@@ -6,11 +6,30 @@ Michael Moffitt 2014
 More or less a collection of parameters to be sent to a generator when this 
 instrument is used on a channel. 
 
-*/
+Notes are stored like this:
 
+(base note) + (256 * octave)
+
+This is so that octaves come from (note value) / 256 = octave.
+This can also be done as (note value) >> 8.
+
+*/
 
 #ifndef INSTRUMENT_H
 #define INSTRUMENT_H
+
+#define NOTE_C  0
+#define NOTE_CS 1
+#define NOTE_D  2
+#define NOTE_DS 3
+#define NOTE_E  4
+#define NOTE_F  5
+#define NOTE_FS 6
+#define NOTE_G  7
+#define NOTE_GS 8
+#define NOTE_A  9
+#define NOTE_AS 10
+#define NOTE_B  11
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,4 +51,6 @@ typedef struct
 
 msf_instrument *msf_create_instrument();
 void msf_destroy_instrument(msf_instrument *ptr);
+
+float msf_get_freq(msf_instrument *ptr);
 #endif
