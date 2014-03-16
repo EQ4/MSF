@@ -6,11 +6,11 @@ msf_phrase *msf_create_phrase(int len)
 	msf_phrase *ret = malloc(sizeof(*ret));
 
 	// Create and clear arrays for its properties
-	ret->note = calloc(sizeof(int) * len);
-	ret->inst = calloc(sizeof(int) * len);
-	ret->vol = calloc(sizeof(int) * len);
-	ret->cmd = calloc(sizeof(int) * len);
-	ret->arg = calloc(sizeof(int) * len);
+	ret->note = calloc(len,sizeof(int));
+	ret->inst = calloc(len,sizeof(int));
+	ret->vol = calloc(len,sizeof(int));
+	ret->cmd = calloc(len,sizeof(int));
+	ret->arg = calloc(len,sizeof(int));
 
 	return ret;
 }

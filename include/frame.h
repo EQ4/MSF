@@ -20,13 +20,15 @@ used with the same pattern adjacent.
 #ifndef FRAME_H
 #define FRAME_H
 
+#include <stdlib.h>
+
 typedef struct msf_frame msf_frame;
 struct msf_frame
 {
 	int num_channels; // "Width" of a frame
-	int *pattern[]; // Pattern[channel]
-	int *transpose[]; // Transposition[channel]
-	int *tune[]; // Detune[channel];
+	int *pattern; // Pattern[channel]
+	int *transpose; // Transposition[channel]
+	int *tune; // Detune[channel];
 };
 
 msf_frame *msf_create_frame(int num);

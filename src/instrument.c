@@ -12,6 +12,8 @@ msf_instrument *msf_create_instrument()
 	ret->wave_depth = 16; // Default to a 16-bit wave
 	ret->wave_mult = 1; // Default to 44.1khz sample rate
 	ret->wave_len = 2; // Defaul to two samples (1 is useless...)
+	ret->left_amp = 1.0;
+	ret->right_amp = 1.0;
 
 	printf("--Making amp_macro at ");
 	ret->amp_macro = malloc(sizeof(*(ret->amp_macro)));
@@ -35,7 +37,7 @@ void msf_destroy_instrument(msf_instrument *ptr)
 	free(ptr);
 }
 
-float msf_get_freq(int note, )
+float msf_get_freq(int note)
 {
 	int octave = note >> 8;
 	int base = base % 0xFF;
@@ -79,7 +81,6 @@ float msf_get_freq(int note, )
 		base_freq = 30.868;
 		break;
 	}
-	int mult = 1;
-	mult << octave;
+	int mult = 1 << octave;
 	return base_freq * mult;
 }

@@ -38,7 +38,9 @@ This can also be done as (note value) >> 8.
 typedef struct
 {
 	// Which type of wave the generator should use
-	int type; 
+	int type;
+	float left_amp; // 0.0 - 1.0 left amplitude multiplier
+	float right_amp; // 0.0 - 1.0 right amplitude multiplier
 	int *wave_ptr; // Pointer to sample data
 	int wave_depth; // Depth of the sample
 	int wave_mult; // 44100hz / sample rate (must be 1 for 44.1k, 2 for 22k)
@@ -52,5 +54,5 @@ typedef struct
 msf_instrument *msf_create_instrument();
 void msf_destroy_instrument(msf_instrument *ptr);
 
-float msf_get_freq(msf_instrument *ptr);
+float msf_get_freq(int note);
 #endif
