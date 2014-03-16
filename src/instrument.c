@@ -6,7 +6,7 @@ msf_instrument *msf_create_instrument()
 {
 	printf("--Making MSF instrument: ");
 	msf_instrument *ret = malloc(sizeof(*ret));
-	printf("%d\n",ret);
+	printf("%d\n",(int)ret);
 	printf("--Setting defaults.\n");
 	ret->type = 0;
 	ret->wave_ptr = 0;
@@ -16,22 +16,22 @@ msf_instrument *msf_create_instrument()
 
 	printf("--Making amp_macro at ");
 	ret->amp_macro = malloc(sizeof(*(ret->amp_macro)));
-	printf("%d\n--Making arp_macro at ",ret->amp_macro);
+	printf("%d\n--Making arp_macro at ",(int)ret->amp_macro);
 	ret->arp_macro = malloc(sizeof(*(ret->arp_macro)));
-	printf("%d\n--Making pitch_macro at ",ret->arp_macro);
+	printf("%d\n--Making pitch_macro at ",(int)ret->arp_macro);
 	ret->pitch_macro = malloc(sizeof(*(ret->pitch_macro)));
-	printf("%d\n--Done making instrument. Returning.\n",ret->pitch_macro);
+	printf("%d\n--Done making instrument. Returning.\n",(int)ret->pitch_macro);
 	return ret;
 }
 
 void msf_destroy_instrument(msf_instrument *ptr)
 {
-	printf("Destroying amp_macro...\n\n");
+	printf("\nDestroying amp_macro...\n");
 	msf_destroy_ll(ptr->amp_macro);
-	printf("Destroying arp_macro...\n\n");
+	printf("\nDestroying arp_macro...\n");
 	msf_destroy_ll(ptr->arp_macro);
-	printf("Destroying pitch_macro...\n\n");
+	printf("\nDestroying pitch_macro...\n");
 	msf_destroy_ll(ptr->pitch_macro);
-	printf("Freeing instrument pointer...\n\n");
+	printf("\nFreeing instrument pointer...\n");
 	free(ptr);
 }
