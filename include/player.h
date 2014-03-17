@@ -31,6 +31,7 @@ lpoly
 #define MSF_NUM_PHRASES 512
 #define MSF_PHRASE_LENGTH 64 // .mod much?
 #define MSF_NUM_INSTRUMENTS 256
+#define MSF_TUNE_DIV 32.00
 typedef struct msf_player msf_player;
 struct msf_player
 {

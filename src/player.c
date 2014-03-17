@@ -94,6 +94,7 @@ void msf_step()
 		player.phrase_cnt++;
 		new_step = 1;
 	}
+	player.frames[0]->tune[3] = 16;
 	if (player.phrase_cnt == player.phrase_length) // End of phrase
 	{
 		player.frame_cnt++;
@@ -153,8 +154,10 @@ void msf_step()
 				break;
 			case WAVE_SAW:
 				poly_set_wavetype(i,saw);
+				break;
 			case WAVE_TRIANGLE:
 				poly_set_wavetype(i,triangle);
+				break;
 				// The rest will come once libpoly supports them properly
 			}
 		}
@@ -184,16 +187,16 @@ void msf_step()
 		{
 			poly_set_duty(i,(player.duty[i]->value/255.0));
 		}
-		int arp_off = 0;
+		int arp_off = player.frames[player.frame_cnt]->transpose[i];
 		if (player.arp[i] != NULL)
 		{
 			//printf("Setting arp_off to %d.\n",player.arp[i]->value);
-			arp_off = player.arp[i]->value;
+			arp_off += player.arp[i]->value;
 		}
-		float pitch_off = 0;
+		float pitch_off = player.frames[player.frame_cnt]->tune[i] / MSF_TUNE_DIV;
 		if (player.pitch[i] != NULL)
 		{
-			pitch_off = player.pitch[i]->value;
+			pitch_off += player.pitch[i]->value;
 		}
 		player.freq[i] = msf_get_freq(player.note[i] + arp_off) + pitch_off;
 		
