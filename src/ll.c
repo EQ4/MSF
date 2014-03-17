@@ -56,7 +56,7 @@ void msf_destroy_ll(msf_ll *ptr)
 			free(prev); // Free the previous
 		}
 	}
-
+	
 	// Now we must free our addresses list
 	addresses = addresses_base;
 	while (addresses->next != NULL)
@@ -66,11 +66,15 @@ void msf_destroy_ll(msf_ll *ptr)
 		printf("--Freeing address list node at 0x%d\n",(int)prev);
 		free(prev);
 	}
+	free(addresses);
 }
+
+	
 
 msf_ll *msf_create_ll(int value)
 {
 	msf_ll *ret = malloc(sizeof(*ret));
 	ret->value = value;
+	ret->next = NULL;
 	return ret;
 }

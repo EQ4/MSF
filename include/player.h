@@ -14,6 +14,8 @@ lm
 lpoly
 
 */
+#ifndef PLAYER_H
+#define PLAYER_H
 
 #include <stdlib.h>
 #include <poly.h> 
@@ -56,7 +58,7 @@ struct msf_player
 	msf_phrase **phrases;
 	msf_instrument **instruments;
 
-	msf_ll **arp; // For stepping through macros on channels - NOT to be allocated
+	msf_ll **arp; // For stepping through macros on channels - NOT to be allocated ll's
 	msf_ll **amp; // Just one pointer per channel
 	msf_ll **pitch;
 };
@@ -71,3 +73,5 @@ void msf_step(); // Actually runs the music
 void msf_shutdown(); // No leaks!
 
 //frames = malloc(sizeof(msf_frame *) * number);
+
+#endif

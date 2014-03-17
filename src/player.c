@@ -35,6 +35,7 @@ void msf_init_special(int speed, int num_frames, int num_channels, int num_phras
 	{
 		player.instruments[i] = msf_create_instrument();
 		player.instruments[i]->amp_macro->value = 255; // Default to full blast
+		printf("Created instrument #%d at 0x%d.\n",i,(unsigned int)player.instruments[i]);
 	}
 
 	// Point these to the LL macros (one per channel);
@@ -42,7 +43,7 @@ void msf_init_special(int speed, int num_frames, int num_channels, int num_phras
 	player.amp = malloc(num_channels * sizeof(msf_ll *));
 	player.pitch = malloc(num_channels * sizeof(msf_ll *));
 
-	for (int i = 0; i < num_channels; i++)
+	for (int i = 0; i < num_channels; i++) // Null them out to avoid confusion
 	{
 		player.arp[i] = NULL;
 		player.amp[i] = NULL;
@@ -206,22 +207,39 @@ void msf_shutdown()
 	{
 		for (int i = 0; i < player.num_frames; i++)
 		{
+			printf("----%d: Destroying frame 0x%d\n",i,(unsigned int)player.frames[i]);
 			msf_destroy_frame(player.frames[i]);
 		}
 		for (int i = 0; i < player.num_phrases; i++)
 		{
+			printf("----%d: Destroying phrase 0x%d\n",i,(unsigned int)player.phrases[i]);
 			msf_destroy_phrase(player.phrases[i]);
 		}
 		for (int i = 0; i < player.num_instruments; i++)
 		{
+			printf("----%d: Destroying instrument 0x%d\n",i,(unsigned int)player.instruments[i]);
 			msf_destroy_instrument(player.instruments[i]);
 		}
+		
+		printf("----Freeing frames\n");
 		free(player.frames);
+		printf("----Freeing phrases\n");
 		free(player.phrases);
+		printf("----Freeing instruments\n");
 		free(player.instruments);
+		printf("----Freeing arp\n");
 		free(player.arp);
+		printf("----Freeing amp\n");
 		free(player.amp);
+		printf("----Freeing pitch\n");
 		free(player.pitch);
+		printf("----Freeing note\n");
 		free(player.note);
+		printf("----Freeing amp_l\n");
+		free(player.amp_l);
+		printf("----Freeing amp_r\n");
+		free(player.amp_r);
+		printf("----Freeing freq\n");
+		free(player.freq);
 	}
 }

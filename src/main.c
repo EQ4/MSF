@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
 	player.frames[0]->phrase[1] = 2;
 
 	player.instruments[1]->duty = 0.40;
-	for (int i = 0; i < 128; i++)
+	for (int i = 0; i < 54; i++)
 	{
 		usleep(20000);
 		msf_step();

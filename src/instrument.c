@@ -8,7 +8,7 @@ msf_instrument *msf_create_instrument()
 	printf("%d\n",(int)ret);
 	printf("--Setting defaults.\n");
 	ret->type = 0;
-	ret->wave_ptr = 0;
+	ret->wave_ptr = NULL;
 	ret->wave_depth = 16; // Default to a 16-bit wave
 	ret->wave_mult = 1; // Default to 44.1khz sample rate
 	ret->wave_len = 2; // Defaul to two samples (1 is useless...)
@@ -34,6 +34,10 @@ void msf_destroy_instrument(msf_instrument *ptr)
 	printf("\nDestroying pitch_macro...\n");
 	msf_destroy_ll(ptr->pitch_macro);
 	printf("\nFreeing instrument pointer...\n");
+	if (ptr->wave_ptr != NULL)
+	{
+		//poly_destroy_sample(ptr->wave_ptr);
+	}
 	free(ptr);
 }
 
