@@ -1,1 +1,1 @@
-clang -o test -O0 -g src/*.c -pthreads -lm -lao -lpoly
+clang -o msf-test -O0 -g src/*.c -pthreads -lm -lao -lpoly
