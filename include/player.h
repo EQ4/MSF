@@ -26,11 +26,11 @@ lpoly
 #include "../include/phrase.h"
 
 #define MSF_DEFAULT_SPEED 6
-#define MSF_NUM_FRAMES 1024
-#define MSF_NUM_CHANNELS 16 // AKA frame width
-#define MSF_NUM_PHRASES 1024
+#define MSF_NUM_FRAMES 256
+#define MSF_NUM_CHANNELS 8 // AKA frame width
+#define MSF_NUM_PHRASES 512
 #define MSF_PHRASE_LENGTH 64 // .mod much?
-#define MSF_NUM_INSTRUMENTS 128
+#define MSF_NUM_INSTRUMENTS 256
 typedef struct msf_player msf_player;
 struct msf_player
 {
@@ -60,6 +60,7 @@ struct msf_player
 
 	msf_ll **arp; // For stepping through macros on channels - NOT to be allocated ll's
 	msf_ll **amp; // Just one pointer per channel
+	msf_ll **duty;
 	msf_ll **pitch;
 };
 

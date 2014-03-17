@@ -5,89 +5,305 @@
 #include "../include/phrase.h"
 #include "../include/frame.h"
 #include "../include/player.h"
+int in = 0;
+void add(int phr, int val, int inst)
+{
+	player.phrases[phr]->note[in] = val;
+	player.phrases[phr]->inst[in] = inst;
+
+	in++;
+}
+
+void build_tetris()
+{
+	// A section harmony
+	add(4,45,1);
+	add(4,0,0);
+
+	add(4,0,0);
+	add(4,0,0);
+
+	add(4,38,1);
+	add(4,0,0);
+
+	add(4,42,1);
+	add(4,0,0);
+
+	add(4,45,1);
+	add(4,0,0);
+
+	add(4,46,1);
+	add(4,45,1);
+	add(4,43,1);
+	add(4,0,0);
+	add(4,39,1);
+	add(4,0,0);
+	add(4,38,1);
+	add(4,38,1);
+	add(4,34,1);
+	add(4,0,0);
+	add(4,38,1);
+	add(4,0,0);
+	add(4,43,1);
+	add(4,0,0);
+	add(4,43,1);
+	add(4,43,1);
+	add(4,42,1);
+	add(4,0,0);
+	add(4,40,1);
+	// A section lead
+
+	in = 0;
+	add(2,50,1);
+	add(2,0,0);
+
+	add(2,0,1);
+	add(2,0,0);
+
+	add(2,45,1);
+	add(2,0,0);
+
+	add(2,46,1);
+	add(2,0,0);
+
+	add(2,48,1);
+	add(2,0,0);
+
+	add(2,0,1);
+	add(2,0,0);
+
+	add(2,46,1);
+	add(2,0,0);
+	
+	add(2,45,1);
+	add(2,0,0);
+
+	add(2,43,1);
+	add(2,0,0);
+
+	add(2,0,1);
+	add(2,0,0);
+
+	add(2,43,1);
+	add(2,0,0);
+
+	add(2,46,1);
+	add(2,0,0);
+
+	add(2,50,1);
+	add(2,0,0);
+
+	add(2,0,1);
+	add(2,0,0);
+
+	add(2,48,1);
+	add(2,0,0);
+
+	add(2,46,1);
+	add(2,0,0);
+
+	add(2,45,1);
+	add(2,0,0);
+
+	add(2,0,1);
+	add(2,0,0);
+
+	add(2,45,1);
+	add(2,0,0);
+
+	add(2,46,1);
+	add(2,0,0);
+
+	add(2,48,1);
+	add(2,0,0);
+
+	add(2,0,1);
+	add(2,0,0);
+
+	add(2,50,1);
+	add(2,0,0);
+
+	add(2,0,1);
+	add(2,0,0);
+
+	add(2,46,1);
+	add(2,0,0);
+
+	add(2,0,1);
+	add(2,0,0);
+
+	add(2,43,1);
+	add(2,0,0);
+
+	add(2,0,1);
+	add(2,0,0);
+
+	add(2,43,1);
+	add(2,0,0);
+
+	add(2,0,1);
+	add(2,0,0);
+
+	add(2,45,1);
+	add(2,0,0);
+
+	add(2,46,1);
+	add(2,0,0);
+
+	in = 0;
+	add(3,-1,1);
+	add(3,0,0);
+
+	add(3,48,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,51,1);
+	add(3,0,0);
+
+	add(3,55,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,53,1);
+	add(3,0,0);
+
+	add(3,51,1);
+	add(3,0,0);
+
+	add(3,50,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+
+	add(3,46,1);
+	add(3,0,0);
+
+	add(3,50,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,48,1);
+	add(3,0,0);
+
+	add(3,46,1);
+	add(3,0,0);
+
+	add(3,45,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,45,1);
+	add(3,0,0);
+
+	add(3,46,1);
+	add(3,0,0);
+
+	add(3,48,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,50,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,46,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,43,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,43,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,0,1);
+	add(3,0,0);
+
+	add(3,-1,1);
+	add(3,0,0);
+
+
+}
 
 int main(int argc, char *argv[])
 {
-/*
-	printf("Building test instrument\n\n");
-	msf_instrument *test = msf_create_instrument();
-	printf("Messing with test->type\n\n");
-	test->type = 18;
-	printf("The type of wave is %d.\n\nAdding a little something to test's arp_macro.\n\n",test->type);
-	test->arp_macro->next = malloc(sizeof(msf_ll));
-	test->arp_macro->next->value = 6;
-	msf_destroy_instrument(test);
-	printf("Done.\n\nMessing with some phrases...\n");
 
-	// Dynamic array containing n pointers to msf_phrase structs
-	#define NUM_TEST_PHRASES 24
-	msf_phrase **tphrases = malloc(sizeof(msf_phrase *) * NUM_TEST_PHRASES);
-
-	for (int i = 0; i < NUM_TEST_PHRASES; i++)
-	{
-		tphrases[i] = msf_create_phrase(64);
-		printf("Created phrase %d at 0x%d\n",(i+1),(unsigned int)tphrases[i]);
-	}
-	msf_frame *frame = msf_create_frame(16);
-	printf("Destroying the frame at 0x%d.\n",(unsigned int)frame);
-	msf_destroy_frame(frame);
-	for (int i = 0; i < NUM_TEST_PHRASES; i++)
-	{
-		printf("Destroying phrase at 0x%d.\n",(unsigned int)tphrases[i]);
-		msf_destroy_phrase(tphrases[i]);
-	}
-	free(tphrases);
-	printf("\n\nAll done.\n\n");
-*/
 
 	printf("MSF init sequence starting.\n");
 	msf_init();
-	printf("Playing.\n");
-	
-	
-	player.phrases[2]->note[1] = 48-5;
-	player.phrases[2]->note[2] = 52-5;
-	player.phrases[2]->note[3] = 48-5;
-	player.phrases[2]->note[4] = 53-5;
-	player.phrases[2]->note[5] = 48-5;
-	player.phrases[2]->note[6] = 52-5;
-	player.phrases[2]->note[7] = 48-5;
-	player.phrases[2]->inst[1] = 1;
-	player.phrases[2]->inst[2] = 1;
-	player.phrases[2]->inst[3] = 1;
-	player.phrases[2]->inst[4] = 1;
-	player.phrases[2]->inst[5] = 1;
-	player.phrases[2]->inst[6] = 1;
-	player.phrases[2]->inst[7] = 1;
-	player.phrases[2]->note[8] = -1;
-	
-	
-	
-	
-	player.phrases[1]->note[1] = 48;
-	player.phrases[1]->note[2] = 52;
-	player.phrases[1]->note[3] = 48;
-	player.phrases[1]->note[4] = 53;
-	player.phrases[1]->note[5] = 48;
-	player.phrases[1]->note[6] = 52;
-	player.phrases[1]->note[7] = 48;
-	player.phrases[1]->inst[1] = 1;
-	player.phrases[1]->inst[2] = 1;
-	player.phrases[1]->inst[3] = 1;
-	player.phrases[1]->inst[4] = 1;
-	player.phrases[1]->inst[5] = 1;
-	player.phrases[1]->inst[6] = 1;
-	player.phrases[1]->inst[7] = 1;
-	player.phrases[1]->note[9] = -1;
-	player.frames[0]->phrase[0] = 1;
-	player.frames[0]->phrase[1] = 2;
+	build_tetris();	
+	int idx = 0;
 
-	player.instruments[1]->duty = 0.40;
-	for (int i = 0; i < 54; i++)
+	printf("Setting phrases.\n");
+	player.frames[0]->phrase[0] = 2;
+	player.frames[0]->phrase[1] = 4;
+	player.frames[1]->phrase[0] = 3;
+	player.loopback = 0;
+	player.track_length = 2;
+
+
+	msf_instrument *inst = player.instruments[1];
+	inst->type = WAVE_SQUARE;
+	inst->right_amp = 1.0;
+
+	printf("Building instrument macro data\n");
+	msf_ll *base_amp = inst->amp_macro;
+	msf_add_ll(base_amp,255-16);
+	msf_add_ll(base_amp,255-32);
+	msf_add_ll(base_amp,255-48);
+	msf_add_ll(base_amp,255-64);
+	msf_add_ll(base_amp,255-80);
+	msf_add_ll(base_amp,255-96);
+	msf_add_ll(base_amp,255-128);
+
+	msf_ll *base_arp = inst->arp_macro;
+	base_arp->value = 12;
+//	msf_add_ll(base_arp,12);
+/*	msf_add_ll(base_arp,0);
+	msf_add_ll(base_arp,12);
+	msf_add_ll(base_arp,12);
+	msf_loop_ll(base_arp,base_arp);
+*/
+	msf_ll *base_duty = inst->duty_macro;
+	for (int i = 0; i < 0; i++)
 	{
-		usleep(20000);
+		msf_add_ll(base_duty,60 + (6*i));
+	}
+//	inst->arp_macro->next = base_arp;
+	for (int i = 0; i < 2560; i++)
+	{
+		usleep(15000);
 		msf_step();
-		msf_spill();
+		//msf_spill();
 	}
 	printf("Killing player now.\n");
 	msf_shutdown();

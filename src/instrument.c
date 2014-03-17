@@ -3,10 +3,10 @@
 
 msf_instrument *msf_create_instrument()
 {
-	printf("--Making MSF instrument: ");
+	//printf("--Making MSF instrument: ");
 	msf_instrument *ret = malloc(sizeof(*ret));
-	printf("%d\n",(int)ret);
-	printf("--Setting defaults.\n");
+	//printf("%d\n",(int)ret);
+	//printf("--Setting defaults.\n");
 	ret->type = 0;
 	ret->wave_ptr = NULL;
 	ret->wave_depth = 16; // Default to a 16-bit wave
@@ -14,26 +14,27 @@ msf_instrument *msf_create_instrument()
 	ret->wave_len = 2; // Defaul to two samples (1 is useless...)
 	ret->left_amp = 1.0;
 	ret->right_amp = 1.0;
-	ret->duty = 0.5;
-	printf("--Making amp_macro at ");
+	//printf("--Making amp_macro at ");
 	ret->amp_macro = msf_create_ll(255);
-	printf("%d\n--Making arp_macro at ",(int)ret->amp_macro);
+	//printf("%d\n--Making arp_macro at ",(int)ret->amp_macro);
 	ret->arp_macro = msf_create_ll(0);
-	printf("%d\n--Making pitch_macro at ",(int)ret->arp_macro);
+	//printf("%d\n--Making pitch_macro at ",(int)ret->arp_macro);
 	ret->pitch_macro = msf_create_ll(0);
-	printf("%d\n--Done making instrument. Returning.\n",(int)ret->pitch_macro);
+	//printf("New instrument at %d.\n",(int)ret);
+	ret->duty_macro = msf_create_ll(128);
 	return ret;
 }
 
 void msf_destroy_instrument(msf_instrument *ptr)
 {
-	printf("\nDestroying amp_macro...\n");
+	//printf("\nDestroying amp_macro...\n");
 	msf_destroy_ll(ptr->amp_macro);
-	printf("\nDestroying arp_macro...\n");
+	//printf("\nDestroying arp_macro...\n");
 	msf_destroy_ll(ptr->arp_macro);
-	printf("\nDestroying pitch_macro...\n");
+	//printf("\nDestroying pitch_macro...\n");
 	msf_destroy_ll(ptr->pitch_macro);
-	printf("\nFreeing instrument pointer...\n");
+	//printf("\nFreeing instrument pointer...\n");
+	msf_destroy_ll(ptr->duty_macro);
 	if (ptr->wave_ptr != NULL)
 	{
 		//poly_destroy_sample(ptr->wave_ptr);

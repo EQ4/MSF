@@ -9,10 +9,16 @@ msf_frame *msf_create_frame(int num)
 	ret->num_channels = num;
 
 	// Make arrays
-	ret->phrase = calloc(num,sizeof(int));
-	ret->transpose = calloc(num,sizeof(int));
-	ret->tune = calloc(num,sizeof(int));
+	ret->phrase = malloc(num *sizeof(int));
+	ret->transpose = malloc(num * sizeof(int));
+	ret->tune = malloc(num * sizeof(int));
 
+	for (int i = 0; i < num; i++)
+	{
+		ret->phrase[i] = 0;
+		ret->transpose[i] = 0;
+		ret->tune[i] = 0;
+	}
 	return ret;
 }
 

@@ -8,9 +8,7 @@ void msf_destroy_ll(msf_ll *ptr)
 	cur = ptr;
 
 	msf_ll *addresses; // Addresses we have already seen for end detection
-	addresses = malloc(sizeof(*addresses));
-	addresses->value = -1;
-	addresses->next = NULL;
+	addresses = msf_create_ll(-1);
 
 	msf_ll *addresses_base = addresses;
 
@@ -19,14 +17,15 @@ void msf_destroy_ll(msf_ll *ptr)
 	{
 		// Check for the current address in our existing list
 		msf_ll *next_check = addresses_base;
-		printf("--Current node's next address is 0x%d.\n",(int)cur->next);
+		//printf("--Current node's next address is 0x%d.\n",(int)cur->next);
 		while (next_check->next != NULL) // Go through the LL of seen addresses
 		{
-			printf("--Checking %d against %d...\n",(int)next_check->value,(int)cur->next);
-			if (next_check->value == (int)cur->next) // If we have seen the next node...
+			//printf("--- Checking %d against %d...\n",(unsigned int)next_check->value,(unsigned int)cur->next);
+			if (next_check->value == (unsigned int)cur->next) // If we have seen the next node...
 			{
-				printf("--Match found! Finished destroying list.\n");
 				finished = 1; // ...we are done.
+				free(cur);
+				break;
 			}
 			else
 			{
@@ -38,21 +37,21 @@ void msf_destroy_ll(msf_ll *ptr)
 		    prev = cur; // Record our current node
 			if (cur->next == NULL)
 			{
-				printf("--Finished with this list.\n");
+		//		printf("--Finished with this list.\n");
 				finished = 1;
 			}
 			else
 			{
-				printf("--Hopping to 0x%d\n",(int)cur->next);
+		//		printf("--Hopping to 0x%d\n",(int)cur->next);
 				cur = cur->next; // Hop to next node
 			}
-			addresses->value = (int)prev; // Record the address we visited
-			printf("--Marked address 0x%d as visited.\n",(int)prev);
-			addresses->next = malloc(sizeof(*addresses)); // Build the next address node
+			//addresses->value = (int)prev; // Record the address we visited
+		//	printf("--Marked address 0x%d as visited.\n",(int)prev);
+			addresses->next = msf_create_ll((unsigned int)prev); // Build the next address node
 			addresses = addresses->next; // Go to it
-			addresses->next = NULL;
-			addresses->value = -1;
-			printf("--Freeing msf_ll node at 0x%d\n",(int)prev);
+			//addresses->next = NULL;
+			//addresses->value = -1;
+			//printf("--Freeing msf_ll node at 0x%d\n",(int)prev);
 			free(prev); // Free the previous
 		}
 	}
@@ -63,7 +62,7 @@ void msf_destroy_ll(msf_ll *ptr)
 	{
 		prev = addresses;
 		addresses = addresses->next;
-		printf("--Freeing address list node at 0x%d\n",(int)prev);
+//		printf("--Freeing address list node at 0x%d\n",(int)prev);
 		free(prev);
 	}
 	free(addresses);
@@ -77,4 +76,24 @@ msf_ll *msf_create_ll(int value)
 	ret->value = value;
 	ret->next = NULL;
 	return ret;
+}
+
+void msf_add_ll(msf_ll *base, int value)
+{
+	msf_ll *ptr = base;
+	while (ptr->next != NULL)
+	{
+		ptr = ptr->next;
+	}
+	ptr->next = msf_create_ll(value);
+}
+
+void msf_loop_ll(msf_ll *base, msf_ll *point)
+{
+	msf_ll *ptr;
+	while (ptr->next != NULL)
+	{
+		ptr = ptr->next;
+	}
+	ptr->next = point;
 }
