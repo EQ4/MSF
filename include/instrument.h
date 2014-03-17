@@ -31,6 +31,14 @@ This can also be done as (note value) >> 8.
 #define NOTE_AS 10
 #define NOTE_B  11
 
+#define WAVE_SQUARE 0
+#define WAVE_SINE 1
+#define WAVE_SAW 2
+#define WAVE_TRIANGLE 3
+#define WAVE_NOISE 4
+#define WAVE_SAMPLE 5
+#define WAVE_LOOPSAMPLE 6
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/ll.h"

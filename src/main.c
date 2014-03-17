@@ -17,21 +17,23 @@ int main(int argc, char *argv[])
 	printf("Done.\n\nMessing with some phrases...\n");
 
 	// Dynamic array containing n pointers to msf_phrase structs
-	msf_phrase *tphrases[8];// = malloc(sizeof(*msf_phrase) * 8);
+	#define NUM_TEST_PHRASES 24
+	msf_phrase **tphrases = malloc(sizeof(msf_phrase *) * NUM_TEST_PHRASES);
 
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < NUM_TEST_PHRASES; i++)
 	{
 		tphrases[i] = msf_create_phrase(64);
 		printf("Created phrase %d at 0x%d\n",(i+1),(unsigned int)tphrases[i]);
 	}
-	msf_frame *frame = msf_create_frame(8);
+	msf_frame *frame = msf_create_frame(16);
 	printf("Destroying the frame at 0x%d.\n",(unsigned int)frame);
 	msf_destroy_frame(frame);
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < NUM_TEST_PHRASES; i++)
 	{
 		printf("Destroying phrase at 0x%d.\n",(unsigned int)tphrases[i]);
 		msf_destroy_phrase(tphrases[i]);
 	}
+	free(tphrases);
 	printf("\n\nAll done.\n\n");
 	return 0;
 }
