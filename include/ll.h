@@ -24,5 +24,5 @@ struct msf_ll
 };
 
 void msf_destroy_ll(msf_ll *ptr);
-
+msf_ll *msf_create_ll(int value);
 #endif

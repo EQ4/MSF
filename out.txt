@@ -1,0 +1,3716 @@
+Building a player now.
+--Making MSF instrument: 10359872
+--Setting defaults.
+--Making amp_macro at 10359952
+--Making arp_macro at 10359984
+--Making pitch_macro at 10360016
+--Done making instrument. Returning.
+--Making MSF instrument: 10360048
+--Setting defaults.
+--Making amp_macro at 10360128
+--Making arp_macro at 10360160
+--Making pitch_macro at 10360192
+--Done making instrument. Returning.
+--Making MSF instrument: 10360224
+--Setting defaults.
+--Making amp_macro at 10360304
+--Making arp_macro at 10360336
+--Making pitch_macro at 10360368
+--Done making instrument. Returning.
+--Making MSF instrument: 10360400
+--Setting defaults.
+--Making amp_macro at 10360480
+--Making arp_macro at 10360512
+--Making pitch_macro at 10360544
+--Done making instrument. Returning.
+--Making MSF instrument: 10360576
+--Setting defaults.
+--Making amp_macro at 10360656
+--Making arp_macro at 10360688
+--Making pitch_macro at 10360720
+--Done making instrument. Returning.
+--Making MSF instrument: 10360752
+--Setting defaults.
+--Making amp_macro at 10360832
+--Making arp_macro at 10360864
+--Making pitch_macro at 10360896
+--Done making instrument. Returning.
+--Making MSF instrument: 10360928
+--Setting defaults.
+--Making amp_macro at 10361008
+--Making arp_macro at 10361040
+--Making pitch_macro at 10361072
+--Done making instrument. Returning.
+--Making MSF instrument: 10361104
+--Setting defaults.
+--Making amp_macro at 10361184
+--Making arp_macro at 10361216
+--Making pitch_macro at 10361248
+--Done making instrument. Returning.
+--Making MSF instrument: 10361280
+--Setting defaults.
+--Making amp_macro at 10361360
+--Making arp_macro at 10361392
+--Making pitch_macro at 10361424
+--Done making instrument. Returning.
+--Making MSF instrument: 10361456
+--Setting defaults.
+--Making amp_macro at 10361536
+--Making arp_macro at 10361568
+--Making pitch_macro at 10361600
+--Done making instrument. Returning.
+--Making MSF instrument: 10361632
+--Setting defaults.
+--Making amp_macro at 10361712
+--Making arp_macro at 10361744
+--Making pitch_macro at 10361776
+--Done making instrument. Returning.
+--Making MSF instrument: 10361808
+--Setting defaults.
+--Making amp_macro at 10361888
+--Making arp_macro at 10361920
+--Making pitch_macro at 10361952
+--Done making instrument. Returning.
+--Making MSF instrument: 10361984
+--Setting defaults.
+--Making amp_macro at 10362064
+--Making arp_macro at 10362096
+--Making pitch_macro at 10362128
+--Done making instrument. Returning.
+--Making MSF instrument: 10362160
+--Setting defaults.
+--Making amp_macro at 10362240
+--Making arp_macro at 10362272
+--Making pitch_macro at 10362304
+--Done making instrument. Returning.
+--Making MSF instrument: 10362336
+--Setting defaults.
+--Making amp_macro at 10362416
+--Making arp_macro at 10362448
+--Making pitch_macro at 10362480
+--Done making instrument. Returning.
+--Making MSF instrument: 10362512
+--Setting defaults.
+--Making amp_macro at 10362592
+--Making arp_macro at 10362624
+--Making pitch_macro at 10362656
+--Done making instrument. Returning.
+--Making MSF instrument: 10362688
+--Setting defaults.
+--Making amp_macro at 10362768
+--Making arp_macro at 10362800
+--Making pitch_macro at 10362832
+--Done making instrument. Returning.
+--Making MSF instrument: 10362864
+--Setting defaults.
+--Making amp_macro at 10362944
+--Making arp_macro at 10362976
+--Making pitch_macro at 10363008
+--Done making instrument. Returning.
+--Making MSF instrument: 10363040
+--Setting defaults.
+--Making amp_macro at 10363120
+--Making arp_macro at 10363152
+--Making pitch_macro at 10363184
+--Done making instrument. Returning.
+--Making MSF instrument: 10363216
+--Setting defaults.
+--Making amp_macro at 10363296
+--Making arp_macro at 10363328
+--Making pitch_macro at 10363360
+--Done making instrument. Returning.
+--Making MSF instrument: 10363392
+--Setting defaults.
+--Making amp_macro at 10363472
+--Making arp_macro at 10363504
+--Making pitch_macro at 10363536
+--Done making instrument. Returning.
+--Making MSF instrument: 10363568
+--Setting defaults.
+--Making amp_macro at 10363648
+--Making arp_macro at 10363680
+--Making pitch_macro at 10363712
+--Done making instrument. Returning.
+--Making MSF instrument: 10363744
+--Setting defaults.
+--Making amp_macro at 10363824
+--Making arp_macro at 10363856
+--Making pitch_macro at 10363888
+--Done making instrument. Returning.
+--Making MSF instrument: 10363920
+--Setting defaults.
+--Making amp_macro at 10364000
+--Making arp_macro at 10364032
+--Making pitch_macro at 10364064
+--Done making instrument. Returning.
+--Making MSF instrument: 10364096
+--Setting defaults.
+--Making amp_macro at 10364176
+--Making arp_macro at 10364208
+--Making pitch_macro at 10364240
+--Done making instrument. Returning.
+--Making MSF instrument: 10364272
+--Setting defaults.
+--Making amp_macro at 10364352
+--Making arp_macro at 10364384
+--Making pitch_macro at 10364416
+--Done making instrument. Returning.
+--Making MSF instrument: 10364448
+--Setting defaults.
+--Making amp_macro at 10364528
+--Making arp_macro at 10364560
+--Making pitch_macro at 10364592
+--Done making instrument. Returning.
+--Making MSF instrument: 10364624
+--Setting defaults.
+--Making amp_macro at 10364704
+--Making arp_macro at 10364736
+--Making pitch_macro at 10364768
+--Done making instrument. Returning.
+--Making MSF instrument: 10364800
+--Setting defaults.
+--Making amp_macro at 10364880
+--Making arp_macro at 10364912
+--Making pitch_macro at 10364944
+--Done making instrument. Returning.
+--Making MSF instrument: 10364976
+--Setting defaults.
+--Making amp_macro at 10365056
+--Making arp_macro at 10365088
+--Making pitch_macro at 10365120
+--Done making instrument. Returning.
+--Making MSF instrument: 10365152
+--Setting defaults.
+--Making amp_macro at 10365232
+--Making arp_macro at 10365264
+--Making pitch_macro at 10365296
+--Done making instrument. Returning.
+--Making MSF instrument: 10365328
+--Setting defaults.
+--Making amp_macro at 10365408
+--Making arp_macro at 10365440
+--Making pitch_macro at 10365472
+--Done making instrument. Returning.
+--Making MSF instrument: 10365504
+--Setting defaults.
+--Making amp_macro at 10365584
+--Making arp_macro at 10365616
+--Making pitch_macro at 10365648
+--Done making instrument. Returning.
+--Making MSF instrument: 10365680
+--Setting defaults.
+--Making amp_macro at 10365760
+--Making arp_macro at 10365792
+--Making pitch_macro at 10365824
+--Done making instrument. Returning.
+--Making MSF instrument: 10365856
+--Setting defaults.
+--Making amp_macro at 10365936
+--Making arp_macro at 10365968
+--Making pitch_macro at 10366000
+--Done making instrument. Returning.
+--Making MSF instrument: 10366032
+--Setting defaults.
+--Making amp_macro at 10366112
+--Making arp_macro at 10366144
+--Making pitch_macro at 10366176
+--Done making instrument. Returning.
+--Making MSF instrument: 10366208
+--Setting defaults.
+--Making amp_macro at 10366288
+--Making arp_macro at 10366320
+--Making pitch_macro at 10366352
+--Done making instrument. Returning.
+--Making MSF instrument: 10366384
+--Setting defaults.
+--Making amp_macro at 10366464
+--Making arp_macro at 10366496
+--Making pitch_macro at 10366528
+--Done making instrument. Returning.
+--Making MSF instrument: 10366560
+--Setting defaults.
+--Making amp_macro at 10366640
+--Making arp_macro at 10366672
+--Making pitch_macro at 10366704
+--Done making instrument. Returning.
+--Making MSF instrument: 10366736
+--Setting defaults.
+--Making amp_macro at 10366816
+--Making arp_macro at 10366848
+--Making pitch_macro at 10366880
+--Done making instrument. Returning.
+--Making MSF instrument: 10366912
+--Setting defaults.
+--Making amp_macro at 10366992
+--Making arp_macro at 10367024
+--Making pitch_macro at 10367056
+--Done making instrument. Returning.
+--Making MSF instrument: 10367088
+--Setting defaults.
+--Making amp_macro at 10367168
+--Making arp_macro at 10367200
+--Making pitch_macro at 10367232
+--Done making instrument. Returning.
+--Making MSF instrument: 10367264
+--Setting defaults.
+--Making amp_macro at 10367344
+--Making arp_macro at 10367376
+--Making pitch_macro at 10367408
+--Done making instrument. Returning.
+--Making MSF instrument: 10367440
+--Setting defaults.
+--Making amp_macro at 10367520
+--Making arp_macro at 10367552
+--Making pitch_macro at 10367584
+--Done making instrument. Returning.
+--Making MSF instrument: 10367616
+--Setting defaults.
+--Making amp_macro at 10367696
+--Making arp_macro at 10367728
+--Making pitch_macro at 10367760
+--Done making instrument. Returning.
+--Making MSF instrument: 10367792
+--Setting defaults.
+--Making amp_macro at 10367872
+--Making arp_macro at 10367904
+--Making pitch_macro at 10367936
+--Done making instrument. Returning.
+--Making MSF instrument: 10367968
+--Setting defaults.
+--Making amp_macro at 10368048
+--Making arp_macro at 10368080
+--Making pitch_macro at 10368112
+--Done making instrument. Returning.
+--Making MSF instrument: 10368144
+--Setting defaults.
+--Making amp_macro at 10368224
+--Making arp_macro at 10368256
+--Making pitch_macro at 10368288
+--Done making instrument. Returning.
+--Making MSF instrument: 10368320
+--Setting defaults.
+--Making amp_macro at 10368400
+--Making arp_macro at 10368432
+--Making pitch_macro at 10368464
+--Done making instrument. Returning.
+--Making MSF instrument: 10368496
+--Setting defaults.
+--Making amp_macro at 10368576
+--Making arp_macro at 10368608
+--Making pitch_macro at 10368640
+--Done making instrument. Returning.
+--Making MSF instrument: 10368672
+--Setting defaults.
+--Making amp_macro at 10368752
+--Making arp_macro at 10368784
+--Making pitch_macro at 10368816
+--Done making instrument. Returning.
+--Making MSF instrument: 10368848
+--Setting defaults.
+--Making amp_macro at 10368928
+--Making arp_macro at 10368960
+--Making pitch_macro at 10368992
+--Done making instrument. Returning.
+--Making MSF instrument: 10369024
+--Setting defaults.
+--Making amp_macro at 10369104
+--Making arp_macro at 10369136
+--Making pitch_macro at 10369168
+--Done making instrument. Returning.
+--Making MSF instrument: 10369200
+--Setting defaults.
+--Making amp_macro at 10369280
+--Making arp_macro at 10369312
+--Making pitch_macro at 10369344
+--Done making instrument. Returning.
+--Making MSF instrument: 10369376
+--Setting defaults.
+--Making amp_macro at 10369456
+--Making arp_macro at 10369488
+--Making pitch_macro at 10369520
+--Done making instrument. Returning.
+--Making MSF instrument: 10369552
+--Setting defaults.
+--Making amp_macro at 10369632
+--Making arp_macro at 10369664
+--Making pitch_macro at 10369696
+--Done making instrument. Returning.
+--Making MSF instrument: 10369728
+--Setting defaults.
+--Making amp_macro at 10369808
+--Making arp_macro at 10369840
+--Making pitch_macro at 10369872
+--Done making instrument. Returning.
+--Making MSF instrument: 10369904
+--Setting defaults.
+--Making amp_macro at 10369984
+--Making arp_macro at 10370016
+--Making pitch_macro at 10370048
+--Done making instrument. Returning.
+--Making MSF instrument: 10370080
+--Setting defaults.
+--Making amp_macro at 10370160
+--Making arp_macro at 10370192
+--Making pitch_macro at 10370224
+--Done making instrument. Returning.
+--Making MSF instrument: 10370256
+--Setting defaults.
+--Making amp_macro at 10370336
+--Making arp_macro at 10370368
+--Making pitch_macro at 10370400
+--Done making instrument. Returning.
+--Making MSF instrument: 10370432
+--Setting defaults.
+--Making amp_macro at 10370512
+--Making arp_macro at 10370544
+--Making pitch_macro at 10370576
+--Done making instrument. Returning.
+--Making MSF instrument: 10370608
+--Setting defaults.
+--Making amp_macro at 10370688
+--Making arp_macro at 10370720
+--Making pitch_macro at 10370752
+--Done making instrument. Returning.
+--Making MSF instrument: 10370784
+--Setting defaults.
+--Making amp_macro at 10370864
+--Making arp_macro at 10370896
+--Making pitch_macro at 10370928
+--Done making instrument. Returning.
+--Making MSF instrument: 10370960
+--Setting defaults.
+--Making amp_macro at 10371040
+--Making arp_macro at 10371072
+--Making pitch_macro at 10371104
+--Done making instrument. Returning.
+--Making MSF instrument: 10371136
+--Setting defaults.
+--Making amp_macro at 10371216
+--Making arp_macro at 10371248
+--Making pitch_macro at 10371280
+--Done making instrument. Returning.
+--Making MSF instrument: 10371312
+--Setting defaults.
+--Making amp_macro at 10371392
+--Making arp_macro at 10371424
+--Making pitch_macro at 10371456
+--Done making instrument. Returning.
+--Making MSF instrument: 10371488
+--Setting defaults.
+--Making amp_macro at 10371568
+--Making arp_macro at 10371600
+--Making pitch_macro at 10371632
+--Done making instrument. Returning.
+--Making MSF instrument: 10371664
+--Setting defaults.
+--Making amp_macro at 10371744
+--Making arp_macro at 10371776
+--Making pitch_macro at 10371808
+--Done making instrument. Returning.
+--Making MSF instrument: 10371840
+--Setting defaults.
+--Making amp_macro at 10371920
+--Making arp_macro at 10371952
+--Making pitch_macro at 10371984
+--Done making instrument. Returning.
+--Making MSF instrument: 10372016
+--Setting defaults.
+--Making amp_macro at 10372096
+--Making arp_macro at 10372128
+--Making pitch_macro at 10372160
+--Done making instrument. Returning.
+--Making MSF instrument: 10372192
+--Setting defaults.
+--Making amp_macro at 10372272
+--Making arp_macro at 10372304
+--Making pitch_macro at 10372336
+--Done making instrument. Returning.
+--Making MSF instrument: 10372368
+--Setting defaults.
+--Making amp_macro at 10372448
+--Making arp_macro at 10372480
+--Making pitch_macro at 10372512
+--Done making instrument. Returning.
+--Making MSF instrument: 10372544
+--Setting defaults.
+--Making amp_macro at 10372624
+--Making arp_macro at 10372656
+--Making pitch_macro at 10372688
+--Done making instrument. Returning.
+--Making MSF instrument: 10372720
+--Setting defaults.
+--Making amp_macro at 10372800
+--Making arp_macro at 10372832
+--Making pitch_macro at 10372864
+--Done making instrument. Returning.
+--Making MSF instrument: 10372896
+--Setting defaults.
+--Making amp_macro at 10372976
+--Making arp_macro at 10373008
+--Making pitch_macro at 10373040
+--Done making instrument. Returning.
+--Making MSF instrument: 10373072
+--Setting defaults.
+--Making amp_macro at 10373152
+--Making arp_macro at 10373184
+--Making pitch_macro at 10373216
+--Done making instrument. Returning.
+--Making MSF instrument: 10373248
+--Setting defaults.
+--Making amp_macro at 10373328
+--Making arp_macro at 10373360
+--Making pitch_macro at 10373392
+--Done making instrument. Returning.
+--Making MSF instrument: 10373424
+--Setting defaults.
+--Making amp_macro at 10373504
+--Making arp_macro at 10373536
+--Making pitch_macro at 10373568
+--Done making instrument. Returning.
+--Making MSF instrument: 10373600
+--Setting defaults.
+--Making amp_macro at 10373680
+--Making arp_macro at 10373712
+--Making pitch_macro at 10373744
+--Done making instrument. Returning.
+--Making MSF instrument: 10373776
+--Setting defaults.
+--Making amp_macro at 10373856
+--Making arp_macro at 10373888
+--Making pitch_macro at 10373920
+--Done making instrument. Returning.
+--Making MSF instrument: 10373952
+--Setting defaults.
+--Making amp_macro at 10374032
+--Making arp_macro at 10374064
+--Making pitch_macro at 10374096
+--Done making instrument. Returning.
+--Making MSF instrument: 10374128
+--Setting defaults.
+--Making amp_macro at 10374208
+--Making arp_macro at 10374240
+--Making pitch_macro at 10374272
+--Done making instrument. Returning.
+--Making MSF instrument: 10374304
+--Setting defaults.
+--Making amp_macro at 10374384
+--Making arp_macro at 10374416
+--Making pitch_macro at 10374448
+--Done making instrument. Returning.
+--Making MSF instrument: 10374480
+--Setting defaults.
+--Making amp_macro at 10374560
+--Making arp_macro at 10374592
+--Making pitch_macro at 10374624
+--Done making instrument. Returning.
+--Making MSF instrument: 10374656
+--Setting defaults.
+--Making amp_macro at 10374736
+--Making arp_macro at 10374768
+--Making pitch_macro at 10374800
+--Done making instrument. Returning.
+--Making MSF instrument: 10374832
+--Setting defaults.
+--Making amp_macro at 10374912
+--Making arp_macro at 10374944
+--Making pitch_macro at 10374976
+--Done making instrument. Returning.
+--Making MSF instrument: 10375008
+--Setting defaults.
+--Making amp_macro at 10375088
+--Making arp_macro at 10375120
+--Making pitch_macro at 10375152
+--Done making instrument. Returning.
+--Making MSF instrument: 10375184
+--Setting defaults.
+--Making amp_macro at 10375264
+--Making arp_macro at 10375296
+--Making pitch_macro at 10375328
+--Done making instrument. Returning.
+--Making MSF instrument: 10375360
+--Setting defaults.
+--Making amp_macro at 10375440
+--Making arp_macro at 10375472
+--Making pitch_macro at 10375504
+--Done making instrument. Returning.
+--Making MSF instrument: 10375536
+--Setting defaults.
+--Making amp_macro at 10375616
+--Making arp_macro at 10375648
+--Making pitch_macro at 10375680
+--Done making instrument. Returning.
+--Making MSF instrument: 10375712
+--Setting defaults.
+--Making amp_macro at 10375792
+--Making arp_macro at 10375824
+--Making pitch_macro at 10375856
+--Done making instrument. Returning.
+--Making MSF instrument: 10375888
+--Setting defaults.
+--Making amp_macro at 10375968
+--Making arp_macro at 10376000
+--Making pitch_macro at 10376032
+--Done making instrument. Returning.
+--Making MSF instrument: 10376064
+--Setting defaults.
+--Making amp_macro at 10376144
+--Making arp_macro at 10376176
+--Making pitch_macro at 10376208
+--Done making instrument. Returning.
+--Making MSF instrument: 10376240
+--Setting defaults.
+--Making amp_macro at 10376320
+--Making arp_macro at 10376352
+--Making pitch_macro at 10376384
+--Done making instrument. Returning.
+--Making MSF instrument: 10376416
+--Setting defaults.
+--Making amp_macro at 10376496
+--Making arp_macro at 10376528
+--Making pitch_macro at 10376560
+--Done making instrument. Returning.
+--Making MSF instrument: 10376592
+--Setting defaults.
+--Making amp_macro at 10376672
+--Making arp_macro at 10376704
+--Making pitch_macro at 10376736
+--Done making instrument. Returning.
+--Making MSF instrument: 10376768
+--Setting defaults.
+--Making amp_macro at 10376848
+--Making arp_macro at 10376880
+--Making pitch_macro at 10376912
+--Done making instrument. Returning.
+--Making MSF instrument: 10376944
+--Setting defaults.
+--Making amp_macro at 10377024
+--Making arp_macro at 10377056
+--Making pitch_macro at 10377088
+--Done making instrument. Returning.
+--Making MSF instrument: 10377120
+--Setting defaults.
+--Making amp_macro at 10377200
+--Making arp_macro at 10377232
+--Making pitch_macro at 10377264
+--Done making instrument. Returning.
+--Making MSF instrument: 10377296
+--Setting defaults.
+--Making amp_macro at 10377376
+--Making arp_macro at 10377408
+--Making pitch_macro at 10377440
+--Done making instrument. Returning.
+--Making MSF instrument: 10377472
+--Setting defaults.
+--Making amp_macro at 10377552
+--Making arp_macro at 10377584
+--Making pitch_macro at 10377616
+--Done making instrument. Returning.
+--Making MSF instrument: 10377648
+--Setting defaults.
+--Making amp_macro at 10377728
+--Making arp_macro at 10377760
+--Making pitch_macro at 10377792
+--Done making instrument. Returning.
+--Making MSF instrument: 10377824
+--Setting defaults.
+--Making amp_macro at 10377904
+--Making arp_macro at 10377936
+--Making pitch_macro at 10377968
+--Done making instrument. Returning.
+--Making MSF instrument: 10378000
+--Setting defaults.
+--Making amp_macro at 10378080
+--Making arp_macro at 10378112
+--Making pitch_macro at 10378144
+--Done making instrument. Returning.
+--Making MSF instrument: 10378176
+--Setting defaults.
+--Making amp_macro at 10378256
+--Making arp_macro at 10378288
+--Making pitch_macro at 10378320
+--Done making instrument. Returning.
+--Making MSF instrument: 10378352
+--Setting defaults.
+--Making amp_macro at 10378432
+--Making arp_macro at 10378464
+--Making pitch_macro at 10378496
+--Done making instrument. Returning.
+--Making MSF instrument: 10378528
+--Setting defaults.
+--Making amp_macro at 10378608
+--Making arp_macro at 10378640
+--Making pitch_macro at 10378672
+--Done making instrument. Returning.
+--Making MSF instrument: 10378704
+--Setting defaults.
+--Making amp_macro at 10378784
+--Making arp_macro at 10378816
+--Making pitch_macro at 10378848
+--Done making instrument. Returning.
+--Making MSF instrument: 10378880
+--Setting defaults.
+--Making amp_macro at 10378960
+--Making arp_macro at 10378992
+--Making pitch_macro at 10379024
+--Done making instrument. Returning.
+--Making MSF instrument: 10379056
+--Setting defaults.
+--Making amp_macro at 10379136
+--Making arp_macro at 10379168
+--Making pitch_macro at 10379200
+--Done making instrument. Returning.
+--Making MSF instrument: 10379232
+--Setting defaults.
+--Making amp_macro at 10379312
+--Making arp_macro at 10379344
+--Making pitch_macro at 10379376
+--Done making instrument. Returning.
+--Making MSF instrument: 10379408
+--Setting defaults.
+--Making amp_macro at 10379488
+--Making arp_macro at 10379520
+--Making pitch_macro at 10379552
+--Done making instrument. Returning.
+--Making MSF instrument: 10379584
+--Setting defaults.
+--Making amp_macro at 10379664
+--Making arp_macro at 10379696
+--Making pitch_macro at 10379728
+--Done making instrument. Returning.
+--Making MSF instrument: 10379760
+--Setting defaults.
+--Making amp_macro at 10379840
+--Making arp_macro at 10379872
+--Making pitch_macro at 10379904
+--Done making instrument. Returning.
+--Making MSF instrument: 10379936
+--Setting defaults.
+--Making amp_macro at 10380016
+--Making arp_macro at 10380048
+--Making pitch_macro at 10380080
+--Done making instrument. Returning.
+--Making MSF instrument: 10380112
+--Setting defaults.
+--Making amp_macro at 10380192
+--Making arp_macro at 10380224
+--Making pitch_macro at 10380256
+--Done making instrument. Returning.
+--Making MSF instrument: 10380288
+--Setting defaults.
+--Making amp_macro at 10380368
+--Making arp_macro at 10380400
+--Making pitch_macro at 10380432
+--Done making instrument. Returning.
+--Making MSF instrument: 10380464
+--Setting defaults.
+--Making amp_macro at 10380544
+--Making arp_macro at 10380576
+--Making pitch_macro at 10380608
+--Done making instrument. Returning.
+--Making MSF instrument: 10380640
+--Setting defaults.
+--Making amp_macro at 10380720
+--Making arp_macro at 10380752
+--Making pitch_macro at 10380784
+--Done making instrument. Returning.
+--Making MSF instrument: 10380816
+--Setting defaults.
+--Making amp_macro at 10380896
+--Making arp_macro at 10380928
+--Making pitch_macro at 10380960
+--Done making instrument. Returning.
+--Making MSF instrument: 10380992
+--Setting defaults.
+--Making amp_macro at 10381072
+--Making arp_macro at 10381104
+--Making pitch_macro at 10381136
+--Done making instrument. Returning.
+--Making MSF instrument: 10381168
+--Setting defaults.
+--Making amp_macro at 10381248
+--Making arp_macro at 10381280
+--Making pitch_macro at 10381312
+--Done making instrument. Returning.
+--Making MSF instrument: 10381344
+--Setting defaults.
+--Making amp_macro at 10381424
+--Making arp_macro at 10381456
+--Making pitch_macro at 10381488
+--Done making instrument. Returning.
+--Making MSF instrument: 10381520
+--Setting defaults.
+--Making amp_macro at 10381600
+--Making arp_macro at 10381632
+--Making pitch_macro at 10381664
+--Done making instrument. Returning.
+--Making MSF instrument: 10381696
+--Setting defaults.
+--Making amp_macro at 10381776
+--Making arp_macro at 10381808
+--Making pitch_macro at 10381840
+--Done making instrument. Returning.
+--Making MSF instrument: 10381872
+--Setting defaults.
+--Making amp_macro at 10381952
+--Making arp_macro at 10381984
+--Making pitch_macro at 10382016
+--Done making instrument. Returning.
+--Making MSF instrument: 10382048
+--Setting defaults.
+--Making amp_macro at 10382128
+--Making arp_macro at 10382160
+--Making pitch_macro at 10382192
+--Done making instrument. Returning.
+--Making MSF instrument: 10382224
+--Setting defaults.
+--Making amp_macro at 10382304
+--Making arp_macro at 10382336
+--Making pitch_macro at 10382368
+--Done making instrument. Returning.
+Screwing around with the player.
+Instrument 0's type is 6.
+Killing player now.
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10359952 as visited.
+--Freeing msf_ll node at 0x10359952
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10359984 as visited.
+--Freeing msf_ll node at 0x10359984
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360016 as visited.
+--Freeing msf_ll node at 0x10360016
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360128 as visited.
+--Freeing msf_ll node at 0x10360128
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360160 as visited.
+--Freeing msf_ll node at 0x10360160
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360192 as visited.
+--Freeing msf_ll node at 0x10360192
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360304 as visited.
+--Freeing msf_ll node at 0x10360304
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360336 as visited.
+--Freeing msf_ll node at 0x10360336
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360368 as visited.
+--Freeing msf_ll node at 0x10360368
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360480 as visited.
+--Freeing msf_ll node at 0x10360480
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360512 as visited.
+--Freeing msf_ll node at 0x10360512
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360544 as visited.
+--Freeing msf_ll node at 0x10360544
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360656 as visited.
+--Freeing msf_ll node at 0x10360656
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360688 as visited.
+--Freeing msf_ll node at 0x10360688
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360720 as visited.
+--Freeing msf_ll node at 0x10360720
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360832 as visited.
+--Freeing msf_ll node at 0x10360832
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360864 as visited.
+--Freeing msf_ll node at 0x10360864
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10360896 as visited.
+--Freeing msf_ll node at 0x10360896
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361008 as visited.
+--Freeing msf_ll node at 0x10361008
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361040 as visited.
+--Freeing msf_ll node at 0x10361040
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361072 as visited.
+--Freeing msf_ll node at 0x10361072
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361184 as visited.
+--Freeing msf_ll node at 0x10361184
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361216 as visited.
+--Freeing msf_ll node at 0x10361216
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361248 as visited.
+--Freeing msf_ll node at 0x10361248
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361360 as visited.
+--Freeing msf_ll node at 0x10361360
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361392 as visited.
+--Freeing msf_ll node at 0x10361392
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361424 as visited.
+--Freeing msf_ll node at 0x10361424
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361536 as visited.
+--Freeing msf_ll node at 0x10361536
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361568 as visited.
+--Freeing msf_ll node at 0x10361568
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361600 as visited.
+--Freeing msf_ll node at 0x10361600
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361712 as visited.
+--Freeing msf_ll node at 0x10361712
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361744 as visited.
+--Freeing msf_ll node at 0x10361744
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361776 as visited.
+--Freeing msf_ll node at 0x10361776
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361888 as visited.
+--Freeing msf_ll node at 0x10361888
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361920 as visited.
+--Freeing msf_ll node at 0x10361920
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10361952 as visited.
+--Freeing msf_ll node at 0x10361952
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362064 as visited.
+--Freeing msf_ll node at 0x10362064
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362096 as visited.
+--Freeing msf_ll node at 0x10362096
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362128 as visited.
+--Freeing msf_ll node at 0x10362128
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362240 as visited.
+--Freeing msf_ll node at 0x10362240
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362272 as visited.
+--Freeing msf_ll node at 0x10362272
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362304 as visited.
+--Freeing msf_ll node at 0x10362304
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362416 as visited.
+--Freeing msf_ll node at 0x10362416
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362448 as visited.
+--Freeing msf_ll node at 0x10362448
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362480 as visited.
+--Freeing msf_ll node at 0x10362480
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362592 as visited.
+--Freeing msf_ll node at 0x10362592
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362624 as visited.
+--Freeing msf_ll node at 0x10362624
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362656 as visited.
+--Freeing msf_ll node at 0x10362656
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362768 as visited.
+--Freeing msf_ll node at 0x10362768
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362800 as visited.
+--Freeing msf_ll node at 0x10362800
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362832 as visited.
+--Freeing msf_ll node at 0x10362832
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362944 as visited.
+--Freeing msf_ll node at 0x10362944
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10362976 as visited.
+--Freeing msf_ll node at 0x10362976
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363008 as visited.
+--Freeing msf_ll node at 0x10363008
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363120 as visited.
+--Freeing msf_ll node at 0x10363120
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363152 as visited.
+--Freeing msf_ll node at 0x10363152
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363184 as visited.
+--Freeing msf_ll node at 0x10363184
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363296 as visited.
+--Freeing msf_ll node at 0x10363296
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363328 as visited.
+--Freeing msf_ll node at 0x10363328
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363360 as visited.
+--Freeing msf_ll node at 0x10363360
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363472 as visited.
+--Freeing msf_ll node at 0x10363472
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363504 as visited.
+--Freeing msf_ll node at 0x10363504
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363536 as visited.
+--Freeing msf_ll node at 0x10363536
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363648 as visited.
+--Freeing msf_ll node at 0x10363648
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363680 as visited.
+--Freeing msf_ll node at 0x10363680
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363712 as visited.
+--Freeing msf_ll node at 0x10363712
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363824 as visited.
+--Freeing msf_ll node at 0x10363824
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363856 as visited.
+--Freeing msf_ll node at 0x10363856
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10363888 as visited.
+--Freeing msf_ll node at 0x10363888
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364000 as visited.
+--Freeing msf_ll node at 0x10364000
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364032 as visited.
+--Freeing msf_ll node at 0x10364032
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364064 as visited.
+--Freeing msf_ll node at 0x10364064
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364176 as visited.
+--Freeing msf_ll node at 0x10364176
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364208 as visited.
+--Freeing msf_ll node at 0x10364208
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364240 as visited.
+--Freeing msf_ll node at 0x10364240
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364352 as visited.
+--Freeing msf_ll node at 0x10364352
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364384 as visited.
+--Freeing msf_ll node at 0x10364384
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364416 as visited.
+--Freeing msf_ll node at 0x10364416
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364528 as visited.
+--Freeing msf_ll node at 0x10364528
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364560 as visited.
+--Freeing msf_ll node at 0x10364560
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364592 as visited.
+--Freeing msf_ll node at 0x10364592
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364704 as visited.
+--Freeing msf_ll node at 0x10364704
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364736 as visited.
+--Freeing msf_ll node at 0x10364736
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364768 as visited.
+--Freeing msf_ll node at 0x10364768
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364880 as visited.
+--Freeing msf_ll node at 0x10364880
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364912 as visited.
+--Freeing msf_ll node at 0x10364912
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10364944 as visited.
+--Freeing msf_ll node at 0x10364944
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365056 as visited.
+--Freeing msf_ll node at 0x10365056
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365088 as visited.
+--Freeing msf_ll node at 0x10365088
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365120 as visited.
+--Freeing msf_ll node at 0x10365120
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365232 as visited.
+--Freeing msf_ll node at 0x10365232
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365264 as visited.
+--Freeing msf_ll node at 0x10365264
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365296 as visited.
+--Freeing msf_ll node at 0x10365296
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365408 as visited.
+--Freeing msf_ll node at 0x10365408
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365440 as visited.
+--Freeing msf_ll node at 0x10365440
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365472 as visited.
+--Freeing msf_ll node at 0x10365472
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365584 as visited.
+--Freeing msf_ll node at 0x10365584
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365616 as visited.
+--Freeing msf_ll node at 0x10365616
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365648 as visited.
+--Freeing msf_ll node at 0x10365648
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365760 as visited.
+--Freeing msf_ll node at 0x10365760
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365792 as visited.
+--Freeing msf_ll node at 0x10365792
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365824 as visited.
+--Freeing msf_ll node at 0x10365824
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365936 as visited.
+--Freeing msf_ll node at 0x10365936
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10365968 as visited.
+--Freeing msf_ll node at 0x10365968
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366000 as visited.
+--Freeing msf_ll node at 0x10366000
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366112 as visited.
+--Freeing msf_ll node at 0x10366112
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366144 as visited.
+--Freeing msf_ll node at 0x10366144
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366176 as visited.
+--Freeing msf_ll node at 0x10366176
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366288 as visited.
+--Freeing msf_ll node at 0x10366288
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366320 as visited.
+--Freeing msf_ll node at 0x10366320
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366352 as visited.
+--Freeing msf_ll node at 0x10366352
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366464 as visited.
+--Freeing msf_ll node at 0x10366464
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366496 as visited.
+--Freeing msf_ll node at 0x10366496
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366528 as visited.
+--Freeing msf_ll node at 0x10366528
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366640 as visited.
+--Freeing msf_ll node at 0x10366640
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366672 as visited.
+--Freeing msf_ll node at 0x10366672
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366704 as visited.
+--Freeing msf_ll node at 0x10366704
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366816 as visited.
+--Freeing msf_ll node at 0x10366816
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366848 as visited.
+--Freeing msf_ll node at 0x10366848
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366880 as visited.
+--Freeing msf_ll node at 0x10366880
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10366992 as visited.
+--Freeing msf_ll node at 0x10366992
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367024 as visited.
+--Freeing msf_ll node at 0x10367024
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367056 as visited.
+--Freeing msf_ll node at 0x10367056
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367168 as visited.
+--Freeing msf_ll node at 0x10367168
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367200 as visited.
+--Freeing msf_ll node at 0x10367200
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367232 as visited.
+--Freeing msf_ll node at 0x10367232
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367344 as visited.
+--Freeing msf_ll node at 0x10367344
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367376 as visited.
+--Freeing msf_ll node at 0x10367376
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367408 as visited.
+--Freeing msf_ll node at 0x10367408
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367520 as visited.
+--Freeing msf_ll node at 0x10367520
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367552 as visited.
+--Freeing msf_ll node at 0x10367552
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367584 as visited.
+--Freeing msf_ll node at 0x10367584
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367696 as visited.
+--Freeing msf_ll node at 0x10367696
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367728 as visited.
+--Freeing msf_ll node at 0x10367728
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367760 as visited.
+--Freeing msf_ll node at 0x10367760
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367872 as visited.
+--Freeing msf_ll node at 0x10367872
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367904 as visited.
+--Freeing msf_ll node at 0x10367904
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10367936 as visited.
+--Freeing msf_ll node at 0x10367936
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368048 as visited.
+--Freeing msf_ll node at 0x10368048
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368080 as visited.
+--Freeing msf_ll node at 0x10368080
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368112 as visited.
+--Freeing msf_ll node at 0x10368112
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368224 as visited.
+--Freeing msf_ll node at 0x10368224
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368256 as visited.
+--Freeing msf_ll node at 0x10368256
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368288 as visited.
+--Freeing msf_ll node at 0x10368288
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368400 as visited.
+--Freeing msf_ll node at 0x10368400
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368432 as visited.
+--Freeing msf_ll node at 0x10368432
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368464 as visited.
+--Freeing msf_ll node at 0x10368464
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368576 as visited.
+--Freeing msf_ll node at 0x10368576
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368608 as visited.
+--Freeing msf_ll node at 0x10368608
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368640 as visited.
+--Freeing msf_ll node at 0x10368640
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368752 as visited.
+--Freeing msf_ll node at 0x10368752
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368784 as visited.
+--Freeing msf_ll node at 0x10368784
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368816 as visited.
+--Freeing msf_ll node at 0x10368816
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368928 as visited.
+--Freeing msf_ll node at 0x10368928
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368960 as visited.
+--Freeing msf_ll node at 0x10368960
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10368992 as visited.
+--Freeing msf_ll node at 0x10368992
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369104 as visited.
+--Freeing msf_ll node at 0x10369104
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369136 as visited.
+--Freeing msf_ll node at 0x10369136
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369168 as visited.
+--Freeing msf_ll node at 0x10369168
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369280 as visited.
+--Freeing msf_ll node at 0x10369280
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369312 as visited.
+--Freeing msf_ll node at 0x10369312
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369344 as visited.
+--Freeing msf_ll node at 0x10369344
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369456 as visited.
+--Freeing msf_ll node at 0x10369456
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369488 as visited.
+--Freeing msf_ll node at 0x10369488
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369520 as visited.
+--Freeing msf_ll node at 0x10369520
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369632 as visited.
+--Freeing msf_ll node at 0x10369632
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369664 as visited.
+--Freeing msf_ll node at 0x10369664
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369696 as visited.
+--Freeing msf_ll node at 0x10369696
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369808 as visited.
+--Freeing msf_ll node at 0x10369808
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369840 as visited.
+--Freeing msf_ll node at 0x10369840
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369872 as visited.
+--Freeing msf_ll node at 0x10369872
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10369984 as visited.
+--Freeing msf_ll node at 0x10369984
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370016 as visited.
+--Freeing msf_ll node at 0x10370016
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370048 as visited.
+--Freeing msf_ll node at 0x10370048
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370160 as visited.
+--Freeing msf_ll node at 0x10370160
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370192 as visited.
+--Freeing msf_ll node at 0x10370192
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370224 as visited.
+--Freeing msf_ll node at 0x10370224
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370336 as visited.
+--Freeing msf_ll node at 0x10370336
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370368 as visited.
+--Freeing msf_ll node at 0x10370368
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370400 as visited.
+--Freeing msf_ll node at 0x10370400
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370512 as visited.
+--Freeing msf_ll node at 0x10370512
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370544 as visited.
+--Freeing msf_ll node at 0x10370544
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370576 as visited.
+--Freeing msf_ll node at 0x10370576
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370688 as visited.
+--Freeing msf_ll node at 0x10370688
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370720 as visited.
+--Freeing msf_ll node at 0x10370720
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370752 as visited.
+--Freeing msf_ll node at 0x10370752
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370864 as visited.
+--Freeing msf_ll node at 0x10370864
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370896 as visited.
+--Freeing msf_ll node at 0x10370896
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10370928 as visited.
+--Freeing msf_ll node at 0x10370928
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371040 as visited.
+--Freeing msf_ll node at 0x10371040
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371072 as visited.
+--Freeing msf_ll node at 0x10371072
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371104 as visited.
+--Freeing msf_ll node at 0x10371104
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371216 as visited.
+--Freeing msf_ll node at 0x10371216
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371248 as visited.
+--Freeing msf_ll node at 0x10371248
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371280 as visited.
+--Freeing msf_ll node at 0x10371280
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371392 as visited.
+--Freeing msf_ll node at 0x10371392
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371424 as visited.
+--Freeing msf_ll node at 0x10371424
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371456 as visited.
+--Freeing msf_ll node at 0x10371456
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371568 as visited.
+--Freeing msf_ll node at 0x10371568
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371600 as visited.
+--Freeing msf_ll node at 0x10371600
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371632 as visited.
+--Freeing msf_ll node at 0x10371632
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371744 as visited.
+--Freeing msf_ll node at 0x10371744
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371776 as visited.
+--Freeing msf_ll node at 0x10371776
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371808 as visited.
+--Freeing msf_ll node at 0x10371808
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371920 as visited.
+--Freeing msf_ll node at 0x10371920
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371952 as visited.
+--Freeing msf_ll node at 0x10371952
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10371984 as visited.
+--Freeing msf_ll node at 0x10371984
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372096 as visited.
+--Freeing msf_ll node at 0x10372096
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372128 as visited.
+--Freeing msf_ll node at 0x10372128
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372160 as visited.
+--Freeing msf_ll node at 0x10372160
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372272 as visited.
+--Freeing msf_ll node at 0x10372272
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372304 as visited.
+--Freeing msf_ll node at 0x10372304
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372336 as visited.
+--Freeing msf_ll node at 0x10372336
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372448 as visited.
+--Freeing msf_ll node at 0x10372448
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372480 as visited.
+--Freeing msf_ll node at 0x10372480
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372512 as visited.
+--Freeing msf_ll node at 0x10372512
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372624 as visited.
+--Freeing msf_ll node at 0x10372624
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372656 as visited.
+--Freeing msf_ll node at 0x10372656
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372688 as visited.
+--Freeing msf_ll node at 0x10372688
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372800 as visited.
+--Freeing msf_ll node at 0x10372800
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372832 as visited.
+--Freeing msf_ll node at 0x10372832
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372864 as visited.
+--Freeing msf_ll node at 0x10372864
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10372976 as visited.
+--Freeing msf_ll node at 0x10372976
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373008 as visited.
+--Freeing msf_ll node at 0x10373008
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373040 as visited.
+--Freeing msf_ll node at 0x10373040
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373152 as visited.
+--Freeing msf_ll node at 0x10373152
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373184 as visited.
+--Freeing msf_ll node at 0x10373184
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373216 as visited.
+--Freeing msf_ll node at 0x10373216
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373328 as visited.
+--Freeing msf_ll node at 0x10373328
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373360 as visited.
+--Freeing msf_ll node at 0x10373360
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373392 as visited.
+--Freeing msf_ll node at 0x10373392
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373504 as visited.
+--Freeing msf_ll node at 0x10373504
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373536 as visited.
+--Freeing msf_ll node at 0x10373536
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373568 as visited.
+--Freeing msf_ll node at 0x10373568
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373680 as visited.
+--Freeing msf_ll node at 0x10373680
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373712 as visited.
+--Freeing msf_ll node at 0x10373712
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373744 as visited.
+--Freeing msf_ll node at 0x10373744
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373856 as visited.
+--Freeing msf_ll node at 0x10373856
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373888 as visited.
+--Freeing msf_ll node at 0x10373888
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10373920 as visited.
+--Freeing msf_ll node at 0x10373920
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374032 as visited.
+--Freeing msf_ll node at 0x10374032
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374064 as visited.
+--Freeing msf_ll node at 0x10374064
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374096 as visited.
+--Freeing msf_ll node at 0x10374096
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374208 as visited.
+--Freeing msf_ll node at 0x10374208
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374240 as visited.
+--Freeing msf_ll node at 0x10374240
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374272 as visited.
+--Freeing msf_ll node at 0x10374272
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374384 as visited.
+--Freeing msf_ll node at 0x10374384
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374416 as visited.
+--Freeing msf_ll node at 0x10374416
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374448 as visited.
+--Freeing msf_ll node at 0x10374448
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374560 as visited.
+--Freeing msf_ll node at 0x10374560
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374592 as visited.
+--Freeing msf_ll node at 0x10374592
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374624 as visited.
+--Freeing msf_ll node at 0x10374624
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374736 as visited.
+--Freeing msf_ll node at 0x10374736
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374768 as visited.
+--Freeing msf_ll node at 0x10374768
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374800 as visited.
+--Freeing msf_ll node at 0x10374800
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374912 as visited.
+--Freeing msf_ll node at 0x10374912
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374944 as visited.
+--Freeing msf_ll node at 0x10374944
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10374976 as visited.
+--Freeing msf_ll node at 0x10374976
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375088 as visited.
+--Freeing msf_ll node at 0x10375088
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375120 as visited.
+--Freeing msf_ll node at 0x10375120
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375152 as visited.
+--Freeing msf_ll node at 0x10375152
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375264 as visited.
+--Freeing msf_ll node at 0x10375264
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375296 as visited.
+--Freeing msf_ll node at 0x10375296
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375328 as visited.
+--Freeing msf_ll node at 0x10375328
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375440 as visited.
+--Freeing msf_ll node at 0x10375440
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375472 as visited.
+--Freeing msf_ll node at 0x10375472
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375504 as visited.
+--Freeing msf_ll node at 0x10375504
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375616 as visited.
+--Freeing msf_ll node at 0x10375616
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375648 as visited.
+--Freeing msf_ll node at 0x10375648
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375680 as visited.
+--Freeing msf_ll node at 0x10375680
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375792 as visited.
+--Freeing msf_ll node at 0x10375792
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375824 as visited.
+--Freeing msf_ll node at 0x10375824
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375856 as visited.
+--Freeing msf_ll node at 0x10375856
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10375968 as visited.
+--Freeing msf_ll node at 0x10375968
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376000 as visited.
+--Freeing msf_ll node at 0x10376000
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376032 as visited.
+--Freeing msf_ll node at 0x10376032
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376144 as visited.
+--Freeing msf_ll node at 0x10376144
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376176 as visited.
+--Freeing msf_ll node at 0x10376176
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376208 as visited.
+--Freeing msf_ll node at 0x10376208
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376320 as visited.
+--Freeing msf_ll node at 0x10376320
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376352 as visited.
+--Freeing msf_ll node at 0x10376352
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376384 as visited.
+--Freeing msf_ll node at 0x10376384
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376496 as visited.
+--Freeing msf_ll node at 0x10376496
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376528 as visited.
+--Freeing msf_ll node at 0x10376528
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376560 as visited.
+--Freeing msf_ll node at 0x10376560
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376672 as visited.
+--Freeing msf_ll node at 0x10376672
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376704 as visited.
+--Freeing msf_ll node at 0x10376704
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376736 as visited.
+--Freeing msf_ll node at 0x10376736
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376848 as visited.
+--Freeing msf_ll node at 0x10376848
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376880 as visited.
+--Freeing msf_ll node at 0x10376880
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10376912 as visited.
+--Freeing msf_ll node at 0x10376912
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377024 as visited.
+--Freeing msf_ll node at 0x10377024
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377056 as visited.
+--Freeing msf_ll node at 0x10377056
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377088 as visited.
+--Freeing msf_ll node at 0x10377088
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377200 as visited.
+--Freeing msf_ll node at 0x10377200
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377232 as visited.
+--Freeing msf_ll node at 0x10377232
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377264 as visited.
+--Freeing msf_ll node at 0x10377264
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377376 as visited.
+--Freeing msf_ll node at 0x10377376
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377408 as visited.
+--Freeing msf_ll node at 0x10377408
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377440 as visited.
+--Freeing msf_ll node at 0x10377440
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377552 as visited.
+--Freeing msf_ll node at 0x10377552
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377584 as visited.
+--Freeing msf_ll node at 0x10377584
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377616 as visited.
+--Freeing msf_ll node at 0x10377616
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377728 as visited.
+--Freeing msf_ll node at 0x10377728
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377760 as visited.
+--Freeing msf_ll node at 0x10377760
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377792 as visited.
+--Freeing msf_ll node at 0x10377792
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377904 as visited.
+--Freeing msf_ll node at 0x10377904
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377936 as visited.
+--Freeing msf_ll node at 0x10377936
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10377968 as visited.
+--Freeing msf_ll node at 0x10377968
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378080 as visited.
+--Freeing msf_ll node at 0x10378080
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378112 as visited.
+--Freeing msf_ll node at 0x10378112
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378144 as visited.
+--Freeing msf_ll node at 0x10378144
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378256 as visited.
+--Freeing msf_ll node at 0x10378256
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378288 as visited.
+--Freeing msf_ll node at 0x10378288
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378320 as visited.
+--Freeing msf_ll node at 0x10378320
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378432 as visited.
+--Freeing msf_ll node at 0x10378432
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378464 as visited.
+--Freeing msf_ll node at 0x10378464
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378496 as visited.
+--Freeing msf_ll node at 0x10378496
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378608 as visited.
+--Freeing msf_ll node at 0x10378608
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378640 as visited.
+--Freeing msf_ll node at 0x10378640
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378672 as visited.
+--Freeing msf_ll node at 0x10378672
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378784 as visited.
+--Freeing msf_ll node at 0x10378784
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378816 as visited.
+--Freeing msf_ll node at 0x10378816
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378848 as visited.
+--Freeing msf_ll node at 0x10378848
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378960 as visited.
+--Freeing msf_ll node at 0x10378960
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10378992 as visited.
+--Freeing msf_ll node at 0x10378992
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379024 as visited.
+--Freeing msf_ll node at 0x10379024
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379136 as visited.
+--Freeing msf_ll node at 0x10379136
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379168 as visited.
+--Freeing msf_ll node at 0x10379168
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379200 as visited.
+--Freeing msf_ll node at 0x10379200
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379312 as visited.
+--Freeing msf_ll node at 0x10379312
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379344 as visited.
+--Freeing msf_ll node at 0x10379344
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379376 as visited.
+--Freeing msf_ll node at 0x10379376
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379488 as visited.
+--Freeing msf_ll node at 0x10379488
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379520 as visited.
+--Freeing msf_ll node at 0x10379520
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379552 as visited.
+--Freeing msf_ll node at 0x10379552
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379664 as visited.
+--Freeing msf_ll node at 0x10379664
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379696 as visited.
+--Freeing msf_ll node at 0x10379696
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379728 as visited.
+--Freeing msf_ll node at 0x10379728
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379840 as visited.
+--Freeing msf_ll node at 0x10379840
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379872 as visited.
+--Freeing msf_ll node at 0x10379872
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10379904 as visited.
+--Freeing msf_ll node at 0x10379904
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380016 as visited.
+--Freeing msf_ll node at 0x10380016
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380048 as visited.
+--Freeing msf_ll node at 0x10380048
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380080 as visited.
+--Freeing msf_ll node at 0x10380080
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380192 as visited.
+--Freeing msf_ll node at 0x10380192
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380224 as visited.
+--Freeing msf_ll node at 0x10380224
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380256 as visited.
+--Freeing msf_ll node at 0x10380256
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380368 as visited.
+--Freeing msf_ll node at 0x10380368
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380400 as visited.
+--Freeing msf_ll node at 0x10380400
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380432 as visited.
+--Freeing msf_ll node at 0x10380432
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380544 as visited.
+--Freeing msf_ll node at 0x10380544
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380576 as visited.
+--Freeing msf_ll node at 0x10380576
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380608 as visited.
+--Freeing msf_ll node at 0x10380608
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380720 as visited.
+--Freeing msf_ll node at 0x10380720
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380752 as visited.
+--Freeing msf_ll node at 0x10380752
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380784 as visited.
+--Freeing msf_ll node at 0x10380784
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380896 as visited.
+--Freeing msf_ll node at 0x10380896
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380928 as visited.
+--Freeing msf_ll node at 0x10380928
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10380960 as visited.
+--Freeing msf_ll node at 0x10380960
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381072 as visited.
+--Freeing msf_ll node at 0x10381072
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381104 as visited.
+--Freeing msf_ll node at 0x10381104
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381136 as visited.
+--Freeing msf_ll node at 0x10381136
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381248 as visited.
+--Freeing msf_ll node at 0x10381248
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381280 as visited.
+--Freeing msf_ll node at 0x10381280
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381312 as visited.
+--Freeing msf_ll node at 0x10381312
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381424 as visited.
+--Freeing msf_ll node at 0x10381424
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381456 as visited.
+--Freeing msf_ll node at 0x10381456
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381488 as visited.
+--Freeing msf_ll node at 0x10381488
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381600 as visited.
+--Freeing msf_ll node at 0x10381600
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381632 as visited.
+--Freeing msf_ll node at 0x10381632
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381664 as visited.
+--Freeing msf_ll node at 0x10381664
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381776 as visited.
+--Freeing msf_ll node at 0x10381776
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381808 as visited.
+--Freeing msf_ll node at 0x10381808
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381840 as visited.
+--Freeing msf_ll node at 0x10381840
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381952 as visited.
+--Freeing msf_ll node at 0x10381952
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10381984 as visited.
+--Freeing msf_ll node at 0x10381984
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10382016 as visited.
+--Freeing msf_ll node at 0x10382016
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10382128 as visited.
+--Freeing msf_ll node at 0x10382128
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10382160 as visited.
+--Freeing msf_ll node at 0x10382160
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10382192 as visited.
+--Freeing msf_ll node at 0x10382192
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...
+
+Destroying amp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10382304 as visited.
+--Freeing msf_ll node at 0x10382304
+--Freeing address list node at 0x8903184
+
+Destroying arp_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10382336 as visited.
+--Freeing msf_ll node at 0x10382336
+--Freeing address list node at 0x8903184
+
+Destroying pitch_macro...
+--Current node's next address is 0x0.
+--Finished with this list.
+--Marked address 0x10382368 as visited.
+--Freeing msf_ll node at 0x10382368
+--Freeing address list node at 0x8903184
+
+Freeing instrument pointer...

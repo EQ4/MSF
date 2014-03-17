@@ -67,3 +67,10 @@ void msf_destroy_ll(msf_ll *ptr)
 		free(prev);
 	}
 }
+
+msf_ll *msf_create_ll(int value)
+{
+	msf_ll *ret = malloc(sizeof(*ret));
+	ret->value = value;
+	return ret;
+}

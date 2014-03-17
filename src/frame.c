@@ -9,7 +9,7 @@ msf_frame *msf_create_frame(int num)
 	ret->num_channels = num;
 
 	// Make arrays
-	ret->pattern = calloc(num,sizeof(int));
+	ret->phrase = calloc(num,sizeof(int));
 	ret->transpose = calloc(num,sizeof(int));
 	ret->tune = calloc(num,sizeof(int));
 
@@ -18,7 +18,7 @@ msf_frame *msf_create_frame(int num)
 
 void msf_destroy_frame(msf_frame *ptr)
 {
-	free(ptr->pattern);
+	free(ptr->phrase);
 	free(ptr->transpose);
 	free(ptr->tune);
 	free(ptr);

@@ -14,13 +14,13 @@ msf_instrument *msf_create_instrument()
 	ret->wave_len = 2; // Defaul to two samples (1 is useless...)
 	ret->left_amp = 1.0;
 	ret->right_amp = 1.0;
-
+	ret->duty = 0.5;
 	printf("--Making amp_macro at ");
-	ret->amp_macro = malloc(sizeof(*(ret->amp_macro)));
+	ret->amp_macro = msf_create_ll(255);
 	printf("%d\n--Making arp_macro at ",(int)ret->amp_macro);
-	ret->arp_macro = malloc(sizeof(*(ret->arp_macro)));
+	ret->arp_macro = msf_create_ll(0);
 	printf("%d\n--Making pitch_macro at ",(int)ret->arp_macro);
-	ret->pitch_macro = malloc(sizeof(*(ret->pitch_macro)));
+	ret->pitch_macro = msf_create_ll(0);
 	printf("%d\n--Done making instrument. Returning.\n",(int)ret->pitch_macro);
 	return ret;
 }
@@ -39,8 +39,8 @@ void msf_destroy_instrument(msf_instrument *ptr)
 
 float msf_get_freq(int note)
 {
-	int octave = note >> 8;
-	int base = base % 0xFF;
+	int octave = note/12;
+	int base = note % 12;
 	float base_freq = 16.351; // Default to C
 	switch (base)
 	{

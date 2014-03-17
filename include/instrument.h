@@ -49,6 +49,7 @@ typedef struct
 	int type;
 	float left_amp; // 0.0 - 1.0 left amplitude multiplier
 	float right_amp; // 0.0 - 1.0 right amplitude multiplier
+	float duty;
 	int *wave_ptr; // Pointer to sample data
 	int wave_depth; // Depth of the sample
 	int wave_mult; // 44100hz / sample rate (must be 1 for 44.1k, 2 for 22k)

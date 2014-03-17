@@ -7,8 +7,13 @@ msf_phrase *msf_create_phrase(int len)
 
 	// Create and clear arrays for its properties
 	ret->note = calloc(len,sizeof(int));
-	ret->inst = calloc(len,sizeof(int));
-	ret->vol = calloc(len,sizeof(int));
+	ret->inst = malloc(len * sizeof(int));
+	ret->vol = malloc(len * sizeof(int));
+	for (int i = 0; i < len; i++)
+	{
+		ret->inst[i] = -1; // Default to no instrument
+		ret->vol[i] = -1; // Default to no volume modification
+	}
 	ret->cmd = calloc(len,sizeof(int));
 	ret->arg = calloc(len,sizeof(int));
 

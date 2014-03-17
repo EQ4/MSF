@@ -1,0 +1,4033 @@
+Building a player now.
+--Making MSF instrument: 35238976
+--Setting defaults.
+--Making amp_macro at 35239056
+--Making arp_macro at 35239088
+--Making pitch_macro at 35239120
+--Done making instrument. Returning.
+--Making MSF instrument: 35239152
+--Setting defaults.
+--Making amp_macro at 35239232
+--Making arp_macro at 35239264
+--Making pitch_macro at 35239296
+--Done making instrument. Returning.
+--Making MSF instrument: 35239328
+--Setting defaults.
+--Making amp_macro at 35239408
+--Making arp_macro at 35239440
+--Making pitch_macro at 35239472
+--Done making instrument. Returning.
+--Making MSF instrument: 35239504
+--Setting defaults.
+--Making amp_macro at 35239584
+--Making arp_macro at 35239616
+--Making pitch_macro at 35239648
+--Done making instrument. Returning.
+--Making MSF instrument: 35239680
+--Setting defaults.
+--Making amp_macro at 35239760
+--Making arp_macro at 35239792
+--Making pitch_macro at 35239824
+--Done making instrument. Returning.
+--Making MSF instrument: 35239856
+--Setting defaults.
+--Making amp_macro at 35239936
+--Making arp_macro at 35239968
+--Making pitch_macro at 35240000
+--Done making instrument. Returning.
+--Making MSF instrument: 35240032
+--Setting defaults.
+--Making amp_macro at 35240112
+--Making arp_macro at 35240144
+--Making pitch_macro at 35240176
+--Done making instrument. Returning.
+--Making MSF instrument: 35240208
+--Setting defaults.
+--Making amp_macro at 35240288
+--Making arp_macro at 35240320
+--Making pitch_macro at 35240352
+--Done making instrument. Returning.
+--Making MSF instrument: 35240384
+--Setting defaults.
+--Making amp_macro at 35240464
+--Making arp_macro at 35240496
+--Making pitch_macro at 35240528
+--Done making instrument. Returning.
+--Making MSF instrument: 35240560
+--Setting defaults.
+--Making amp_macro at 35240640
+--Making arp_macro at 35240672
+--Making pitch_macro at 35240704
+--Done making instrument. Returning.
+--Making MSF instrument: 35240736
+--Setting defaults.
+--Making amp_macro at 35240816
+--Making arp_macro at 35240848
+--Making pitch_macro at 35240880
+--Done making instrument. Returning.
+--Making MSF instrument: 35240912
+--Setting defaults.
+--Making amp_macro at 35240992
+--Making arp_macro at 35241024
+--Making pitch_macro at 35241056
+--Done making instrument. Returning.
+--Making MSF instrument: 35241088
+--Setting defaults.
+--Making amp_macro at 35241168
+--Making arp_macro at 35241200
+--Making pitch_macro at 35241232
+--Done making instrument. Returning.
+--Making MSF instrument: 35241264
+--Setting defaults.
+--Making amp_macro at 35241344
+--Making arp_macro at 35241376
+--Making pitch_macro at 35241408
+--Done making instrument. Returning.
+--Making MSF instrument: 35241440
+--Setting defaults.
+--Making amp_macro at 35241520
+--Making arp_macro at 35241552
+--Making pitch_macro at 35241584
+--Done making instrument. Returning.
+--Making MSF instrument: 35241616
+--Setting defaults.
+--Making amp_macro at 35241696
+--Making arp_macro at 35241728
+--Making pitch_macro at 35241760
+--Done making instrument. Returning.
+--Making MSF instrument: 35241792
+--Setting defaults.
+--Making amp_macro at 35241872
+--Making arp_macro at 35241904
+--Making pitch_macro at 35241936
+--Done making instrument. Returning.
+--Making MSF instrument: 35241968
+--Setting defaults.
+--Making amp_macro at 35242048
+--Making arp_macro at 35242080
+--Making pitch_macro at 35242112
+--Done making instrument. Returning.
+--Making MSF instrument: 35242144
+--Setting defaults.
+--Making amp_macro at 35242224
+--Making arp_macro at 35242256
+--Making pitch_macro at 35242288
+--Done making instrument. Returning.
+--Making MSF instrument: 35242320
+--Setting defaults.
+--Making amp_macro at 35242400
+--Making arp_macro at 35242432
+--Making pitch_macro at 35242464
+--Done making instrument. Returning.
+--Making MSF instrument: 35242496
+--Setting defaults.
+--Making amp_macro at 35242576
+--Making arp_macro at 35242608
+--Making pitch_macro at 35242640
+--Done making instrument. Returning.
+--Making MSF instrument: 35242672
+--Setting defaults.
+--Making amp_macro at 35242752
+--Making arp_macro at 35242784
+--Making pitch_macro at 35242816
+--Done making instrument. Returning.
+--Making MSF instrument: 35242848
+--Setting defaults.
+--Making amp_macro at 35242928
+--Making arp_macro at 35242960
+--Making pitch_macro at 35242992
+--Done making instrument. Returning.
+--Making MSF instrument: 35243024
+--Setting defaults.
+--Making amp_macro at 35243104
+--Making arp_macro at 35243136
+--Making pitch_macro at 35243168
+--Done making instrument. Returning.
+--Making MSF instrument: 35243200
+--Setting defaults.
+--Making amp_macro at 35243280
+--Making arp_macro at 35243312
+--Making pitch_macro at 35243344
+--Done making instrument. Returning.
+--Making MSF instrument: 35243376
+--Setting defaults.
+--Making amp_macro at 35243456
+--Making arp_macro at 35243488
+--Making pitch_macro at 35243520
+--Done making instrument. Returning.
+--Making MSF instrument: 35243552
+--Setting defaults.
+--Making amp_macro at 35243632
+--Making arp_macro at 35243664
+--Making pitch_macro at 35243696
+--Done making instrument. Returning.
+--Making MSF instrument: 35243728
+--Setting defaults.
+--Making amp_macro at 35243808
+--Making arp_macro at 35243840
+--Making pitch_macro at 35243872
+--Done making instrument. Returning.
+--Making MSF instrument: 35243904
+--Setting defaults.
+--Making amp_macro at 35243984
+--Making arp_macro at 35244016
+--Making pitch_macro at 35244048
+--Done making instrument. Returning.
+--Making MSF instrument: 35244080
+--Setting defaults.
+--Making amp_macro at 35244160
+--Making arp_macro at 35244192
+--Making pitch_macro at 35244224
+--Done making instrument. Returning.
+--Making MSF instrument: 35244256
+--Setting defaults.
+--Making amp_macro at 35244336
+--Making arp_macro at 35244368
+--Making pitch_macro at 35244400
+--Done making instrument. Returning.
+--Making MSF instrument: 35244432
+--Setting defaults.
+--Making amp_macro at 35244512
+--Making arp_macro at 35244544
+--Making pitch_macro at 35244576
+--Done making instrument. Returning.
+--Making MSF instrument: 35244608
+--Setting defaults.
+--Making amp_macro at 35244688
+--Making arp_macro at 35244720
+--Making pitch_macro at 35244752
+--Done making instrument. Returning.
+--Making MSF instrument: 35244784
+--Setting defaults.
+--Making amp_macro at 35244864
+--Making arp_macro at 35244896
+--Making pitch_macro at 35244928
+--Done making instrument. Returning.
+--Making MSF instrument: 35244960
+--Setting defaults.
+--Making amp_macro at 35245040
+--Making arp_macro at 35245072
+--Making pitch_macro at 35245104
+--Done making instrument. Returning.
+--Making MSF instrument: 35245136
+--Setting defaults.
+--Making amp_macro at 35245216
+--Making arp_macro at 35245248
+--Making pitch_macro at 35245280
+--Done making instrument. Returning.
+--Making MSF instrument: 35245312
+--Setting defaults.
+--Making amp_macro at 35245392
+--Making arp_macro at 35245424
+--Making pitch_macro at 35245456
+--Done making instrument. Returning.
+--Making MSF instrument: 35245488
+--Setting defaults.
+--Making amp_macro at 35245568
+--Making arp_macro at 35245600
+--Making pitch_macro at 35245632
+--Done making instrument. Returning.
+--Making MSF instrument: 35245664
+--Setting defaults.
+--Making amp_macro at 35245744
+--Making arp_macro at 35245776
+--Making pitch_macro at 35245808
+--Done making instrument. Returning.
+--Making MSF instrument: 35245840
+--Setting defaults.
+--Making amp_macro at 35245920
+--Making arp_macro at 35245952
+--Making pitch_macro at 35245984
+--Done making instrument. Returning.
+--Making MSF instrument: 35246016
+--Setting defaults.
+--Making amp_macro at 35246096
+--Making arp_macro at 35246128
+--Making pitch_macro at 35246160
+--Done making instrument. Returning.
+--Making MSF instrument: 35246192
+--Setting defaults.
+--Making amp_macro at 35246272
+--Making arp_macro at 35246304
+--Making pitch_macro at 35246336
+--Done making instrument. Returning.
+--Making MSF instrument: 35246368
+--Setting defaults.
+--Making amp_macro at 35246448
+--Making arp_macro at 35246480
+--Making pitch_macro at 35246512
+--Done making instrument. Returning.
+--Making MSF instrument: 35246544
+--Setting defaults.
+--Making amp_macro at 35246624
+--Making arp_macro at 35246656
+--Making pitch_macro at 35246688
+--Done making instrument. Returning.
+--Making MSF instrument: 35246720
+--Setting defaults.
+--Making amp_macro at 35246800
+--Making arp_macro at 35246832
+--Making pitch_macro at 35246864
+--Done making instrument. Returning.
+--Making MSF instrument: 35246896
+--Setting defaults.
+--Making amp_macro at 35246976
+--Making arp_macro at 35247008
+--Making pitch_macro at 35247040
+--Done making instrument. Returning.
+--Making MSF instrument: 35247072
+--Setting defaults.
+--Making amp_macro at 35247152
+--Making arp_macro at 35247184
+--Making pitch_macro at 35247216
+--Done making instrument. Returning.
+--Making MSF instrument: 35247248
+--Setting defaults.
+--Making amp_macro at 35247328
+--Making arp_macro at 35247360
+--Making pitch_macro at 35247392
+--Done making instrument. Returning.
+--Making MSF instrument: 35247424
+--Setting defaults.
+--Making amp_macro at 35247504
+--Making arp_macro at 35247536
+--Making pitch_macro at 35247568
+--Done making instrument. Returning.
+--Making MSF instrument: 35247600
+--Setting defaults.
+--Making amp_macro at 35247680
+--Making arp_macro at 35247712
+--Making pitch_macro at 35247744
+--Done making instrument. Returning.
+--Making MSF instrument: 35247776
+--Setting defaults.
+--Making amp_macro at 35247856
+--Making arp_macro at 35247888
+--Making pitch_macro at 35247920
+--Done making instrument. Returning.
+--Making MSF instrument: 35247952
+--Setting defaults.
+--Making amp_macro at 35248032
+--Making arp_macro at 35248064
+--Making pitch_macro at 35248096
+--Done making instrument. Returning.
+--Making MSF instrument: 35248128
+--Setting defaults.
+--Making amp_macro at 35248208
+--Making arp_macro at 35248240
+--Making pitch_macro at 35248272
+--Done making instrument. Returning.
+--Making MSF instrument: 35248304
+--Setting defaults.
+--Making amp_macro at 35248384
+--Making arp_macro at 35248416
+--Making pitch_macro at 35248448
+--Done making instrument. Returning.
+--Making MSF instrument: 35248480
+--Setting defaults.
+--Making amp_macro at 35248560
+--Making arp_macro at 35248592
+--Making pitch_macro at 35248624
+--Done making instrument. Returning.
+--Making MSF instrument: 35248656
+--Setting defaults.
+--Making amp_macro at 35248736
+--Making arp_macro at 35248768
+--Making pitch_macro at 35248800
+--Done making instrument. Returning.
+--Making MSF instrument: 35248832
+--Setting defaults.
+--Making amp_macro at 35248912
+--Making arp_macro at 35248944
+--Making pitch_macro at 35248976
+--Done making instrument. Returning.
+--Making MSF instrument: 35249008
+--Setting defaults.
+--Making amp_macro at 35249088
+--Making arp_macro at 35249120
+--Making pitch_macro at 35249152
+--Done making instrument. Returning.
+--Making MSF instrument: 35249184
+--Setting defaults.
+--Making amp_macro at 35249264
+--Making arp_macro at 35249296
+--Making pitch_macro at 35249328
+--Done making instrument. Returning.
+--Making MSF instrument: 35249360
+--Setting defaults.
+--Making amp_macro at 35249440
+--Making arp_macro at 35249472
+--Making pitch_macro at 35249504
+--Done making instrument. Returning.
+--Making MSF instrument: 35249536
+--Setting defaults.
+--Making amp_macro at 35249616
+--Making arp_macro at 35249648
+--Making pitch_macro at 35249680
+--Done making instrument. Returning.
+--Making MSF instrument: 35249712
+--Setting defaults.
+--Making amp_macro at 35249792
+--Making arp_macro at 35249824
+--Making pitch_macro at 35249856
+--Done making instrument. Returning.
+--Making MSF instrument: 35249888
+--Setting defaults.
+--Making amp_macro at 35249968
+--Making arp_macro at 35250000
+--Making pitch_macro at 35250032
+--Done making instrument. Returning.
+--Making MSF instrument: 35250064
+--Setting defaults.
+--Making amp_macro at 35250144
+--Making arp_macro at 35250176
+--Making pitch_macro at 35250208
+--Done making instrument. Returning.
+--Making MSF instrument: 35250240
+--Setting defaults.
+--Making amp_macro at 35250320
+--Making arp_macro at 35250352
+--Making pitch_macro at 35250384
+--Done making instrument. Returning.
+--Making MSF instrument: 35250416
+--Setting defaults.
+--Making amp_macro at 35250496
+--Making arp_macro at 35250528
+--Making pitch_macro at 35250560
+--Done making instrument. Returning.
+--Making MSF instrument: 35250592
+--Setting defaults.
+--Making amp_macro at 35250672
+--Making arp_macro at 35250704
+--Making pitch_macro at 35250736
+--Done making instrument. Returning.
+--Making MSF instrument: 35250768
+--Setting defaults.
+--Making amp_macro at 35250848
+--Making arp_macro at 35250880
+--Making pitch_macro at 35250912
+--Done making instrument. Returning.
+--Making MSF instrument: 35250944
+--Setting defaults.
+--Making amp_macro at 35251024
+--Making arp_macro at 35251056
+--Making pitch_macro at 35251088
+--Done making instrument. Returning.
+--Making MSF instrument: 35251120
+--Setting defaults.
+--Making amp_macro at 35251200
+--Making arp_macro at 35251232
+--Making pitch_macro at 35251264
+--Done making instrument. Returning.
+--Making MSF instrument: 35251296
+--Setting defaults.
+--Making amp_macro at 35251376
+--Making arp_macro at 35251408
+--Making pitch_macro at 35251440
+--Done making instrument. Returning.
+--Making MSF instrument: 35251472
+--Setting defaults.
+--Making amp_macro at 35251552
+--Making arp_macro at 35251584
+--Making pitch_macro at 35251616
+--Done making instrument. Returning.
+--Making MSF instrument: 35251648
+--Setting defaults.
+--Making amp_macro at 35251728
+--Making arp_macro at 35251760
+--Making pitch_macro at 35251792
+--Done making instrument. Returning.
+--Making MSF instrument: 35251824
+--Setting defaults.
+--Making amp_macro at 35251904
+--Making arp_macro at 35251936
+--Making pitch_macro at 35251968
+--Done making instrument. Returning.
+--Making MSF instrument: 35252000
+--Setting defaults.
+--Making amp_macro at 35252080
+--Making arp_macro at 35252112
+--Making pitch_macro at 35252144
+--Done making instrument. Returning.
+--Making MSF instrument: 35252176
+--Setting defaults.
+--Making amp_macro at 35252256
+--Making arp_macro at 35252288
+--Making pitch_macro at 35252320
+--Done making instrument. Returning.
+--Making MSF instrument: 35252352
+--Setting defaults.
+--Making amp_macro at 35252432
+--Making arp_macro at 35252464
+--Making pitch_macro at 35252496
+--Done making instrument. Returning.
+--Making MSF instrument: 35252528
+--Setting defaults.
+--Making amp_macro at 35252608
+--Making arp_macro at 35252640
+--Making pitch_macro at 35252672
+--Done making instrument. Returning.
+--Making MSF instrument: 35252704
+--Setting defaults.
+--Making amp_macro at 35252784
+--Making arp_macro at 35252816
+--Making pitch_macro at 35252848
+--Done making instrument. Returning.
+--Making MSF instrument: 35252880
+--Setting defaults.
+--Making amp_macro at 35252960
+--Making arp_macro at 35252992
+--Making pitch_macro at 35253024
+--Done making instrument. Returning.
+--Making MSF instrument: 35253056
+--Setting defaults.
+--Making amp_macro at 35253136
+--Making arp_macro at 35253168
+--Making pitch_macro at 35253200
+--Done making instrument. Returning.
+--Making MSF instrument: 35253232
+--Setting defaults.
+--Making amp_macro at 35253312
+--Making arp_macro at 35253344
+--Making pitch_macro at 35253376
+--Done making instrument. Returning.
+--Making MSF instrument: 35253408
+--Setting defaults.
+--Making amp_macro at 35253488
+--Making arp_macro at 35253520
+--Making pitch_macro at 35253552
+--Done making instrument. Returning.
+--Making MSF instrument: 35253584
+--Setting defaults.
+--Making amp_macro at 35253664
+--Making arp_macro at 35253696
+--Making pitch_macro at 35253728
+--Done making instrument. Returning.
+--Making MSF instrument: 35253760
+--Setting defaults.
+--Making amp_macro at 35253840
+--Making arp_macro at 35253872
+--Making pitch_macro at 35253904
+--Done making instrument. Returning.
+--Making MSF instrument: 35253936
+--Setting defaults.
+--Making amp_macro at 35254016
+--Making arp_macro at 35254048
+--Making pitch_macro at 35254080
+--Done making instrument. Returning.
+--Making MSF instrument: 35254112
+--Setting defaults.
+--Making amp_macro at 35254192
+--Making arp_macro at 35254224
+--Making pitch_macro at 35254256
+--Done making instrument. Returning.
+--Making MSF instrument: 35254288
+--Setting defaults.
+--Making amp_macro at 35254368
+--Making arp_macro at 35254400
+--Making pitch_macro at 35254432
+--Done making instrument. Returning.
+--Making MSF instrument: 35254464
+--Setting defaults.
+--Making amp_macro at 35254544
+--Making arp_macro at 35254576
+--Making pitch_macro at 35254608
+--Done making instrument. Returning.
+--Making MSF instrument: 35254640
+--Setting defaults.
+--Making amp_macro at 35254720
+--Making arp_macro at 35254752
+--Making pitch_macro at 35254784
+--Done making instrument. Returning.
+--Making MSF instrument: 35254816
+--Setting defaults.
+--Making amp_macro at 35254896
+--Making arp_macro at 35254928
+--Making pitch_macro at 35254960
+--Done making instrument. Returning.
+--Making MSF instrument: 35254992
+--Setting defaults.
+--Making amp_macro at 35255072
+--Making arp_macro at 35255104
+--Making pitch_macro at 35255136
+--Done making instrument. Returning.
+--Making MSF instrument: 35255168
+--Setting defaults.
+--Making amp_macro at 35255248
+--Making arp_macro at 35255280
+--Making pitch_macro at 35255312
+--Done making instrument. Returning.
+--Making MSF instrument: 35255344
+--Setting defaults.
+--Making amp_macro at 35255424
+--Making arp_macro at 35255456
+--Making pitch_macro at 35255488
+--Done making instrument. Returning.
+--Making MSF instrument: 35255520
+--Setting defaults.
+--Making amp_macro at 35255600
+--Making arp_macro at 35255632
+--Making pitch_macro at 35255664
+--Done making instrument. Returning.
+--Making MSF instrument: 35255696
+--Setting defaults.
+--Making amp_macro at 35255776
+--Making arp_macro at 35255808
+--Making pitch_macro at 35255840
+--Done making instrument. Returning.
+--Making MSF instrument: 35255872
+--Setting defaults.
+--Making amp_macro at 35255952
+--Making arp_macro at 35255984
+--Making pitch_macro at 35256016
+--Done making instrument. Returning.
+--Making MSF instrument: 35256048
+--Setting defaults.
+--Making amp_macro at 35256128
+--Making arp_macro at 35256160
+--Making pitch_macro at 35256192
+--Done making instrument. Returning.
+--Making MSF instrument: 35256224
+--Setting defaults.
+--Making amp_macro at 35256304
+--Making arp_macro at 35256336
+--Making pitch_macro at 35256368
+--Done making instrument. Returning.
+--Making MSF instrument: 35256400
+--Setting defaults.
+--Making amp_macro at 35256480
+--Making arp_macro at 35256512
+--Making pitch_macro at 35256544
+--Done making instrument. Returning.
+--Making MSF instrument: 35256576
+--Setting defaults.
+--Making amp_macro at 35256656
+--Making arp_macro at 35256688
+--Making pitch_macro at 35256720
+--Done making instrument. Returning.
+--Making MSF instrument: 35256752
+--Setting defaults.
+--Making amp_macro at 35256832
+--Making arp_macro at 35256864
+--Making pitch_macro at 35256896
+--Done making instrument. Returning.
+--Making MSF instrument: 35256928
+--Setting defaults.
+--Making amp_macro at 35257008
+--Making arp_macro at 35257040
+--Making pitch_macro at 35257072
+--Done making instrument. Returning.
+--Making MSF instrument: 35257104
+--Setting defaults.
+--Making amp_macro at 35257184
+--Making arp_macro at 35257216
+--Making pitch_macro at 35257248
+--Done making instrument. Returning.
+--Making MSF instrument: 35257280
+--Setting defaults.
+--Making amp_macro at 35257360
+--Making arp_macro at 35257392
+--Making pitch_macro at 35257424
+--Done making instrument. Returning.
+--Making MSF instrument: 35257456
+--Setting defaults.
+--Making amp_macro at 35257536
+--Making arp_macro at 35257568
+--Making pitch_macro at 35257600
+--Done making instrument. Returning.
+--Making MSF instrument: 35257632
+--Setting defaults.
+--Making amp_macro at 35257712
+--Making arp_macro at 35257744
+--Making pitch_macro at 35257776
+--Done making instrument. Returning.
+--Making MSF instrument: 35257808
+--Setting defaults.
+--Making amp_macro at 35257888
+--Making arp_macro at 35257920
+--Making pitch_macro at 35257952
+--Done making instrument. Returning.
+--Making MSF instrument: 35257984
+--Setting defaults.
+--Making amp_macro at 35258064
+--Making arp_macro at 35258096
+--Making pitch_macro at 35258128
+--Done making instrument. Returning.
+--Making MSF instrument: 35258160
+--Setting defaults.
+--Making amp_macro at 35258240
+--Making arp_macro at 35258272
+--Making pitch_macro at 35258304
+--Done making instrument. Returning.
+--Making MSF instrument: 35258336
+--Setting defaults.
+--Making amp_macro at 35258416
+--Making arp_macro at 35258448
+--Making pitch_macro at 35258480
+--Done making instrument. Returning.
+--Making MSF instrument: 35258512
+--Setting defaults.
+--Making amp_macro at 35258592
+--Making arp_macro at 35258624
+--Making pitch_macro at 35258656
+--Done making instrument. Returning.
+--Making MSF instrument: 35258688
+--Setting defaults.
+--Making amp_macro at 35258768
+--Making arp_macro at 35258800
+--Making pitch_macro at 35258832
+--Done making instrument. Returning.
+--Making MSF instrument: 35258864
+--Setting defaults.
+--Making amp_macro at 35258944
+--Making arp_macro at 35258976
+--Making pitch_macro at 35259008
+--Done making instrument. Returning.
+--Making MSF instrument: 35259040
+--Setting defaults.
+--Making amp_macro at 35259120
+--Making arp_macro at 35259152
+--Making pitch_macro at 35259184
+--Done making instrument. Returning.
+--Making MSF instrument: 35259216
+--Setting defaults.
+--Making amp_macro at 35259296
+--Making arp_macro at 35259328
+--Making pitch_macro at 35259360
+--Done making instrument. Returning.
+--Making MSF instrument: 35259392
+--Setting defaults.
+--Making amp_macro at 35259472
+--Making arp_macro at 35259504
+--Making pitch_macro at 35259536
+--Done making instrument. Returning.
+--Making MSF instrument: 35259568
+--Setting defaults.
+--Making amp_macro at 35259648
+--Making arp_macro at 35259680
+--Making pitch_macro at 35259712
+--Done making instrument. Returning.
+--Making MSF instrument: 35259744
+--Setting defaults.
+--Making amp_macro at 35259824
+--Making arp_macro at 35259856
+--Making pitch_macro at 35259888
+--Done making instrument. Returning.
+--Making MSF instrument: 35259920
+--Setting defaults.
+--Making amp_macro at 35260000
+--Making arp_macro at 35260032
+--Making pitch_macro at 35260064
+--Done making instrument. Returning.
+--Making MSF instrument: 35260096
+--Setting defaults.
+--Making amp_macro at 35260176
+--Making arp_macro at 35260208
+--Making pitch_macro at 35260240
+--Done making instrument. Returning.
+--Making MSF instrument: 35260272
+--Setting defaults.
+--Making amp_macro at 35260352
+--Making arp_macro at 35260384
+--Making pitch_macro at 35260416
+--Done making instrument. Returning.
+--Making MSF instrument: 35260448
+--Setting defaults.
+--Making amp_macro at 35260528
+--Making arp_macro at 35260560
+--Making pitch_macro at 35260592
+--Done making instrument. Returning.
+--Making MSF instrument: 35260624
+--Setting defaults.
+--Making amp_macro at 35260704
+--Making arp_macro at 35260736
+--Making pitch_macro at 35260768
+--Done making instrument. Returning.
+--Making MSF instrument: 35260800
+--Setting defaults.
+--Making amp_macro at 35260880
+--Making arp_macro at 35260912
+--Making pitch_macro at 35260944
+--Done making instrument. Returning.
+--Making MSF instrument: 35260976
+--Setting defaults.
+--Making amp_macro at 35261056
+--Making arp_macro at 35261088
+--Making pitch_macro at 35261120
+--Done making instrument. Returning.
+--Making MSF instrument: 35261152
+--Setting defaults.
+--Making amp_macro at 35261232
+--Making arp_macro at 35261264
+--Making pitch_macro at 35261296
+--Done making instrument. Returning.
+--Making MSF instrument: 35261328
+--Setting defaults.
+--Making amp_macro at 35261408
+--Making arp_macro at 35261440
+--Making pitch_macro at 35261472
+--Done making instrument. Returning.
+Screwing around with the player.
+Instrument 0's type is 6. 
+Making a sound now.
+Playing a bullshit song.
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	0	1
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	0	2
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	0	3
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	0	4
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	0	5
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	0	6
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	1	1
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	1	2
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	1	3
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	1	4
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	1	5
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	1	6
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	2	1
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	2	2
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	2	3
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	2	4
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	2	5
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	2	6
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	3	1
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	3	2
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	3	3
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	3	4
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	3	5
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	3	6
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	4	1
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	4	2
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	4	3
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 14: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 15: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+0	4	4
+Chan 0: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 1: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 2: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 3: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 4: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 5: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 6: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 7: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 8: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 9: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 10: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 11: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 12: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing macros.
+Player amp_l: 0.000000	amp_r:0.000000	 note:0	
+Frequency is 19.445000.
+Chan 13: Phrase num is 0. 
+Phrase address is 0x33780800. 
+Instrument at 0x1041.
+Phrase data: 	0	-1
+Advancing m

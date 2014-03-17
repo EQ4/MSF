@@ -26,7 +26,7 @@ typedef struct msf_frame msf_frame;
 struct msf_frame
 {
 	int num_channels; // "Width" of a frame
-	int *pattern; // Pattern[channel]
+	int *phrase; // Pattern[channel]
 	int *transpose; // Transposition[channel]
 	int *tune; // Detune[channel];
 };
