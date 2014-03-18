@@ -1,265 +1,648 @@
-#include "../include/player.h"
+/*
 
-msf_player player;
+MSF Player
+Michael Moffitt 2014
+------------------------------------------------------------------------------
+This is a simple example "client" to the MSF driver. 
 
-void msf_init_special(int speed, int num_frames, int num_channels, int num_phrases, int phrase_length, int num_instruments)
+
+
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include "../include/instrument.h"
+#include "../include/phrase.h"
+#include "../include/frame.h"
+#include "../include/driver.h"
+int in = 0;
+void add(int phr, int val, int inst, msf_driver *driver)
 {
-	player.speed = speed;
-	player.num_frames = num_frames;
-	player.num_channels = num_channels;
-	player.num_phrases = num_phrases;
-	player.phrase_length = phrase_length;
-	player.num_instruments = num_instruments;
+	driver->phrases[phr]->note[in] = val;
+	driver->phrases[phr]->inst[in] = inst;
 
-// Reset state variables
-	player.frame_cnt = 0;
-	player.phrase_cnt = 0;
-	player.phrase_adv = 0;
-
-	player.frames = malloc(sizeof(msf_frame *) * num_frames);
-	player.phrases = malloc(sizeof(msf_phrase *) * num_phrases);
-	player.instruments = malloc(sizeof(msf_instrument *) * num_instruments);
-
-	// Actually build the structs the above pointer arrays point to
-	for (int i = 0; i < num_frames; i++)
-	{
-		player.frames[i] = msf_create_frame(num_channels);
-	}
-
-	for (int i = 0; i < num_phrases; i++)
-	{
-		player.phrases[i] = msf_create_phrase(phrase_length);
-	}
-
-	for (int i = 0; i < num_instruments; i++)
-	{
-		player.instruments[i] = msf_create_instrument();
-		player.instruments[i]->amp_macro->value = 255; // Default to full blast
-		//printf("Created instrument #%d at 0x%d.\n",i,(unsigned int)player.instruments[i]);
-	}
-
-	// Point these to the LL macros (one per channel);
-	player.arp = malloc(num_channels * sizeof(msf_ll *));
-	player.amp = malloc(num_channels * sizeof(msf_ll *));
-	player.pitch = malloc(num_channels * sizeof(msf_ll *));
-	player.duty = malloc(num_channels * sizeof(msf_ll *));
-	for (int i = 0; i < num_channels; i++) // Null them out to avoid confusion
-	{
-		player.arp[i] = NULL;
-		player.amp[i] = NULL;
-		player.pitch[i] = NULL;
-		player.duty[i] = NULL;
-	}
-	player.init = 1;
-	player.loopback = 0;
-	player.track_length = 1;
-
-	player.amp_l = malloc(sizeof(float *) * num_channels);
-	player.amp_r= malloc(sizeof(float *) * num_channels);
-	player.freq = malloc(sizeof(float *) * num_channels);
-	player.note = malloc(sizeof(int *) * num_channels);
-
-	// Initialize libPOLY6 with the parametres from above
-	poly_init(16,2,44100,num_channels,NULL);
-	for (int i = 0; i < num_channels; i++)
-	{
-		poly_init_generator(i,square,0.0,440 + (8*i));
-	}
-	poly_start();
+	in++;
 }
 
-// Simple shortcut init with some usable (but maybe too large) defaults
-void msf_init()
+void build_tetris(msf_driver *driver)
 {
-	msf_init_special(
-	MSF_DEFAULT_SPEED,
-	MSF_NUM_FRAMES,
-	MSF_NUM_CHANNELS,
-	MSF_NUM_PHRASES,
-	MSF_PHRASE_LENGTH,
-	MSF_NUM_INSTRUMENTS);
+	// A section harmony
+	add(4,45,1,driver);
+	add(4,0,0,driver);
+
+	add(4,0,0,driver);
+	add(4,0,0,driver);
+
+	add(4,38,1,driver);
+	add(4,0,0,driver);
+
+	add(4,42,1,driver);
+	add(4,0,0,driver);
+
+	add(4,45,1,driver);
+	add(4,0,0,driver);
+
+	add(4,46,1,driver);
+	add(4,45,1,driver);
+	add(4,43,1,driver);
+	add(4,0,0,driver);
+	add(4,39,1,driver);
+	add(4,0,0,driver);
+	add(4,38,1,driver);
+	add(4,38,1,driver);
+	add(4,34,1,driver);
+	add(4,0,0,driver);
+	add(4,38,1,driver);
+	add(4,0,0,driver);
+	add(4,43,1,driver);
+	add(4,0,0,driver);
+	add(4,46,1,driver);
+	add(4,0,0,driver);
+	add(4,46,1,driver);
+	add(4,46,1,driver);
+	add(4,45,1,driver);
+	add(4,0,0,driver);
+	add(4,43,1,driver);
+	add(4,0,0,driver);
+	add(4,42,1,driver);
+	add(4,42,1,driver);
+	add(4,38,1,driver);
+	add(4,0,0,driver);
+	add(4,42,1,driver);
+	add(4,0,0,driver);
+	add(4,43,1,driver);
+	add(4,0,0,driver);
+	add(4,45,1,driver);
+	add(4,0,0,driver);
+	add(4,0,1,driver);
+	add(4,0,0,driver);
+	add(4,46,1,driver);
+	add(4,0,0,driver);
+	add(4,0,1,driver);
+	add(4,0,0,driver);
+	add(4,43,1,driver);
+	add(4,0,0,driver);
+	add(4,0,0,driver);
+	add(4,0,0,driver);
+	add(4,38,1,driver);
+	add(4,0,0,driver);
+	add(4,0,0,driver);
+	add(4,0,0,driver);
+	add(4,38,1,driver);
+	add(4,0,0,driver);
+	add(4,0,0,driver);
+	add(4,0,0,driver);
+	add(4,38,1,driver);
+	add(4,0,0,driver);
+	add(4,43,1,driver);
+	add(4,0,0,driver);
+
+	in=0;
+add(5,-1,1,driver);
+	add(5,0,0,driver);
+
+	add(5,39,1,driver);
+	add(5,0,0,driver);
+
+	add(5,0,1,driver);
+	add(5,0,0,driver);
+
+	add(5,43,1,driver);
+	add(5,0,0,driver);
+
+	add(5,46,1,driver);
+	add(5,0,0,driver);
+
+	add(5,46,1,driver);
+	add(5,46,1,driver);
+
+	add(5,45,1,driver);
+	add(5,0,0,driver);
+
+	add(5,43,1,driver);
+	add(5,0,0,driver);
+
+	add(5,41,1,driver);
+	add(5,0,0,driver);
+
+	add(5,0,1,driver);
+	add(5,0,0,driver);
+
+	add(5,0,1,driver);
+	add(5,0,0,driver);
+
+
+	add(5,38,1,driver);
+	add(5,0,0,driver);
+
+	add(5,41,1,driver);
+	add(5,0,0,driver);
+
+	add(5,43,1,driver);
+	add(5,41,1,driver);
+
+	add(5,39,1,driver);
+	add(5,0,0,driver);
+
+	add(5,38,1,driver);
+	add(5,0,0,driver);
+
+	add(5,42,1,driver);
+	add(5,42,1,driver);
+
+	add(5,38,1,driver);
+	add(5,0,0,driver);
+
+	add(5,42,1,driver);
+	add(5,0,0,driver);
+
+	add(5,43,1,driver);
+	add(5,0,0,driver);
+
+	add(5,45,1,driver);
+	add(5,0,0,driver);
+
+	add(5,0,1,driver);
+	add(5,0,0,driver);
+
+	add(5,46,1,driver);
+	add(5,0,0,driver);
+
+	add(5,0,1,driver);
+	add(5,0,0,driver);
+
+	add(5,43,1,driver);
+	add(5,0,0,driver);
+
+	add(5,0,1,driver);
+	add(5,0,0,driver);
+
+	add(5,38,1,driver);
+	add(5,0,0,driver);
+
+	add(5,0,1,driver);
+	add(5,0,0,driver);
+
+	add(5,38,1,driver);
+	add(5,0,0,driver);
+
+	add(5,0,1,driver);
+	add(5,0,0,driver);
+
+	add(5,0,1,driver);
+	add(5,0,0,driver);
+
+	add(5,0,1,driver);
+	add(5,0,0,driver);
+
+	add(5,-1,1,driver);
+	add(5,0,0,driver);
+
+
+	// A-2 harmony
+
+	// A section lead
+
+	in = 0;
+	add(2,50,1,driver);
+	add(2,0,0,driver);
+
+	add(2,0,1,driver);
+	add(2,0,0,driver);
+
+	add(2,45,1,driver);
+	add(2,0,0,driver);
+
+	add(2,46,1,driver);
+	add(2,0,0,driver);
+
+	add(2,48,1,driver);
+	add(2,0,0,driver);
+
+	add(2,0,1,driver);
+	add(2,0,0,driver);
+
+	add(2,46,1,driver);
+	add(2,0,0,driver);
+	
+	add(2,45,1,driver);
+	add(2,0,0,driver);
+
+	add(2,43,1,driver);
+	add(2,0,0,driver);
+
+	add(2,0,1,driver);
+	add(2,0,0,driver);
+
+	add(2,43,1,driver);
+	add(2,0,0,driver);
+
+	add(2,46,1,driver);
+	add(2,0,0,driver);
+
+	add(2,50,1,driver);
+	add(2,0,0,driver);
+
+	add(2,0,1,driver);
+	add(2,0,0,driver);
+
+	add(2,48,1,driver);
+	add(2,0,0,driver);
+
+	add(2,46,1,driver);
+	add(2,0,0,driver);
+
+	add(2,45,1,driver);
+	add(2,0,0,driver);
+
+	add(2,0,1,driver);
+	add(2,0,0,driver);
+
+	add(2,45,1,driver);
+	add(2,0,0,driver);
+
+	add(2,46,1,driver);
+	add(2,0,0,driver);
+
+	add(2,48,1,driver);
+	add(2,0,0,driver);
+
+	add(2,0,1,driver);
+	add(2,0,0,driver);
+
+	add(2,50,1,driver);
+	add(2,0,0,driver);
+
+	add(2,0,1,driver);
+	add(2,0,0,driver);
+
+	add(2,46,1,driver);
+	add(2,0,0,driver);
+
+	add(2,0,1,driver);
+	add(2,0,0,driver);
+
+	add(2,43,1,driver);
+	add(2,0,0,driver);
+
+	add(2,0,1,driver);
+	add(2,0,0,driver);
+
+	add(2,43,1,driver);
+	add(2,0,0,driver);
+
+	add(2,0,1,driver);
+	add(2,0,0,driver);
+
+	add(2,45,1,driver);
+	add(2,0,0,driver);
+
+	add(2,46,1,driver);
+	add(2,0,0,driver);
+
+	in = 0;
+	add(3,-1,1,driver);
+	add(3,0,0,driver);
+
+	add(3,48,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,51,1,driver);
+	add(3,0,0,driver);
+
+	add(3,55,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,53,1,driver);
+	add(3,0,0,driver);
+
+	add(3,51,1,driver);
+	add(3,0,0,driver);
+
+	add(3,50,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+
+	add(3,46,1,driver);
+	add(3,0,0,driver);
+
+	add(3,50,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,48,1,driver);
+	add(3,0,0,driver);
+
+	add(3,46,1,driver);
+	add(3,0,0,driver);
+
+	add(3,45,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,45,1,driver);
+	add(3,0,0,driver);
+
+	add(3,46,1,driver);
+	add(3,0,0,driver);
+
+	add(3,48,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,50,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,46,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,43,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,43,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,0,1,driver);
+	add(3,0,0,driver);
+
+	add(3,-1,1,driver);
+	add(3,0,0,driver);
+
+	// A bassline // 43 = 
+	in = 0;
+	add(6,38-24,2,driver);
+	add(6,0,0,driver);
+	add(6,38-12,2,driver);
+	add(6,0,0,driver);
+	add(6,38-24,2,driver);
+	add(6,0,0,driver);
+	add(6,38-12,2,driver);
+	add(6,0,0,driver);
+	add(6,38-24,2,driver);
+	add(6,0,0,driver);
+	add(6,38-12,2,driver);
+	add(6,0,0,driver);
+	add(6,38-24,2,driver);
+	add(6,0,0,driver);
+	add(6,38-12,2,driver);
+	add(6,0,0,driver);
+
+
+	add(6,43-24,2,driver);
+	add(6,0,0,driver);
+	add(6,43-12,2,driver);
+	add(6,0,0,driver);
+	add(6,43-24,2,driver);
+	add(6,0,0,driver);
+	add(6,43-12,2,driver);
+	add(6,0,0,driver);
+	add(6,43-24,2,driver);
+	add(6,0,0,driver);
+	add(6,43-12,2,driver);
+	add(6,0,0,driver);
+	add(6,43-24,2,driver);
+	add(6,0,0,driver);
+	add(6,43-12,2,driver);
+	add(6,0,0,driver);
+
+	add(6,42-24,2,driver);
+	add(6,0,0,driver);
+	add(6,42-12,2,driver);
+	add(6,0,0,driver);
+	add(6,42-24,2,driver);
+	add(6,0,0,driver);
+	add(6,42-12,2,driver);
+	add(6,0,0,driver);
+
+	add(6,38-24,2,driver);
+	add(6,0,0,driver);
+	add(6,38-12,2,driver);
+	add(6,0,0,driver);
+	add(6,38-24,2,driver);
+	add(6,0,0,driver);
+	add(6,38-12,2,driver);
+	add(6,0,0,driver);
+
+	add(6,43-24,2,driver);
+	add(6,0,0,driver);
+	add(6,43-12,2,driver);
+	add(6,0,0,driver);
+	add(6,43-24,2,driver);
+	add(6,0,0,driver);
+	add(6,43-12,2,driver);
+	add(6,0,0,driver);
+	add(6,43-24,2,driver);
+	add(6,0,0,driver);
+	add(6,43-12,2,driver);
+	add(6,0,0,driver);
+	add(6,45-12,2,driver);
+	add(6,0,0,driver);
+	add(6,46-12,2,driver);
+	add(6,0,0,driver);
+
+	// A-2 bassline
+	in=0;
+
+	add(7,48-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,48-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,-1,0,driver);
+	add(7,-1,0,driver);
+
+	add(7,48-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,-1,0,driver);
+	add(7,-1,0,driver);
+
+	add(7,48-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,55-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,48-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,46-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,46-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,-1,2,driver);
+	add(7,0,0,driver);
+
+	add(7,46-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,46-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,41-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,43-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,46-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,45-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,45-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,45-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,45-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,38-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,38-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,42-24,2,driver);
+	add(7,0,0,driver);
+
+	add(7,42-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,43-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,38-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,34-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,38-12,2,driver);
+	add(7,0,0,driver);
+
+	add(7,43-24,2,driver);
+	add(7,0,0,driver);
+	add(7,0,0,driver);
+	add(7,0,0,driver);
+	add(7,0,0,driver);
+	add(7,0,0,driver);
+	add(7,-1,0,driver);
+	add(7,0,0,driver);
 }
 
-void msf_step()
+int main(int argc, char *argv[])
 {
-	int new_step = 0;
+	msf_driver driver;
+	printf("MSF init sequence starting.\n");
+	msf_init(&driver);
+	build_tetris(&driver);	
+	int idx = 0;
 
-	if (player.phrase_adv == 0 && player.phrase_cnt == 0)
+	printf("Setting phrases.\n");
+	driver.frames[0]->phrase[0] = 2;
+	driver.frames[0]->phrase[1] = 4;
+	driver.frames[1]->phrase[0] = 3;
+	driver.frames[1]->phrase[1] = 5;
+	driver.frames[0]->phrase[2] = 6;
+	driver.frames[1]->phrase[2] = 7;
+	driver.loopback = 0;
+	driver.track_length = 2;
+
+
+	msf_instrument *inst2 = driver.instruments[2];
+	inst2->type = WAVE_SQUARE;
+	
+	// Lead instrument
+	msf_instrument *inst = driver.instruments[1];
+	inst->type = WAVE_SQUARE;
+
+	printf("Building instrument macro data\n");
+	msf_ll *base_amp = inst->amp_macro;
+	for (int i = 0; i < 18; i++)
 	{
-		new_step = 1;
-	}
-	if (player.phrase_adv == player.speed) // Time to go to next step
-	{
-		player.phrase_adv = 0;
-		player.phrase_cnt++;
-		new_step = 1;
-	}
-	player.frames[0]->tune[3] = 16;
-	if (player.phrase_cnt == player.phrase_length) // End of phrase
-	{
-		player.frame_cnt++;
-		player.phrase_cnt = 0;
-		player.phrase_adv = 0;
-		printf("Moving to frame %d, channel 0 has phrase %d.\n",player.frame_cnt,player.frames[player.frame_cnt]->phrase[0]);
-	}
-	if (player.frame_cnt == player.track_length) // End of song
-	{
-		player.phrase_cnt = 0;
-		player.phrase_adv = 0;
-		player.frame_cnt = player.loopback;
+		msf_add_ll(base_amp,255-(12*i));
+		msf_add_ll(inst2->amp_macro,255-(9*i));
 	}
 	
-	for (int i = 0; i < player.num_channels; i++)
+	inst2->arp_macro->value = 12;
+	inst->arp_macro->value = 12;
+
+	msf_ll *base_arp = inst->arp_macro;
+/*	base_arp->value = 12;
+	msf_add_ll(base_arp,24);
+	msf_add_ll(base_arp,24);
+	msf_add_ll(base_arp,12);
+//	msf_add_ll(base_arp,12);
+//	msf_add_ll(base_arp,12);
+	msf_loop_ll(base_arp,base_arp);
+*/
+
+/*msf_ll *pitch_m = inst->pitch_macro;
+	pitch_m->value = 0;
+	msf_add_ll(pitch_m,2*3);
+	msf_add_ll(pitch_m,2*6);
+	msf_add_ll(pitch_m,2*8);
+	msf_add_ll(pitch_m,2*6);
+	msf_add_ll(pitch_m,2*3);
+	msf_loop_ll(pitch_m,pitch_m);
+*/
+msf_ll *base_duty = inst->duty_macro;
+	base_duty->value = 32;
+	for (int i = 0; i < 0; i++)
 	{
-		// Pull the phrase number for channel i from the current frame
-		int phrase_num = player.frames[player.frame_cnt]->phrase[i];
-		// The phrase itself
-		msf_phrase *phrase = player.phrases[phrase_num];
-
-		// Instrument for the current phrase at the current time
-		msf_instrument *instrument = player.instruments[phrase->inst[player.phrase_cnt]];
-		
-		if (phrase->note[player.phrase_cnt] == -1) // Note kill
-		{
-			poly_set_amplitude(i,0);
-			player.amp_l[i] = 0;
-			player.amp_r[i] = 0;
-			player.note[i] = -1;
-		}
-		if (new_step && phrase->note[player.phrase_cnt] != 0 && phrase->inst[player.phrase_cnt] != -1) // If there is a note to set
-		{
-		//	printf("NOTE ON %d! -Value %d inst %d.\n",i,phrase->note[player.phrase_cnt],phrase->inst[player.phrase_cnt]);
-			// Set the note
-			// Reset our macro traversal
-			player.arp[i] = instrument->arp_macro;
-			//printf("New arp macro: 0x%d\n",player.arp[i]);
-			player.amp[i] = instrument->amp_macro;
-			player.pitch[i] = instrument->pitch_macro;
-			player.duty[i] = instrument->duty_macro;
-			player.note[i] = phrase->note[player.phrase_cnt];
-			player.amp_l[i] = instrument->left_amp;
-			player.amp_r[i] = instrument->right_amp;
-			
-
-			poly_set_R_amp(i,player.amp_r[i]);
-			poly_set_L_amp(i,player.amp_l[i]);
-			
-			switch(instrument->type)
-			{
-			case WAVE_SQUARE:
-				poly_set_wavetype(i,square);
-				break;
-			case WAVE_SINE:
-				poly_set_wavetype(i,sine);
-				break;
-			case WAVE_SAW:
-				poly_set_wavetype(i,saw);
-				break;
-			case WAVE_TRIANGLE:
-				poly_set_wavetype(i,triangle);
-				break;
-				// The rest will come once libpoly supports them properly
-			}
-		}
-		else
-		{
-			// Advance the macro LLs
-			if (player.arp[i] != NULL && player.arp[i]->next != NULL)
-			{
-			//	printf("Advancing arp LL\n");
-				player.arp[i] = player.arp[i]->next;	
-			}
-			if (player.amp[i] != NULL && player.amp[i]->next != NULL)
-			{
-			//	printf("Advancing amp LL\n");
-				player.amp[i] = player.amp[i]->next;
-			}
-			if (player.pitch[i] != NULL && player.pitch[i]->next != NULL)
-			{
-				player.pitch[i] = player.pitch[i]->next;
-			}
-			if (player.duty[i] != NULL && player.duty[i]->next != NULL)
-			{
-				player.duty[i] = player.duty[i]->next;
-			}
-		}
-		if (player.duty[i] != NULL)
-		{
-			poly_set_duty(i,(player.duty[i]->value/255.0));
-		}
-		int arp_off = player.frames[player.frame_cnt]->transpose[i];
-		if (player.arp[i] != NULL)
-		{
-			//printf("Setting arp_off to %d.\n",player.arp[i]->value);
-			arp_off += player.arp[i]->value;
-		}
-		float pitch_off = player.frames[player.frame_cnt]->tune[i] / MSF_TUNE_DIV;
-		if (player.pitch[i] != NULL)
-		{
-			pitch_off += player.pitch[i]->value;
-		}
-		player.freq[i] = msf_get_freq(player.note[i] + arp_off) + pitch_off;
-		
-		if (i == 0)
-		{
-			// printf("Frequency is %f.\n",player.freq[i]);
-		}
-		poly_set_freq(i,player.freq[i]);
-		if (player.note[i] != -1 && player.amp[i] != NULL)
-		{
-			poly_set_amplitude(i,player.amp[i]->value/255.0);
-		}
+		msf_add_ll(base_duty,20 + (7*i));
 	}
-	player.phrase_adv++;
-}
-
-void msf_spill()
-{
-	printf("%d\t%d\t%d\n",player.frame_cnt,player.phrase_cnt,player.phrase_adv);
-}
-
-void msf_shutdown()
-{
-	poly_stop();
-	poly_shutdown();
-	if (player.init == 1)
+//	inst->arp_macro->next = base_arp;
+	for (int i = 0; i < 384; i++)
 	{
-		for (int i = 0; i < player.num_frames; i++)
-		{
-			//printf("----%d: Destroying frame 0x%d\n",i,(unsigned int)player.frames[i]);
-			msf_destroy_frame(player.frames[i]);
-		}
-		for (int i = 0; i < player.num_phrases; i++)
-		{
-			//printf("----%d: Destroying phrase 0x%d\n",i,(unsigned int)player.phrases[i]);
-			msf_destroy_phrase(player.phrases[i]);
-		}
-		for (int i = 0; i < player.num_instruments; i++)
-		{
-			printf("----%d: Destroying instrument 0x%d\n",i,(unsigned int)player.instruments[i]);
-			msf_destroy_instrument(player.instruments[i]);
-		}
+		usleep(16000);
 		
-		//printf("----Freeing frames\n");
-		free(player.frames);
-		//printf("----Freeing phrases\n");
-		free(player.phrases);
-		//printf("----Freeing instruments\n");
-		free(player.instruments);
-		//printf("----Freeing arp\n");
-		free(player.arp);
-		//printf("----Freeing amp\n");
-		free(player.amp);
-		//printf("----Freeing pitch\n");
-		free(player.pitch);
-		//printf("----Freeing note\n");
-		free(player.note);
-		//printf("----Freeing amp_l\n");
-		free(player.amp_l);
-		//printf("----Freeing amp_r\n");
-		free(player.amp_r);
-		//printf("----Freeing freq\n");
-		free(player.freq);
-		free(player.duty);
+		msf_step(&driver);
+		//msf_spill();
 	}
+	printf("Killing driver now.\n");
+	msf_shutdown(&driver);
+	return 0;
 }
