@@ -570,6 +570,112 @@ add(5,-1,1,driver);
 	add(7,0,0,driver);
 	add(7,-1,0,driver);
 	add(7,0,0,driver);
+
+	// Drums
+	in = 0;
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,100,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,100,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,0,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+	add(8,100,3,driver);
+	add(8,0,3,driver);
+
+
+
+
+
+
+
+
 }
 
 int main(int argc, char *argv[])
@@ -587,9 +693,17 @@ int main(int argc, char *argv[])
 	driver.frames[1]->phrase[1] = 5;
 	driver.frames[0]->phrase[2] = 6;
 	driver.frames[1]->phrase[2] = 7;
+	
+	// Drums
+	driver.frames[0]->phrase[3] = 8;
+	driver.frames[1]->phrase[3] = 8;
 	driver.loopback = 0;
 	driver.track_length = 2;
 
+	msf_instrument *inst3 = driver.instruments[3];
+	inst3->type = WAVE_NOISE;
+	inst3->duty_macro->value = 240;
+	inst3->arp_macro->value = -19;
 
 	msf_instrument *inst2 = driver.instruments[2];
 	inst2->type = WAVE_SQUARE;
@@ -600,42 +714,69 @@ int main(int argc, char *argv[])
 
 	printf("Building instrument macro data\n");
 	msf_ll *base_amp = inst->amp_macro;
+	base_amp->value = 0;
 	for (int i = 0; i < 18; i++)
 	{
-		msf_add_ll(base_amp,255-(12*i));
+		msf_add_ll(base_amp,255-(11*i));
+		//msf_add_ll(inst->amp_macro,0);
+		msf_add_ll(inst3->amp_macro,255-(19*i));
 		msf_add_ll(inst2->amp_macro,255-(9*i));
+		//msf_add_ll(inst2->amp_macro,0);
 	}
-	
-	inst2->arp_macro->value = 12;
-	inst->arp_macro->value = 12;
 
-	msf_ll *base_arp = inst->arp_macro;
-/*	base_arp->value = 12;
-	msf_add_ll(base_arp,24);
-	msf_add_ll(base_arp,24);
-	msf_add_ll(base_arp,12);
+	// Bassline
+	inst2->duty_macro->value = 128;
+	inst2->arp_macro->value = 12;
+	// Lead
+	inst->duty_macro->value = 128;
+	inst->arp_macro->value = 12;
+	
+
+
+
+/*	msf_ll *base_arp = inst->arp_macro;
+	base_arp->value = 7;
+	msf_add_ll(base_arp,8);
+	msf_add_ll(base_arp,9);
+	msf_add_ll(base_arp,10);
 //	msf_add_ll(base_arp,12);
 //	msf_add_ll(base_arp,12);
-	msf_loop_ll(base_arp,base_arp);
-*/
+	msf_loop_ll(base_arp,base_arp);*/
+
 
 /*msf_ll *pitch_m = inst->pitch_macro;
 	pitch_m->value = 0;
-	msf_add_ll(pitch_m,2*3);
-	msf_add_ll(pitch_m,2*6);
-	msf_add_ll(pitch_m,2*8);
-	msf_add_ll(pitch_m,2*6);
-	msf_add_ll(pitch_m,2*3);
-	msf_loop_ll(pitch_m,pitch_m);
-*/
-msf_ll *base_duty = inst->duty_macro;
-	base_duty->value = 32;
+	msf_add_ll(pitch_m,0);
+	msf_add_ll(pitch_m,0);
+	msf_add_ll(pitch_m,0);
+	msf_add_ll(pitch_m,0);
+	msf_add_ll(pitch_m,0);
+	msf_add_ll(pitch_m,0);
+	msf_add_ll(pitch_m,9*1);
+	msf_add_ll(pitch_m,9*2);
+	msf_add_ll(pitch_m,9*3);
+	msf_add_ll(pitch_m,9*2);
+	msf_add_ll(pitch_m,9*1);
+	msf_add_ll(pitch_m,9*0);
+	msf_add_ll(pitch_m,9*-1);
+	msf_add_ll(pitch_m,9*-2);
+	msf_add_ll(pitch_m,9*-3);
+	msf_add_ll(pitch_m,9*-2);
+	msf_add_ll(pitch_m,9*-1);
+	msf_loop_ll(pitch_m,pitch_m->next->next->next->next->next->next->next);*/
+
+	driver.speed = 6;
+/*	msf_ll *base_duty = inst->duty_macro;
+	base_duty->value = 128;
 	for (int i = 0; i < 0; i++)
 	{
-		msf_add_ll(base_duty,20 + (7*i));
+		msf_add_ll(base_duty,20 + (6*i));
 	}
+*/
+
+
 //	inst->arp_macro->next = base_arp;
-	for (int i = 0; i < 384; i++)
+	for (int i = 0; i < 6*64*4; i++)
 	{
 		usleep(16000);
 		

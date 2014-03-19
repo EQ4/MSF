@@ -158,6 +158,9 @@ void msf_step(msf_driver *driver)
 			case WAVE_TRIANGLE:
 				poly_set_wavetype(i,triangle);
 				break;
+			case WAVE_NOISE:
+				poly_set_wavetype(i,noise);
+				break;
 				// The rest will come once libpoly supports them properly
 			}
 		}

@@ -27,7 +27,7 @@ lpoly
 
 #define MSF_DEFAULT_SPEED 6
 #define MSF_NUM_FRAMES 256
-#define MSF_NUM_CHANNELS 4 // AKA frame width
+#define MSF_NUM_CHANNELS 8 // AKA frame width
 #define MSF_NUM_PHRASES 512
 #define MSF_PHRASE_LENGTH 64 // .mod much?
 #define MSF_NUM_INSTRUMENTS 256
