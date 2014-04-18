@@ -669,11 +669,158 @@ add(5,-1,1,driver);
 	add(8,100,3,driver);
 	add(8,0,3,driver);
 
+	in = 0;
+	// B lead - 46 = C
+/*
+add(9,50,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+add(9,46,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+add(9,48,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+add(9,45,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,46,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,43,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,42,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,45,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,50,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,46,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,48,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,45,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,46,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+add(9,50,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,55,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,55,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+
+add(9,54,1);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,-1,0);
+	add(9,0,0);
+	add(9,0,0);
+	add(9,0,0);
 
 
 
 
 
+
+
+
+*/
 
 
 }
@@ -697,13 +844,14 @@ int main(int argc, char *argv[])
 	// Drums
 	driver.frames[0]->phrase[3] = 8;
 	driver.frames[1]->phrase[3] = 8;
+//	driver.frames[2]->phrase[3] = 8;
 	driver.loopback = 0;
 	driver.track_length = 2;
 
 	msf_instrument *inst3 = driver.instruments[3];
 	inst3->type = WAVE_NOISE;
 	inst3->duty_macro->value = 240;
-	inst3->arp_macro->value = -19;
+	inst3->arp_macro->value = 0;
 
 	msf_instrument *inst2 = driver.instruments[2];
 	inst2->type = WAVE_SQUARE;
@@ -714,34 +862,68 @@ int main(int argc, char *argv[])
 
 	printf("Building instrument macro data\n");
 	msf_ll *base_amp = inst->amp_macro;
-	base_amp->value = 0;
+	base_amp->value = 255;
 	for (int i = 0; i < 18; i++)
 	{
 		msf_add_ll(base_amp,255-(11*i));
 		//msf_add_ll(inst->amp_macro,0);
-		msf_add_ll(inst3->amp_macro,255-(19*i));
 		msf_add_ll(inst2->amp_macro,255-(9*i));
 		//msf_add_ll(inst2->amp_macro,0);
 	}
 
+	inst3->amp_macro->value = 255;
+	msf_add_ll(inst3->amp_macro,150);
+	msf_add_ll(inst3->amp_macro,90);
+	msf_add_ll(inst3->amp_macro,30);
+	msf_add_ll(inst3->amp_macro,0);
+	
+	inst->pitch_macro->value = 0;
+	msf_add_ll(inst->pitch_macro,0);
+	msf_add_ll(inst->pitch_macro,0);
+	msf_add_ll(inst->pitch_macro,0);
+	msf_add_ll(inst->pitch_macro,0);
+	msf_add_ll(inst->pitch_macro,0);
+	msf_add_ll(inst->pitch_macro,0);
+	msf_add_ll(inst->pitch_macro,0);
+	msf_add_ll(inst->pitch_macro,0);
+	msf_add_ll(inst->pitch_macro,0);
+	msf_ll *base_pitch = inst->pitch_macro;
+	while (base_pitch->next != NULL)
+	{
+		base_pitch = base_pitch->next;
+	}
+	msf_add_ll(inst->pitch_macro,5);
+	msf_add_ll(inst->pitch_macro,5);
+	msf_add_ll(inst->pitch_macro,0);
+	msf_add_ll(inst->pitch_macro,-5);
+	msf_add_ll(inst->pitch_macro,-5);
+	msf_add_ll(inst->pitch_macro,-5);
+	msf_add_ll(inst->pitch_macro,-5);
+	msf_add_ll(inst->pitch_macro,0);
+	msf_add_ll(inst->pitch_macro,5);
+	msf_add_ll(inst->pitch_macro,5);
+	msf_loop_ll(inst->pitch_macro,base_pitch);
+
 	// Bassline
-	inst2->duty_macro->value = 128;
+	inst2->duty_macro->value = 64;
 	inst2->arp_macro->value = 12;
 	// Lead
 	inst->duty_macro->value = 128;
 	inst->arp_macro->value = 12;
+	msf_print_ll(inst->pitch_macro);
+
+
+
+//	msf_ll *base_arp = inst->arp_macro;
+//	base_arp->value = 0;
+//	msf_add_ll(base_arp,12);
+//	msf_add_ll(base_arp,24);
+//	msf_add_ll(base_arp,36);
+//	msf_add_ll(base_arp,12);
+//	msf_add_ll(base_arp,12);
+//	msf_loop_ll(base_arp,base_arp);
 	
-
-
-
-/*	msf_ll *base_arp = inst->arp_macro;
-	base_arp->value = 7;
-	msf_add_ll(base_arp,8);
-	msf_add_ll(base_arp,9);
-	msf_add_ll(base_arp,10);
-//	msf_add_ll(base_arp,12);
-//	msf_add_ll(base_arp,12);
-	msf_loop_ll(base_arp,base_arp);*/
+	
 
 
 /*msf_ll *pitch_m = inst->pitch_macro;
@@ -781,6 +963,7 @@ int main(int argc, char *argv[])
 		usleep(16000);
 		
 		msf_step(&driver);
+		msf_spill(&driver);
 		//msf_spill();
 	}
 	printf("Killing driver now.\n");

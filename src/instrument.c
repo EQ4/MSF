@@ -1,5 +1,6 @@
 #include "../include/instrument.h"
-#include "../include/ll.h"
+
+#include <stdlib.h>
 
 msf_instrument *msf_create_instrument()
 {

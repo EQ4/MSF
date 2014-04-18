@@ -1,5 +1,9 @@
 #include "../include/driver.h"
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <poly.h> 
+
 
 void msf_init_special(int speed, int num_frames, int num_channels, int num_phrases, int phrase_length, int num_instruments, msf_driver *driver)
 {
@@ -34,7 +38,6 @@ void msf_init_special(int speed, int num_frames, int num_channels, int num_phras
 	{
 		driver->instruments[i] = msf_create_instrument();
 		driver->instruments[i]->amp_macro->value = 255; // Default to full blast
-		//printf("Created instrument #%d at 0x%d.\n",i,(unsigned int)driver->instruments[i]);
 	}
 
 	// Point these to the LL macros (one per channel);
@@ -80,9 +83,35 @@ void msf_init(msf_driver *driver)
 	driver);
 }
 
-void msf_step(msf_driver *driver)
+// Steps through channel [i]'s linked lists
+void msf_drv_inc_ll(msf_driver *driver, int i)
+{
+	// Advance the macro LLs
+	if (driver->arp[i] != NULL && driver->arp[i]->next != NULL)
+	{
+		driver->arp[i] = driver->arp[i]->next;	
+	}
+	if (driver->amp[i] != NULL && driver->amp[i]->next != NULL)
+	{
+		driver->amp[i] = driver->amp[i]->next;
+	}
+	if (driver->pitch[i] != NULL && driver->pitch[i]->next != NULL)
+	{
+		driver->pitch[i] = driver->pitch[i]->next;	
+	}
+	if (driver->duty[i] != NULL && driver->duty[i]->next != NULL)
+	{
+		driver->duty[i] = driver->duty[i]->next;
+	}
+}
+
+// Increments the position counter
+// Returns 1 if it is a new step
+int msf_drv_proc(msf_driver *driver)
 {
 	int new_step = 0;
+
+	// Step through the song
 
 	if (driver->phrase_adv == 0 && driver->phrase_cnt == 0)
 	{
@@ -96,11 +125,11 @@ void msf_step(msf_driver *driver)
 	}
 	driver->frames[0]->tune[3] = 16;
 	if (driver->phrase_cnt == driver->phrase_length) // End of phrase
-	{
+	{	
+		printf("Moving to frame %d, channel 0 has phrase %d.\n",driver->frame_cnt,driver->frames[driver->frame_cnt]->phrase[0]);
 		driver->frame_cnt++;
 		driver->phrase_cnt = 0;
 		driver->phrase_adv = 0;
-		printf("Moving to frame %d, channel 0 has phrase %d.\n",driver->frame_cnt,driver->frames[driver->frame_cnt]->phrase[0]);
 	}
 	if (driver->frame_cnt == driver->track_length) // End of song
 	{
@@ -108,11 +137,19 @@ void msf_step(msf_driver *driver)
 		driver->phrase_adv = 0;
 		driver->frame_cnt = driver->loopback;
 	}
+	return new_step;
+}
+
+void msf_step(msf_driver *driver)
+{
+	int new_step = msf_drv_proc(driver);
 	
+	// Loop through each channel
 	for (int i = 0; i < driver->num_channels; i++)
 	{
 		// Pull the phrase number for channel i from the current frame
 		int phrase_num = driver->frames[driver->frame_cnt]->phrase[i];
+		
 		// The phrase itself
 		msf_phrase *phrase = driver->phrases[phrase_num];
 
@@ -128,11 +165,9 @@ void msf_step(msf_driver *driver)
 		}
 		if (new_step && phrase->note[driver->phrase_cnt] != 0 && phrase->inst[driver->phrase_cnt] != -1) // If there is a note to set
 		{
-		//	printf("NOTE ON %d! -Value %d inst %d.\n",i,phrase->note[driver->phrase_cnt],phrase->inst[driver->phrase_cnt]);
 			// Set the note
 			// Reset our macro traversal
 			driver->arp[i] = instrument->arp_macro;
-			//printf("New arp macro: 0x%d\n",driver->arp[i]);
 			driver->amp[i] = instrument->amp_macro;
 			driver->pitch[i] = instrument->pitch_macro;
 			driver->duty[i] = instrument->duty_macro;
@@ -140,10 +175,15 @@ void msf_step(msf_driver *driver)
 			driver->amp_l[i] = instrument->left_amp;
 			driver->amp_r[i] = instrument->right_amp;
 			
-
+			// Set note with transposition
+			driver->freq[i] = 0; // Zero out the frequency offset from the pitch macro
+			driver->note[i] = driver->note[i];
+			
+			// Set L/R balance
 			poly_set_R_amp(i,driver->amp_r[i]);
 			poly_set_L_amp(i,driver->amp_l[i]);
 			
+			// Set up wave type
 			switch(instrument->type)
 			{
 			case WAVE_SQUARE:
@@ -166,51 +206,46 @@ void msf_step(msf_driver *driver)
 		}
 		else
 		{
-			// Advance the macro LLs
-			if (driver->arp[i] != NULL && driver->arp[i]->next != NULL)
-			{
-			//	printf("Advancing arp LL\n");
-				driver->arp[i] = driver->arp[i]->next;	
-			}
-			if (driver->amp[i] != NULL && driver->amp[i]->next != NULL)
-			{
-			//	printf("Advancing amp LL\n");
-				driver->amp[i] = driver->amp[i]->next;
-			}
-			if (driver->pitch[i] != NULL && driver->pitch[i]->next != NULL)
-			{
-				driver->pitch[i] = driver->pitch[i]->next;
-			}
-			if (driver->duty[i] != NULL && driver->duty[i]->next != NULL)
-			{
-				driver->duty[i] = driver->duty[i]->next;
-			}
+			msf_drv_inc_ll(driver, i);
 		}
+		
+		//  ------------------------------------------------------------------------------
+		// | Commit information loaded from instrument data / runtime data to synthesizer |
+		//  ------------------------------------------------------------------------------
+		
+		// Apply frequency offset from macro LL
+		if (driver->pitch[i] != NULL)
+		{
+			driver->freq[i] += ((float)driver->pitch[i]->value / MSF_TUNE_DIV);
+		}
+		
+		int arp_off = 0;
+		if (driver->arp[i] != NULL)
+		{
+			arp_off = driver->arp[i]->value;
+		}
+		
+		// Set the channel frequency
+		// Considering: frequency from (note + arp offset + transpose) + pitch bend sum
+		poly_set_freq(i,msf_get_freq(driver->note[i] + arp_off + driver->frames[driver->frame_cnt]->transpose[i]) + driver->freq[i]);
+		
+		// Set duty
 		if (driver->duty[i] != NULL)
 		{
 			poly_set_duty(i,(driver->duty[i]->value/255.0));
 		}
-		int arp_off = driver->frames[driver->frame_cnt]->transpose[i];
-		if (driver->arp[i] != NULL)
-		{
-			//printf("Setting arp_off to %d.\n",driver->arp[i]->value);
-			arp_off += driver->arp[i]->value;
-		}
-		float pitch_off = driver->frames[driver->frame_cnt]->tune[i] / MSF_TUNE_DIV;
-		if (driver->pitch[i] != NULL)
-		{
-			pitch_off += driver->pitch[i]->value;
-		}
-		driver->freq[i] = msf_get_freq(driver->note[i] + arp_off) + pitch_off;
 		
-		if (i == 0)
+		// Commit master amplitude from macro
+		if (driver->note[i] != -1)
 		{
-			// printf("Frequency is %f.\n",driver->freq[i]);
-		}
-		poly_set_freq(i,driver->freq[i]);
-		if (driver->note[i] != -1 && driver->amp[i] != NULL)
-		{
-			poly_set_amplitude(i,driver->amp[i]->value/255.0);
+			if (driver->amp[i] != NULL)
+			{
+				poly_set_amplitude(i,driver->amp[i]->value/255.0);
+			}
+			else
+			{
+				poly_set_amplitude(i,0);
+			}
 		}
 	}
 	driver->phrase_adv++;
@@ -229,39 +264,26 @@ void msf_shutdown(msf_driver *driver)
 	{
 		for (int i = 0; i < driver->num_frames; i++)
 		{
-			//printf("----%d: Destroying frame 0x%d\n",i,(unsigned int)driver->frames[i]);
 			msf_destroy_frame(driver->frames[i]);
 		}
 		for (int i = 0; i < driver->num_phrases; i++)
 		{
-			//printf("----%d: Destroying phrase 0x%d\n",i,(unsigned int)driver->phrases[i]);
 			msf_destroy_phrase(driver->phrases[i]);
 		}
 		for (int i = 0; i < driver->num_instruments; i++)
 		{
-			printf("----%d: Destroying instrument 0x%d\n",i,(unsigned int)driver->instruments[i]);
 			msf_destroy_instrument(driver->instruments[i]);
 		}
 		
-		//printf("----Freeing frames\n");
 		free(driver->frames);
-		//printf("----Freeing phrases\n");
 		free(driver->phrases);
-		//printf("----Freeing instruments\n");
 		free(driver->instruments);
-		//printf("----Freeing arp\n");
 		free(driver->arp);
-		//printf("----Freeing amp\n");
 		free(driver->amp);
-		//printf("----Freeing pitch\n");
 		free(driver->pitch);
-		//printf("----Freeing note\n");
 		free(driver->note);
-		//printf("----Freeing amp_l\n");
 		free(driver->amp_l);
-		//printf("----Freeing amp_r\n");
 		free(driver->amp_r);
-		//printf("----Freeing freq\n");
 		free(driver->freq);
 		free(driver->duty);
 	}

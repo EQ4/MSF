@@ -38,9 +38,6 @@ This can also be done as (note value) >> 8.
 #define WAVE_NOISE 4
 #define WAVE_SAMPLE 5
 #define WAVE_LOOPSAMPLE 6
-
-#include <stdio.h>
-#include <stdlib.h>
 #include "../include/ll.h"
 
 typedef struct

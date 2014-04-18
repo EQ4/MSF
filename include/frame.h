@@ -20,8 +20,6 @@ used with the same pattern adjacent.
 #ifndef FRAME_H
 #define FRAME_H
 
-#include <stdlib.h>
-
 typedef struct msf_frame msf_frame;
 struct msf_frame
 {

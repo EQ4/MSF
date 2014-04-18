@@ -1,5 +1,7 @@
 #include "../include/frame.h"
 
+#include <stdlib.h>
+
 msf_frame *msf_create_frame(int num)
 {
 	// Make frame

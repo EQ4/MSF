@@ -11,7 +11,6 @@ global within a song.
 
 #ifndef PHRASE_H
 #define PHRASE_H
-#include <stdlib.h>
 typedef struct msf_phrase msf_phrase;
 
 struct msf_phrase
