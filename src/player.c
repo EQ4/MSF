@@ -910,7 +910,6 @@ int main(int argc, char *argv[])
 	// Lead
 	inst->duty_macro->value = 128;
 	inst->arp_macro->value = 12;
-	msf_print_ll(inst->pitch_macro);
 
 
 
