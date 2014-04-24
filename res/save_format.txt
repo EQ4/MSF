@@ -1,0 +1,190 @@
+MSF Song Save Format "Documentation"
+Michael Moffitt 2014
+
+Note: to offset any pedantics I'll point out that strictly these probably are
+not songs as a song by definition has lyrics, or some degree of singing. These
+would be better referred to as pieces, tracks, numbers, etc. From here on I'm
+going to be using the word song because it isn't worth the bother.
+
+Anyway, onto the format. For each song the plan is to treat the song as having
+"slots" for the various properties a song might have.
+
+Each song has:
+
+ = Meta information =
+This section is quite simple. It will contain lines as follows:
+
+	name = Song name
+	author = Song writer
+	speed = 6
+	loopback = 0
+	tracklength = 16
+	phraselength = 64
+
+I should note that the max length of a phrase is 64. However, if an artist was
+working in 3/4, a length of 48 may be desired. Phrase length simply lets the 
+artist cut off a phrase early without a hop command at the end of each frame.
+Track looping is accomplished basically as 
+	if frame position == track length
+		set frame position to loopback
+
+ = Frame list =
+A frame is an 8-index-wide table of phrase indexes. Each channel gets one int
+representing which phrase will be played during that frame of the song. They
+are linear, going from 0 to 255 through the song. Rather than save and load
+256 of these each time, which would be slow and tedious, the save format will
+fill in frames as they are specified individually. An example line to fill in
+frame 00 would be as follows:
+
+	frame 0 = 00,01,0B,1A,00,07,06,07
+
+As for what that means, channel 0 will play phrase 0 during frame 0, while
+channel 1 will play phrase 01, channel 2 will play phrase 0B, etc.
+
+That line would set frame 0 to those 8 values. Frame 2 could be filled in 
+without ever filling in frame 1, but that would be silly. Still, it can be
+done this way. Out of order definitions are fine, though I don't see how that
+would really happen unless somebody decided to write out a song by hand. 
+
+ = Phrase list = 
+There happen to also be 256 phrase entries in a song. They are universal for
+all channels, so if each channel had individual phrases the max per channel
+would be 32. Tihs is an unlikely scenario, so this is not a problem.
+
+Each phrase conveys 64 rows of [note,instrument,command,argument]. Command
+and argument wlil often be 0 and 0, for no command. Each element has a range
+of 0-255, one byte or unsigned char, so we can take advantage of the 32-bit
+unsigned integer and store a phrase as a 64-entry delimited list of ints.
+
+For extraction / encoding of one step of a phrase:
+    note: (value >> 24) % 0xFF;
+    inst: (value >> 16) % 0xFF;
+     cmd: (value >> 8) % 0xFF;
+	 arg: value % 0xFF;
+
+Phrases are filled in much like frames. Here the advantage of being able to
+fill slots arbitrarily for phrases is clearer, as not all phrases may be used
+and a songwriter may wish to organize different phrase sections for different
+uses (example: all leads are between 30-40, all bass phrases are between 
+60-70, etc). Phrases will all default to being empty.
+An example to fill in a line would resemble the following:
+
+	phrase 6 = 19820320,13244557,2301031,000000, ... etc
+
+Those numbers are 100% fabricated and won't work. They will be generated, and
+to write such a thing by hand would be absurd.
+
+= Instrument list =
+The instrument is by far the most complicated section. This is because of the
+amplitude, arpeggoi, pitch, and duty cycle macros that are used to shape the
+instrument's sound over time. Rather than use the ADSR curves one might expect
+from a more modern synthesizer, things like amplitude (and attack, implicitly)
+are defined via macros. A sound that quickly starts and fades out would have
+a curve shaped somewhat like this primitive text art:
+
+max |#####.................
+    |.....###..............
+    |........##............
+    |..........#...........
+    |...........#..........
+    |............##........
+    |..............###.....
+min |.................#####
+
+Much like encoding PCM data, we encode the value of amplitude over time. The
+time division used is steps through a phrase. With a speed of 6, a phrase will
+take 64 * 6 steps to complete. Each note will get 6 steps before another note
+happens. We will encode the instrument's absolute pitch, arpeggio, pitch bend,
+and duty cycle. Arpeggio is recorded in half tones relative to the original
+note pitch, and has a range of -128 to 127 (signed char). Pitch bend is also
+a signed char, representing relative pitch offset in a sub-halftone division.
+Pitch is actually a pitch offset delta, and it will "stack" with the previous
+division. This means that a repeated positive value for pitch will make a note
+continually rise up in an upwards portamento.
+
+Before we get into the complicated bits, three simple values are set:
+
+	instrument 0 = waveform,left_amp,right_amp
+
+All 3 are values 0-255, though waveform only is defined for a few values.
+0 is a square wave, 1 is a saw (I think? check instruments.h for more info).
+Left amp and right amp are values 0-255 that get mapped to a float 0.0 - 1.0
+as coefficients for output, allowing for stereo effects.
+
+Though the MSF engine uses floats internally to represent amplitude, for the 
+creator a fidelity of 0-255 is used. I do not wish to go into detail about
+this decision, so I won't.
+
+Internally, the MSF engine uses linked lists to represent these values. I used
+linked lists as it greatly facilitated the engine's ability to have a macro 
+loop back to an earlier point in itself without any special checking code, as
+during playback, any reduced overhead is better. 
+
+For making, saving, and loading these macros, however, I will be borrowing the 
+notation used by Famitracker, a synthesized music tracker targeting the 
+Nintendo Famicom. It goes as follows:
+
+	amp of instrument 0 = 255 208 192 164 | 132 100 80 64 80 100
+
+This describes a downwards curve which then starts to curve back up. It will
+do this repeatedly from the 132 element. The bar character (|) records the 
+address of the next node, and when the list is complete it sets the next
+pointer of the last node to the stored address, making the list loop.
+
+The song will always store macro data in the above format, with the linked
+list only being a reflection of its data and never the reverse. The linked
+list is never read back out into the format in order to simplify matters. The
+actual song, as loaded into the MSF driver, could be considered generated by
+the song format.
+
+Other properties, like arp, pitch, and duty, are filled in the same way, 
+following the trend of 
+
+	[property] of instrument [instrument #] = num num2 num3 | num4 ... etc
+
+The more touchy property is wave data and format specification, mostly because
+those aren't implemented in the engine yet as the underlying synth library does
+not support these at the time of writing.
+
+I expect to implement them as follows:
+	
+	wavedata of instrument 0 = 1324,56687,12321,46567,343213,676754 etc. etc.
+
+That is raw PCM data for a sample. If it is not specified, it will default to 
+a 1-sample-long wave with value 0. It will make no sound, as a result. 
+Then, the wavetype must also be specified:
+
+	wavetype of instrument = [depth],[mult]
+
+Depth is how many bits deep the wave data is per sample, and mult is actually
+a division used to specify the sample rate. A value of 1 represents 44.1KHz,
+a value of 2 represents 22.05KHz, etc. If these aren't specified, it will
+default to 16-bit at 44.1Khz (16,1).
+
+If these aren't filled in, an instrument is initialized with sane defaults so
+it will not be catastrophic. An undefined instrument starts with:
+	type 0 (square wave)
+	left and right amplitude of 255 (full both sides)
+	amplitude macro of 255 (full volume, no change)
+	arp macro of 0 (no arp)
+	pich macro of 0 (no bend)
+	duty of 128 (50% duty)
+	wavedata of value 0 (nothing)
+	wavetype of 16,1 (16-bit, 44KHz)
+
+This means an uninitialized instrument won't break everything. If an instrument
+fails to load properly, it will leave that instrument alone. That means if your
+instrument sounds like a Sega Master System with no dynamics, check that the 
+instrument definition lines are not broken.
+
+As with everything else, this data can be filled in in just about any order. 
+Again, I doubt anybody will want to compose by hand here, so I don't foresee
+any actual need to be so concerned with people malforming the file. The MSF
+song editor will generate and load these song files. 
+
+The MSF driver will have functionality to populate the driver struct with data
+from the song file, and that's how playback will work. It should be fairly
+simple, as once a song is loaded there's no need to keep the song data open as
+it has already been interpreted as values for the driver struct. This way no
+additional memory management is needed over what has already been done (which,
+by the way, doesn't leak when shutting down!)
