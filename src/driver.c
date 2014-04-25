@@ -6,10 +6,22 @@
 #include <string.h>
 
 
-void msf_init_special(int speed, int num_frames, int num_channels, int num_phrases, int phrase_length, int num_instruments, msf_driver *driver)
+msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int num_phrases, int phrase_length, int num_instruments)
 {
+	msf_driver *driver = NULL;
+	driver = (msf_driver*)malloc(sizeof(msf_driver));
+	if (driver == NULL)
+	{
+		printf("Malloc was no good! %u was too much.\n",(unsigned int)sizeof(msf_driver));
+		return NULL;
+	}
+	else
+	{
+		printf("Using new driver at 0x%u.\n",(unsigned int)driver);
+	}
 	driver->speed = speed;
 	driver->num_frames = num_frames;
+	driver->track_length = num_frames;
 	driver->num_channels = num_channels;
 	driver->num_phrases = num_phrases;
 	driver->phrase_length = phrase_length;
@@ -57,7 +69,6 @@ void msf_init_special(int speed, int num_frames, int num_channels, int num_phras
 	}
 	driver->init = 1;
 	driver->loopback = 0;
-	driver->track_length = 1;
 
 	driver->amp_l = malloc(sizeof(float *) * num_channels);
 	driver->amp_r= malloc(sizeof(float *) * num_channels);
@@ -71,19 +82,20 @@ void msf_init_special(int speed, int num_frames, int num_channels, int num_phras
 		poly_init_generator(i,square,0.0,440 + (8*i));
 	}
 	poly_start();
+	printf("Giving back 0x%u.\n",(unsigned int)driver);
+	return driver;
 }
 
 // Simple shortcut init with some usable (but maybe too large) defaults
-void msf_init(msf_driver *driver)
+msf_driver *msf_init()
 {
-	msf_init_special(
+	return msf_init_special(
 	MSF_DEFAULT_SPEED,
 	MSF_NUM_FRAMES,
 	MSF_NUM_CHANNELS,
 	MSF_NUM_PHRASES,
 	MSF_PHRASE_LENGTH,
-	MSF_NUM_INSTRUMENTS,
-	driver);
+	MSF_NUM_INSTRUMENTS);
 }
 
 // Steps through channel [i]'s linked lists
@@ -298,6 +310,7 @@ void msf_shutdown(msf_driver *driver)
 			free(driver->author);
 		}
 	}
+	free(driver);
 }
 
 #define MSF_MAX_LINELENGTH 65536
@@ -355,104 +368,224 @@ char *msf_get_entry(const char *word, const char *l)
 	return ret;
 }
 
-int msf_handle_line(msf_driver *driver, char *line)
+// This is a complete hack. The returned unsigned long, if greater than 2, is 
+// the address of the driver on the heap.
+
+unsigned long msf_handle_line(msf_driver *driver, char *line)
 {
 	char *check;
+	/* Check holds the result of seeing if the line begins with a property
+	that is being seeked. If it matches, check contains the rest *after*
+	the property tag. If it doesn't, it returns NULL. 
+
+	Since this is not the fastest thing in the world, the potentially
+	biggest operations come first here. 
+	*/
 	
-	check = msf_get_entry("//",line); // allow comments
-	if (check != NULL) { free(check); return 1; };
-	
-	check = msf_get_entry("name is ",line);
-	if (check != NULL) { driver->name = check; return 1;}
-	
-	check = msf_get_entry("author is ",line);
-	if (check != NULL) { driver->author = check; return 1;}
-	
-	check = msf_get_entry("speed is ",line);
-	if (check != NULL) 
-	{ 
-		driver->speed = atoi(check); 
-		free(check);
-		return 1;
-	}
-	
-	check = msf_get_entry("loopback is ",line);
-	if (check != NULL) 
-	{ 
-		driver->loopback = atoi(check); 
-		free(check);
-		return 1;
-	}
-	
-	check = msf_get_entry("track length is ",line);
-	if (check != NULL) 
-	{ 
-		driver->track_length = atoi(check); 
-		free(check);
-		return 1;
-	}
-	
-	check = msf_get_entry("phrase length is ",line);
-	if (check != NULL) 
-	{ 
-		driver->track_length = atoi(check); 
-		free(check);
-		return 1;
-	}
-	
-	
-	// ACtual frame entry, time to do a little work
+
+	// Check if it's a frame definition
 	check = msf_get_entry("frame ",line);
 	if (check != NULL)
 	{
+		if (driver->init != 1)
+		{
+			printf("Premature frame entry");
+			free(check);
+			return 2;
+		}
 		// Get the length of the original substring check and duplicate it
 		
-		// Go through it token by token
-		char *token = strtok(check," "); // Get the number
+		// Go through it token by token with multiple delimiters in case
+		// some mega marny thought it was a good idea to use underscores
+		// or somethinb dumb like that
+		char *token = strtok(check," ,_"); 
 		int framenum = atoi(token);
-		token = strtok(NULL," "); // skip the "is"
+		token = strtok(NULL," ,_"); // skip the "is"
+		if (token == NULL)
+		{
+			free (check);
+			return 0;
+		}
 		int channel = 0;
-		token = strtok(NULL," "); // Start capturing numbers
+		token = strtok(NULL," ,_"); // Start capturing numbers
 		while (token != NULL && channel < driver->num_channels)
 		{
 			unsigned long value = strtoul(token,NULL,0);
-			printf("Got %lu...\n",value);
-			printf(" Phrase: %i\n",(unsigned char)((value >> 16) & 0xFF));
-			printf(" Transpose: %i\n",(unsigned char)((value >> 8) & 0xFF) - 128);
-			printf(" Tune: %i\n",(unsigned char)((value) & 0xFF) - 128);
-		//	driver->frames[framenum]->phrase[channel]
-			printf("\n ");
+			int tune = ((unsigned char)((value >> 16) & 0xFF) - 128);
+			int transpose = ((unsigned char)((value >> 8) & 0xFF) - 128);
+
+			driver->frames[framenum]->phrase[channel] = (unsigned char)(value & 0xFF);
+			driver->frames[framenum]->transpose[channel] = (transpose == -128)?(0):((int)transpose);
+			driver->frames[framenum]->tune[channel] = (tune == -128)?(0):((int)tune);
+
 			token = strtok(NULL," ");
 			channel++;
 		}
-		printf("\n\n");
-		
-		
-		
+		if (channel == driver->num_channels && token != NULL)
+		{
+			printf("Warning: The song will work, but there is superfluous frame data");
+			free(check);
+			return 2;
+		}
 		free(check);
+		return 1;
+	}
+
+	// Define a phrase - the most complicated!
+	check = msf_get_entry("phrase ",line);
+	if (check != NULL)
+	{
+		if (driver->init != 1)
+		{
+			printf("Premature phrase entry");
+			free(check);
+			return 2;
+		}
+		char *token = strtok(check," ,_");
+		int phrasenum = atoi(token);
+		token = strtok(NULL," ,_"); // skip the "is"
+		if (token == NULL)
+		{
+			free(check);
+			return 0;
+		}
+		msf_phrase *phraseptr = driver->phrases[phrasenum];
+		int stepnum = 0;
+		token = strtok(NULL," ,_");
+		while (token != NULL && stepnum < phraseptr->length)
+		{
+			unsigned long value = strtoul(token,NULL,0);
+			int arg = ((unsigned char)((value >> 24) & 0xFF));
+			int cmd = ((unsigned char)((value >> 16) & 0xFF));
+			int inst = ((unsigned char)((value >> 8) & 0xFF));
+			int note = ((unsigned char)((value) & 0xFF));
+
+			phraseptr->note[stepnum] = (unsigned char)(value & 0xFF);
+			phraseptr->inst[stepnum] = inst;
+			phraseptr->cmd[stepnum] = cmd;
+			phraseptr->arg[stepnum] = arg;
+			stepnum++;
+		}
+		if (phraseptr->used != 0)
+		{
+			if (token != NULL && stepnum == phraseptr->length)
+			{
+				printf("Warning: the song will work, but there is superflous phrase data.\n");
+			}
+			printf("Warning: Redefinition of phrase #%i",phrasenum);
+			free(check);
+			return 2;
+		}
+
+		phraseptr->used = 1;
+		if (token != NULL && stepnum == phraseptr->length)
+		{
+			printf("Warning: the song will work, but there is superflous phrase data");
+			free(check);
+			return 2;
+		}
+		free(check);
+		return 1;
+	}
+
+	// Initialize MSF driver
+	check = msf_get_entry("init ",line);
+	if (check != NULL) 
+	{
+		int count = 0;
+		char *token = NULL;
+		token = strtok(check," ,_");
+		int speed = 6;
+		int loopback = 0;
+		int num_frames = 32;
+		int num_channels = 8;
+		int num_phrases = 8;
+		int phrase_length = 64;
+		int num_instruments = 16;
+		if (token == NULL)
+		{
+			free(check);
+			return 0;
+		}
+		while (token != NULL && count < 7)
+		{
+			switch (count)
+			{
+				case 0:
+					speed = atoi(token);
+					break;
+				case 1:
+					loopback = atoi(token);
+					break;
+				case 2:
+					num_frames = atoi(token);
+					break;
+				case 3:
+					num_channels = atoi(token);
+					break;
+				case 4:
+					num_phrases = atoi(token);
+					break;
+				case 5:
+					phrase_length = atoi(token);
+					break;
+				case 6:
+					num_instruments = atoi(token);
+					break;
+			}
+			token = strtok(NULL," ,_");
+			count++;
+		}
+		printf("Initializing MSF driver with params %i %i %i %i %i %i %i.\n",speed,loopback,num_frames,num_channels,
+				num_phrases,phrase_length,num_instruments);
+
+		driver = msf_init_special(speed,num_frames,num_channels,num_phrases,phrase_length,
+						num_instruments);
+		
+		printf("Got it at 0x%i.\n",(unsigned int)driver);
+		driver->loopback = loopback;
+		if (check != NULL)
+		{
+			free(check);
+		}
+
+		// Hack to preserve the new driver pointer
+		return (unsigned long)driver;
+	}
+
+	check = msf_get_entry("//",line); // allow comments
+	if (check != NULL) { free(check); return 1; };
+
+//	printf("Driver: 0x%u\n",(unsigned int)driver);
+	if (driver != NULL && driver->init == 1)
+	{
+		check = msf_get_entry("name is ",line);
+		if (check != NULL)
+		{ 
+			driver->name = check; return 1;
+		}
+		
+		check = msf_get_entry("author is ",line);
+		if (check != NULL) { driver->author = check; return 1;}
+		
+	
 	}
 	
 	if (check == NULL)
 	{
 		return 0;
 	}
-	return 1;
+	return 0;
 }
 
-int msf_load_file(msf_driver *driver, const char *fname)
+msf_driver *msf_load_file(const char *fname)
 {
-	// TODO: make this section a lot better
-	if (!driver->init)
-	{
-		printf("MSF driver was not properly initialized. Aborting.\n");
-		return -1;
-	}
-	
+	// TODO: make this section a lot better	
 	FILE *file = fopen(fname, "r");
 	if (file == NULL)
 	{
 		printf("Failed to load MSF file. Aborting.\n");
-		return -1;
+		return NULL;
 	}
 	
 	int line_number = 1;
@@ -461,19 +594,30 @@ int msf_load_file(msf_driver *driver, const char *fname)
 	int buffer_size = MSF_MAX_LINELENGTH;
 	char *line = (char*)malloc(MSF_MAX_LINELENGTH* sizeof(char*));
 	
+	msf_driver *driver = NULL;
 	// Handle each line, taking data from it as is appropriate
 	while (fgets(line, MSF_MAX_LINELENGTH, file))
 	{
-		if (msf_handle_line(driver,line) == 0)
+		unsigned long result = msf_handle_line(driver,line);
+		if (result == 0)
 		{
 			printf("Ignoring line %i.\n",line_number);
 		}
+		else if (result == 2)
+		{
+			printf(" at line %i.\n",line_number);
+		}
+		else if (result > 8)
+		{
+			driver = (msf_driver*)result;
+		}
+			
 		line_number++;
 	}
 	printf("Name: %s\n",driver->name);
 	printf("By: %s\n",driver->author);
 	fclose(file);
 	free(line);
-	return 0;
+	return driver;
 	
 }

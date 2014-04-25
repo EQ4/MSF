@@ -11,6 +11,14 @@ Anyway, onto the format. For each song the plan is to treat the song as having
 
 Each song has:
 
+ = Init Section =
+Before any data is loaded into the engine, the engine must be told a few things
+prior to initialization of its data structures. So, this line is here:
+
+	init 6 0 32 8 8 64 32
+
+This initializes the MSF driver with a speed of 6, loopback of 0, 32 frames, 
+8 channels, 8 phrases, 64 phrase length, and 32 instruments.
  = Meta information =
 This section is quite simple. It will contain lines as follows:
 
@@ -39,13 +47,13 @@ In addition to phrase indeces, for each channel a frame also encodes a detune
 and transpose number. The phrase index is an unsigned char, while the other
 two are signed chars. For this reason we may decode it as follows:
 
-     phrase: (value >> 16) & 0xFF;
+     phrase: (value & 0xFF);
   transpose: ((value >> 8) & 0xFF) - 128;
-       tune: (value & 0xFF) - 128;
+       tune: ((value >> 16) & 0xFF - 128);
        
 For encoding naturally values are shifted to the left, like this:
 
-entry = (phrase << 16) + ((transpose+128) << 8) + (tune+128);
+entry = ((tune+128) << 16) + ((transpose+128) << 8) + (phrase);
 
 An example line to fill in frame 00 would be as follows:
 
@@ -59,7 +67,13 @@ without ever filling in frame 1, but that would be silly. Still, it can be
 done this way. Out of order definitions are fine, though I don't see how that
 would really happen unless somebody decided to write out a song by hand. 
 
- is Phrase list is 
+To simplify the lodaing of... well, nothing, if transpose evaluates to -128
+after the shifting and masking, it will be treated as 0, as it was probably
+not intentional. I have doubts anybody wants to transpose down 128 half steps,
+and this way the upper and lower range are equal in magnitude anyway (127 to
+-127). Tune will behave in the exact same way.
+
+ = Phrase list =
 There happen to also be 256 phrase entries in a song. They are universal for
 all channels, so if each channel had individual phrases the max per channel
 would be 32. This is an unlikely scenario, so this is not a problem.
@@ -70,14 +84,17 @@ of 0-255, one byte or unsigned char, so we can take advantage of the 32-bit
 unsigned integer and store a phrase as a 64-entry delimited list of ints.
 
 For decoding of one step of a phrase:
-      note: (value >> 24) % 0xFF;
-      inst: (value >> 16) % 0xFF;
-       cmd: (value >> 8) % 0xFF;
-       arg: value % 0xFF;
+       arg: (value >> 24) & 0xFF;
+       cmd: (value >> 16) & 0xFF;
+      inst: (value >> 8) & 0xFF;
+      note: (value) & 0xFF;
 
 Encoding naturally follows:
 
 entry = (note << 24) + (inst << 16) + (cmd << 8) + arg;
+
+By now you may have noticed that the most important elements are put in lower
+order areas in the line; note doesn't even require any shifting.
 
 Phrases are filled in much like frames. Here the advantage of being able to
 fill slots arbitrarily for phrases is clearer, as not all phrases may be used

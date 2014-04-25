@@ -18,9 +18,9 @@ struct msf_phrase
 	int length; // Number of steps
 	int *note; // Note[step]
 	int *inst; // Instrument[step] This is an instrument number, not a pointer.
-	int *vol; // Volume[step] (scale from 0-255)
 	int *cmd; // Command[step]
 	int *arg; // Argument[step] for the command
+	int used; // Set to 1 if the phrase has been touched
 };
 
 msf_phrase *msf_create_phrase(int len);

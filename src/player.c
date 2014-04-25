@@ -19,12 +19,14 @@ This is a simple example "client" to the MSF driver.
 #include "../include/driver.h"
 int main(int argc, char *argv[])
 {
-	msf_driver driver;
 	printf("MSF init sequence starting.\n");
-	msf_init(&driver);
 	
-	msf_load_file(&driver,"/home/moffitt/test.msf");
+	msf_driver *driver = msf_load_file("/home/moffitt/test.msf");
 	
+	if (driver == NULL)
+	{
+		return -1;
+	}
 //	for (int i = 0; i < 6*64*4; i++)
 //	{
 //		usleep(16000);
@@ -33,6 +35,6 @@ int main(int argc, char *argv[])
 //		msf_spill(&driver);
 //	}
 	printf("Killing driver now.\n");
-	msf_shutdown(&driver);
+	msf_shutdown(driver);
 	return 0;
 }

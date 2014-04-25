@@ -69,10 +69,9 @@ struct msf_driver
 };
 
 // For those who aren't satisfied with my defaults
-void msf_init_special(int speed, int num_frames, int num_channels, 
-					  int num_phrases, int phrase_length, int num_instruments, 
-					  msf_driver *driver);
-void msf_init(msf_driver *driver);
+msf_driver *msf_init_special(int speed, int num_frames, int num_channels, 
+					  int num_phrases, int phrase_length, int num_instruments);
+msf_driver *msf_init();
 void msf_spill(msf_driver *driver); // Print where we are in the track
 int msf_drv_proc(msf_driver *driver);
 void msf_drv_inc_ll(msf_driver *driver, int i); // Step through the LLs
@@ -80,9 +79,9 @@ void msf_step(msf_driver *driver); // Actually runs the music
 void msf_shutdown(msf_driver *driver); // No leaks!
 
 
-int msf_handle_line(msf_driver *driver, char *line);
+unsigned long msf_handle_line(msf_driver *driver, char *line);
 int *msf_get_line_values(const char *line);
 char *msf_get_entry(const char *word, const char *l);
-int msf_load_file(msf_driver *driver, const char *fname); // Load from MSF file
+msf_driver *msf_load_file(const char *fname); // Load from MSF file
 
 #endif
