@@ -14,12 +14,12 @@ Each song has:
  = Meta information =
 This section is quite simple. It will contain lines as follows:
 
-	name = Song name
-	author = Song writer
-	speed = 6
-	loopback = 0
-	tracklength = 16
-	phraselength = 64
+	name is Song name
+	author is Song writer
+	speed is 6
+	loopback is 0
+	tracklength is 16
+	phraselength is 64
 
 I should note that the max length of a phrase is 64. However, if an artist was
 working in 3/4, a length of 48 may be desired. Phrase length simply lets the 
@@ -36,7 +36,7 @@ are linear, going from 0 to 255 through the song. Rather than save and load
 fill in frames as they are specified individually. An example line to fill in
 frame 00 would be as follows:
 
-	frame 0 = 00,01,0B,1A,00,07,06,07
+	frame 0 is 00 01 0B 1A 00 07 06 07
 
 As for what that means, channel 0 will play phrase 0 during frame 0, while
 channel 1 will play phrase 01, channel 2 will play phrase 0B, etc.
@@ -46,10 +46,10 @@ without ever filling in frame 1, but that would be silly. Still, it can be
 done this way. Out of order definitions are fine, though I don't see how that
 would really happen unless somebody decided to write out a song by hand. 
 
- = Phrase list = 
+ is Phrase list is 
 There happen to also be 256 phrase entries in a song. They are universal for
 all channels, so if each channel had individual phrases the max per channel
-would be 32. Tihs is an unlikely scenario, so this is not a problem.
+would be 32. This is an unlikely scenario, so this is not a problem.
 
 Each phrase conveys 64 rows of [note,instrument,command,argument]. Command
 and argument wlil often be 0 and 0, for no command. Each element has a range
@@ -60,7 +60,7 @@ For extraction / encoding of one step of a phrase:
     note: (value >> 24) % 0xFF;
     inst: (value >> 16) % 0xFF;
      cmd: (value >> 8) % 0xFF;
-	 arg: value % 0xFF;
+     arg: value % 0xFF;
 
 Phrases are filled in much like frames. Here the advantage of being able to
 fill slots arbitrarily for phrases is clearer, as not all phrases may be used
@@ -69,12 +69,12 @@ uses (example: all leads are between 30-40, all bass phrases are between
 60-70, etc). Phrases will all default to being empty.
 An example to fill in a line would resemble the following:
 
-	phrase 6 = 19820320,13244557,2301031,000000, ... etc
+	phrase 6 is 19820320 13244557 2301031 0000000 ... etc
 
 Those numbers are 100% fabricated and won't work. They will be generated, and
 to write such a thing by hand would be absurd.
 
-= Instrument list =
+ = Instrument list =
 The instrument is by far the most complicated section. This is because of the
 amplitude, arpeggoi, pitch, and duty cycle macros that are used to shape the
 instrument's sound over time. Rather than use the ADSR curves one might expect
@@ -104,7 +104,7 @@ continually rise up in an upwards portamento.
 
 Before we get into the complicated bits, three simple values are set:
 
-	instrument 0 = waveform,left_amp,right_amp
+	instrument 0 is waveform left_amp right_amp
 
 All 3 are values 0-255, though waveform only is defined for a few values.
 0 is a square wave, 1 is a saw (I think? check instruments.h for more info).
@@ -124,7 +124,7 @@ For making, saving, and loading these macros, however, I will be borrowing the
 notation used by Famitracker, a synthesized music tracker targeting the 
 Nintendo Famicom. It goes as follows:
 
-	amp of instrument 0 = 255 208 192 164 | 132 100 80 64 80 100
+	amp of instrument 0 is 255 208 192 164 | 132 100 80 64 80 100
 
 This describes a downwards curve which then starts to curve back up. It will
 do this repeatedly from the 132 element. The bar character (|) records the 
@@ -140,7 +140,7 @@ the song format.
 Other properties, like arp, pitch, and duty, are filled in the same way, 
 following the trend of 
 
-	[property] of instrument [instrument #] = num num2 num3 | num4 ... etc
+	[property] of instrument [instrument #] is num num2 num3 | num4 ... etc
 
 The more touchy property is wave data and format specification, mostly because
 those aren't implemented in the engine yet as the underlying synth library does
@@ -148,13 +148,13 @@ not support these at the time of writing.
 
 I expect to implement them as follows:
 	
-	wavedata of instrument 0 = 1324,56687,12321,46567,343213,676754 etc. etc.
+	wavedata of instrument 0 is 1324 56687 12321 46567 343213 676754 etc. etc.
 
 That is raw PCM data for a sample. If it is not specified, it will default to 
 a 1-sample-long wave with value 0. It will make no sound, as a result. 
 Then, the wavetype must also be specified:
 
-	wavetype of instrument = [depth],[mult]
+	wavetype of instrument is [depth] [mult]
 
 Depth is how many bits deep the wave data is per sample, and mult is actually
 a division used to specify the sample rate. A value of 1 represents 44.1KHz,
@@ -170,7 +170,7 @@ it will not be catastrophic. An undefined instrument starts with:
 	pich macro of 0 (no bend)
 	duty of 128 (50% duty)
 	wavedata of value 0 (nothing)
-	wavetype of 16,1 (16-bit, 44KHz)
+	wavetype of 16 1 (16-bit, 44KHz)
 
 This means an uninitialized instrument won't break everything. If an instrument
 fails to load properly, it will leave that instrument alone. That means if your

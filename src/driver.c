@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <poly.h> 
+#include <string.h>
 
 
 void msf_init_special(int speed, int num_frames, int num_channels, int num_phrases, int phrase_length, int num_instruments, msf_driver *driver)
@@ -13,6 +14,8 @@ void msf_init_special(int speed, int num_frames, int num_channels, int num_phras
 	driver->num_phrases = num_phrases;
 	driver->phrase_length = phrase_length;
 	driver->num_instruments = num_instruments;
+	driver->name = NULL;
+	driver->author = NULL;
 
 // Reset state variables
 	driver->frame_cnt = 0;
@@ -286,5 +289,116 @@ void msf_shutdown(msf_driver *driver)
 		free(driver->amp_r);
 		free(driver->freq);
 		free(driver->duty);
+		if (driver->name != NULL)
+		{
+			free(driver->name);
+		}
+		if (driver->author != NULL)
+		{
+			free(driver->author);
+		}
 	}
+}
+
+#define MSF_MAX_LINELENGTH 65536
+
+// Returns a dynamic array of the values from the delimited list
+int *msf_get_line_values(const char *line)
+{
+	printf("uh\n");
+	return malloc(sizeof(int));
+}
+
+// Returns the rest of line if line starts with word. If not,
+// it returns null.
+char *msf_get_entry(const char *word, const char *l)
+{
+	// Find length of the word
+	int wordlen = 0;
+	
+	char *line = (char*)malloc(sizeof(char) * MSF_MAX_LINELENGTH);
+	strncpy(line,l,MSF_MAX_LINELENGTH);
+	
+	for (int i = 0; i < MSF_MAX_LINELENGTH; i++)
+	{
+		if (word[i] == '\0' || word[i] == '\n')
+		{
+			wordlen = i;
+			break;
+		}
+	}
+	
+	// Strip linebreak into a harmless space
+	for (int i = 0; i < MSF_MAX_LINELENGTH; i++)
+	{
+		if (line[i] == '\n')
+		{
+			line[i] = '\0';
+		}
+		if (line[i] == '\0')
+		{
+			break;
+		}
+	}
+	for (int i = 0; i < wordlen; i++)
+	{
+		if ((word[i] | 0x20) != (line[i] | 0x20))
+		{
+			free(line);
+			return NULL;
+		}
+	}
+	
+	char *ret = (char*)malloc(sizeof(char) * MSF_MAX_LINELENGTH);
+	strncpy(ret,&line[wordlen+1],MSF_MAX_LINELENGTH-wordlen);
+	free(line);
+	return ret;
+}
+
+void msf_handle_line(msf_driver *driver, char *line)
+{
+	char *check = msf_get_entry("name is",line);
+	if (check != NULL) { driver->name = check; }
+	
+	check = msf_get_entry("author is",line);
+	if (check != NULL)
+	{
+		driver->author = check;
+	}
+}
+
+int msf_load_file(msf_driver *driver, const char *fname)
+{
+	// TODO: make this section a lot better
+	if (!driver->init)
+	{
+		printf("MSF driver was not properly initialized. Aborting.\n");
+		return -1;
+	}
+	
+	FILE *file = fopen(fname, "r");
+	if (file == NULL)
+	{
+		printf("Failed to load MSF file. Aborting.\n");
+		return -1;
+	}
+	
+	int line_number = 0;
+	
+	// Allocate for one line, ready to realloc if needed
+	int buffer_size = MSF_MAX_LINELENGTH;
+	char *line = (char*)malloc(MSF_MAX_LINELENGTH* sizeof(char*));
+	
+	// Handle each line, taking data from it as is appropriate
+	while (fgets(line, MSF_MAX_LINELENGTH, file))
+	{
+		msf_handle_line(driver,line);
+		line_number++;
+	}
+	printf("Name: %s\n",driver->name);
+	printf("By: %s\n",driver->author);
+	fclose(file);
+	free(line);
+	return 0;
+	
 }

@@ -25,7 +25,7 @@ lpoly
 #define MSF_DEFAULT_SPEED 6
 #define MSF_NUM_FRAMES 256
 #define MSF_NUM_CHANNELS 8 // AKA frame width
-#define MSF_NUM_PHRASES 512
+#define MSF_NUM_PHRASES 256
 #define MSF_PHRASE_LENGTH 64 // .mod much?
 #define MSF_NUM_INSTRUMENTS 256
 #define MSF_TUNE_DIV 1.00
@@ -58,6 +58,8 @@ struct msf_driver
 	int track_length;
 	int speed; // How many steps per frame
 	int phrase_length;
+	char *name;
+	char *author;
 
 	// Instrument macros (not to be allocated), one per channel
 	msf_ll **arp;
@@ -67,7 +69,9 @@ struct msf_driver
 };
 
 // For those who aren't satisfied with my defaults
-void msf_init_special(int speed, int num_frames, int num_channels, int num_phrases, int phrase_length, int num_instruments, msf_driver *driver);
+void msf_init_special(int speed, int num_frames, int num_channels, 
+					  int num_phrases, int phrase_length, int num_instruments, 
+					  msf_driver *driver);
 void msf_init(msf_driver *driver);
 void msf_spill(msf_driver *driver); // Print where we are in the track
 int msf_drv_proc(msf_driver *driver);
@@ -75,6 +79,10 @@ void msf_drv_inc_ll(msf_driver *driver, int i); // Step through the LLs
 void msf_step(msf_driver *driver); // Actually runs the music
 void msf_shutdown(msf_driver *driver); // No leaks!
 
-//frames = malloc(sizeof(msf_frame *) * number);
+
+void msf_handle_line(msf_driver *driver, char *line);
+int *msf_get_line_values(const char *line);
+char *msf_get_entry(const char *word, const char *l);
+int msf_load_file(msf_driver *driver, const char *fname); // Load from MSF file
 
 #endif

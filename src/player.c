@@ -812,14 +812,6 @@ add(9,54,1);
 	add(9,0,0);
 	add(9,0,0);
 	add(9,0,0);
-
-
-
-
-
-
-
-
 */
 
 
@@ -832,6 +824,8 @@ int main(int argc, char *argv[])
 	msf_init(&driver);
 	build_tetris(&driver);	
 	int idx = 0;
+	
+	msf_load_file(&driver,"/home/moffitt/test.msf");
 
 	printf("Setting phrases.\n");
 	driver.frames[0]->phrase[0] = 2;
