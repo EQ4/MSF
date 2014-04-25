@@ -400,6 +400,8 @@ int msf_handle_line(msf_driver *driver, char *line)
 		return 1;
 	}
 	
+	
+	// ACtual frame entry, time to do a little work
 	check = msf_get_entry("frame ",line);
 	if (check != NULL)
 	{
@@ -409,33 +411,25 @@ int msf_handle_line(msf_driver *driver, char *line)
 		char *token = strtok(check," "); // Get the number
 		int framenum = atoi(token);
 		token = strtok(NULL," "); // skip the "is"
+		int channel = 0;
 		token = strtok(NULL," "); // Start capturing numbers
-		while (token != NULL)
+		while (token != NULL && channel < driver->num_channels)
 		{
-			printf("%s ",token);
+			unsigned long value = strtoul(token,NULL,0);
+			printf("Got %lu...\n",value);
+			printf(" Phrase: %i\n",(unsigned char)((value >> 16) & 0xFF));
+			printf(" Transpose: %i\n",(unsigned char)((value >> 8) & 0xFF) - 128);
+			printf(" Tune: %i\n",(unsigned char)((value) & 0xFF) - 128);
+		//	driver->frames[framenum]->phrase[channel]
+			printf("\n ");
 			token = strtok(NULL," ");
+			channel++;
 		}
 		printf("\n\n");
 		
 		
 		
 		free(check);
-		//int num = atoi(numstr);
-		//numstr = strtok(check," "); // Skip the is 
-		
-		/*
-		 * int channel = 0;
-		numstr = strtok(check," ");
-		while (numstr != NULL && channel < driver->num_channels)
-		{
-			//int value = atoi(numstr);
-			printf(numstr);
-			numstr = strtok(check," ");
-			channel++;
-		}
-		printf(".\n");
-		
-		*/
 	}
 	
 	if (check == NULL)
