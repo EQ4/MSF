@@ -350,21 +350,99 @@ char *msf_get_entry(const char *word, const char *l)
 	}
 	
 	char *ret = (char*)malloc(sizeof(char) * MSF_MAX_LINELENGTH);
-	strncpy(ret,&line[wordlen+1],MSF_MAX_LINELENGTH-wordlen);
+	strncpy(ret,&line[wordlen],MSF_MAX_LINELENGTH-wordlen);
 	free(line);
 	return ret;
 }
 
-void msf_handle_line(msf_driver *driver, char *line)
+int msf_handle_line(msf_driver *driver, char *line)
 {
-	char *check = msf_get_entry("name is",line);
-	if (check != NULL) { driver->name = check; }
+	char *check;
 	
-	check = msf_get_entry("author is",line);
+	check = msf_get_entry("//",line); // allow comments
+	if (check != NULL) { free(check); return 1; };
+	
+	check = msf_get_entry("name is ",line);
+	if (check != NULL) { driver->name = check; return 1;}
+	
+	check = msf_get_entry("author is ",line);
+	if (check != NULL) { driver->author = check; return 1;}
+	
+	check = msf_get_entry("speed is ",line);
+	if (check != NULL) 
+	{ 
+		driver->speed = atoi(check); 
+		free(check);
+		return 1;
+	}
+	
+	check = msf_get_entry("loopback is ",line);
+	if (check != NULL) 
+	{ 
+		driver->loopback = atoi(check); 
+		free(check);
+		return 1;
+	}
+	
+	check = msf_get_entry("track length is ",line);
+	if (check != NULL) 
+	{ 
+		driver->track_length = atoi(check); 
+		free(check);
+		return 1;
+	}
+	
+	check = msf_get_entry("phrase length is ",line);
+	if (check != NULL) 
+	{ 
+		driver->track_length = atoi(check); 
+		free(check);
+		return 1;
+	}
+	
+	check = msf_get_entry("frame ",line);
 	if (check != NULL)
 	{
-		driver->author = check;
+		// Get the length of the original substring check and duplicate it
+		
+		// Go through it token by token
+		char *token = strtok(check," "); // Get the number
+		int framenum = atoi(token);
+		token = strtok(NULL," "); // skip the "is"
+		token = strtok(NULL," "); // Start capturing numbers
+		while (token != NULL)
+		{
+			printf("%s ",token);
+			token = strtok(NULL," ");
+		}
+		printf("\n\n");
+		
+		
+		
+		free(check);
+		//int num = atoi(numstr);
+		//numstr = strtok(check," "); // Skip the is 
+		
+		/*
+		 * int channel = 0;
+		numstr = strtok(check," ");
+		while (numstr != NULL && channel < driver->num_channels)
+		{
+			//int value = atoi(numstr);
+			printf(numstr);
+			numstr = strtok(check," ");
+			channel++;
+		}
+		printf(".\n");
+		
+		*/
 	}
+	
+	if (check == NULL)
+	{
+		return 0;
+	}
+	return 1;
 }
 
 int msf_load_file(msf_driver *driver, const char *fname)
@@ -383,7 +461,7 @@ int msf_load_file(msf_driver *driver, const char *fname)
 		return -1;
 	}
 	
-	int line_number = 0;
+	int line_number = 1;
 	
 	// Allocate for one line, ready to realloc if needed
 	int buffer_size = MSF_MAX_LINELENGTH;
@@ -392,7 +470,10 @@ int msf_load_file(msf_driver *driver, const char *fname)
 	// Handle each line, taking data from it as is appropriate
 	while (fgets(line, MSF_MAX_LINELENGTH, file))
 	{
-		msf_handle_line(driver,line);
+		if (msf_handle_line(driver,line) == 0)
+		{
+			printf("Ignoring line %i.\n",line_number);
+		}
 		line_number++;
 	}
 	printf("Name: %s\n",driver->name);

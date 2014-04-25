@@ -18,8 +18,8 @@ This section is quite simple. It will contain lines as follows:
 	author is Song writer
 	speed is 6
 	loopback is 0
-	tracklength is 16
-	phraselength is 64
+	track length is 16
+	phrase length is 64
 
 I should note that the max length of a phrase is 64. However, if an artist was
 working in 3/4, a length of 48 may be desired. Phrase length simply lets the 
