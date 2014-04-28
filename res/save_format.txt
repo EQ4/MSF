@@ -67,7 +67,7 @@ without ever filling in frame 1, but that would be silly. Still, it can be
 done this way. Out of order definitions are fine, though I don't see how that
 would really happen unless somebody decided to write out a song by hand. 
 
-To simplify the lodaing of... well, nothing, if transpose evaluates to -128
+To simplify the loading of... well, nothing, if transpose evaluates to -128
 after the shifting and masking, it will be treated as 0, as it was probably
 not intentional. I have doubts anybody wants to transpose down 128 half steps,
 and this way the upper and lower range are equal in magnitude anyway (127 to
@@ -108,6 +108,9 @@ An example to fill in a line would resemble the following:
 Those numbers are 100% fabricated and won't work. They will be generated, and
 to write such a thing by hand would be absurd.
 
+I will entertain the irony that despite the above I've made the very primitive
+tetris.msf test file by hand.
+
  = Instrument list =
 The instrument is by far the most complicated section. This is because of the
 amplitude, arpeggoi, pitch, and duty cycle macros that are used to shape the
@@ -135,6 +138,10 @@ a signed char, representing relative pitch offset in a sub-halftone division.
 Pitch is actually a pitch offset delta, and it will "stack" with the previous
 division. This means that a repeated positive value for pitch will make a note
 continually rise up in an upwards portamento.
+
+Just like before, signed values aren't truly signed. Really I am just writing
+out the value and then subtracting 128. To simplify matters and to balance the
+range values of -128 and 0 are both registered as 0.
 
 Before we get into the complicated bits, three simple values are set:
 

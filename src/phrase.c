@@ -12,6 +12,7 @@ msf_phrase *msf_create_phrase(int len)
 	ret->cmd = malloc(len * sizeof(int));
 	ret->arg = malloc(len * sizeof(int));
 	ret->used = 0;
+	ret->length = len;
 	for (int i = 0; i < len; i++)
 	{
 		ret->inst[i] = -1; // Default to no instrument

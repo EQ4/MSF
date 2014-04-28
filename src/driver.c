@@ -9,7 +9,7 @@
 msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int num_phrases, int phrase_length, int num_instruments)
 {
 	msf_driver *driver = NULL;
-	driver = (msf_driver*)malloc(sizeof(msf_driver));
+	driver = (msf_driver*)malloc(sizeof(*driver));
 	if (driver == NULL)
 	{
 		printf("Malloc was no good! %u was too much.\n",(unsigned int)sizeof(msf_driver));
@@ -34,10 +34,32 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	driver->phrase_cnt = 0;
 	driver->phrase_adv = 0;
 
+	driver->frames = NULL;
+	driver->phrases = NULL;
+	driver->instruments = NULL;
 	driver->frames = malloc(sizeof(msf_frame *) * num_frames);
 	driver->phrases = malloc(sizeof(msf_phrase *) * num_phrases);
 	driver->instruments = malloc(sizeof(msf_instrument *) * num_instruments);
 
+	if (!driver->frames)
+	{
+		printf("Failed to malloc for frames.\n");
+		free(driver);
+		return NULL;
+	}
+	if (!driver->phrases)
+	{
+		printf("Failed to malloc for phrases.\n");
+		free(driver);
+		return NULL;
+	}
+	if (!driver->instruments)
+	{
+		printf("Failed to malloc for instruments.\n");
+		free(driver);
+		return NULL;
+	}
+	
 	// Actually build the structs the above pointer arrays point to
 	for (int i = 0; i < num_frames; i++)
 	{
@@ -85,7 +107,6 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	printf("Giving back 0x%u.\n",(unsigned int)driver);
 	return driver;
 }
-
 // Simple shortcut init with some usable (but maybe too large) defaults
 msf_driver *msf_init()
 {
@@ -103,6 +124,7 @@ void msf_drv_inc_ll(msf_driver *driver, int i)
 {
 	// Advance the macro LLs
 	if (driver->arp[i] != NULL && driver->arp[i]->next != NULL)
+// Ignore some malformed data
 	{
 		driver->arp[i] = driver->arp[i]->next;	
 	}
@@ -171,14 +193,14 @@ void msf_step(msf_driver *driver)
 		// Instrument for the current phrase at the current time
 		msf_instrument *instrument = driver->instruments[phrase->inst[driver->phrase_cnt]];
 		
-		if (phrase->note[driver->phrase_cnt] == -1) // Note kill
+		if (phrase->note[driver->phrase_cnt] == -1 || phrase->note[driver->phrase_cnt] == 0xFF) // Note kill
 		{
 			poly_set_amplitude(i,0);
 			driver->amp_l[i] = 0;
 			driver->amp_r[i] = 0;
 			driver->note[i] = -1;
 		}
-		if (new_step && phrase->note[driver->phrase_cnt] != 0 && phrase->inst[driver->phrase_cnt] != -1) // If there is a note to set
+		if (new_step && phrase->note[driver->phrase_cnt] > 0 && phrase->note[driver->phrase_cnt] < 0xFF && phrase->inst[driver->phrase_cnt] != -1) // If there is a note to set
 		{
 			// Set the note
 			// Reset our macro traversal
@@ -384,191 +406,208 @@ unsigned long msf_handle_line(msf_driver *driver, char *line)
 	
 
 	// Check if it's a frame definition
-	check = msf_get_entry("frame ",line);
-	if (check != NULL)
+
+	check = msf_get_entry("//",line); // allow comments
+	if (check != NULL) 
 	{
-		if (driver->init != 1)
-		{
-			printf("Premature frame entry");
-			free(check);
-			return 2;
-		}
-		// Get the length of the original substring check and duplicate it
-		
-		// Go through it token by token with multiple delimiters in case
-		// some mega marny thought it was a good idea to use underscores
-		// or somethinb dumb like that
-		char *token = strtok(check," ,_"); 
-		int framenum = atoi(token);
-		token = strtok(NULL," ,_"); // skip the "is"
-		if (token == NULL)
-		{
-			free (check);
-			return 0;
-		}
-		int channel = 0;
-		token = strtok(NULL," ,_"); // Start capturing numbers
-		while (token != NULL && channel < driver->num_channels)
-		{
-			unsigned long value = strtoul(token,NULL,0);
-			int tune = ((unsigned char)((value >> 16) & 0xFF) - 128);
-			int transpose = ((unsigned char)((value >> 8) & 0xFF) - 128);
-
-			driver->frames[framenum]->phrase[channel] = (unsigned char)(value & 0xFF);
-			driver->frames[framenum]->transpose[channel] = (transpose == -128)?(0):((int)transpose);
-			driver->frames[framenum]->tune[channel] = (tune == -128)?(0):((int)tune);
-
-			token = strtok(NULL," ");
-			channel++;
-		}
-		if (channel == driver->num_channels && token != NULL)
-		{
-			printf("Warning: The song will work, but there is superfluous frame data");
-			free(check);
-			return 2;
-		}
-		free(check);
-		return 1;
+		printf("[comment]\n");
+		free(check); 
+		return 1; 
 	}
 
-	// Define a phrase - the most complicated!
-	check = msf_get_entry("phrase ",line);
-	if (check != NULL)
+	if (driver != NULL && driver->init == 1)
 	{
-		if (driver->init != 1)
-		{
-			printf("Premature phrase entry");
-			free(check);
-			return 2;
-		}
-		char *token = strtok(check," ,_");
-		int phrasenum = atoi(token);
-		token = strtok(NULL," ,_"); // skip the "is"
-		if (token == NULL)
-		{
-			free(check);
-			return 0;
-		}
-		msf_phrase *phraseptr = driver->phrases[phrasenum];
-		int stepnum = 0;
-		token = strtok(NULL," ,_");
-		while (token != NULL && stepnum < phraseptr->length)
-		{
-			unsigned long value = strtoul(token,NULL,0);
-			int arg = ((unsigned char)((value >> 24) & 0xFF));
-			int cmd = ((unsigned char)((value >> 16) & 0xFF));
-			int inst = ((unsigned char)((value >> 8) & 0xFF));
-			int note = ((unsigned char)((value) & 0xFF));
-
-			phraseptr->note[stepnum] = (unsigned char)(value & 0xFF);
-			phraseptr->inst[stepnum] = inst;
-			phraseptr->cmd[stepnum] = cmd;
-			phraseptr->arg[stepnum] = arg;
-			stepnum++;
-		}
-		if (phraseptr->used != 0)
-		{
-			if (token != NULL && stepnum == phraseptr->length)
+		// Metadata -- DON'T FREE CHECK, we are using that for the names!
+		check = msf_get_entry("name is ",line);
+		if (check != NULL)
+		{ 
+			if (driver->name != NULL)
 			{
-				printf("Warning: the song will work, but there is superflous phrase data.\n");
+				printf("Warning: Name redefinition");
+				driver->name = check; 
+				return 2;
 			}
-			printf("Warning: Redefinition of phrase #%i",phrasenum);
-			free(check);
-			return 2;
+			driver->name = check; 
+			printf("-Put name.\n");
+			return 1;
 		}
-
-		phraseptr->used = 1;
-		if (token != NULL && stepnum == phraseptr->length)
+		
+		check = msf_get_entry("author is ",line);
+		if (check != NULL)
 		{
-			printf("Warning: the song will work, but there is superflous phrase data");
+			if (driver->author != NULL)
+			{
+				printf("Warning: Author redefinition");
+				driver->author = check;
+				return 2;
+			}
+			driver->author = check; 
+			printf("-Put author.\n");
+			return 1;
+		}	
+
+		// Frame data
+		check = msf_get_entry("frame ",line);
+		if (check != NULL)
+		{
+			if (driver->init != 1)
+			{
+				printf("Premature frame entry");
+				free(check);
+				return 2;
+			}
+			// Get the length of the original substring check and duplicate it
+			
+			// Go through it token by token with multiple delimiters in case
+			// some mega marny thought it was a good idea to use underscores
+			// or somethinb dumb like that
+			char *token = strtok(check,MSF_DELIMITERS); 
+			int framenum = (int)strtoul(token,NULL,0);
+			token = strtok(NULL,MSF_DELIMITERS); // skip the "is"
+			if (token == NULL)
+			{
+				free (check);
+				return 0;
+			}
+			int channel = 0;
+			token = strtok(NULL,MSF_DELIMITERS); // Start capturing numbers
+			while (token != NULL && channel < driver->num_channels)
+			{
+				unsigned long value = strtoul(token,NULL,0);
+				int tune = ((unsigned char)((value >> 16) & 0xFF) - 128);
+				int transpose = ((unsigned char)((value >> 8) & 0xFF) - 128);
+	
+				driver->frames[framenum]->phrase[channel] = (unsigned char)(value & 0xFF);
+				driver->frames[framenum]->transpose[channel] = (transpose == -128)?(0):((int)transpose);
+				driver->frames[framenum]->tune[channel] = (tune == -128)?(0):((int)tune);
+	
+				token = strtok(NULL,MSF_DELIMITERS);
+				channel++;
+			}
+			printf("-Put frame %i\n",framenum);
+	
 			free(check);
-			return 2;
+			return 1;
 		}
-		free(check);
-		return 1;
+	
+		// Define a phrase - the most complicated!
+		check = msf_get_entry("phrase ",line);
+		if (check != NULL)
+		{
+			if (driver->init != 1)
+			{
+				printf("Premature phrase entry");
+				free(check);
+				return 2;
+			}
+			char *token = strtok(check,MSF_DELIMITERS);
+			int phrasenum = (int)strtoul(token,NULL,0);
+			token = strtok(NULL,MSF_DELIMITERS); // skip the "is"
+			if (token == NULL)
+			{
+				free(check);
+				return 0;
+			}
+			msf_phrase *phraseptr = driver->phrases[phrasenum];
+			int stepnum = 0;
+			token = strtok(NULL,MSF_DELIMITERS);
+			while (token != NULL && stepnum < phraseptr->length)
+			{
+				unsigned long value = strtoul(token,NULL,0);
+				int arg = ((unsigned char)((value >> 24) & 0xFF));
+				int cmd = ((unsigned char)((value >> 16) & 0xFF));
+				int inst = ((unsigned char)((value >> 8) & 0xFF));
+				int note = ((unsigned char)((value) & 0xFF));
+
+			
+
+				phraseptr->note[stepnum] = (unsigned char)(value & 0xFF);
+				phraseptr->inst[stepnum] = inst;
+				phraseptr->cmd[stepnum] = cmd;
+				phraseptr->arg[stepnum] = arg;
+				token = strtok(NULL,MSF_DELIMITERS);
+				stepnum++;
+			}
+			if (phraseptr->used != 0)
+			{
+				printf("Warning: Redefinition of phrase #%i",phrasenum);
+				free(check);
+				return 2;
+			}
+	
+			phraseptr->used = 1;
+			printf("-Put phrase %i\n",phrasenum);
+			free(check);
+			return 1;
+		}
 	}
 
 	// Initialize MSF driver
-	check = msf_get_entry("init ",line);
-	if (check != NULL) 
+	if (driver == NULL || (driver != NULL && driver->init != 1))
 	{
-		int count = 0;
-		char *token = NULL;
-		token = strtok(check," ,_");
-		int speed = 6;
-		int loopback = 0;
-		int num_frames = 32;
-		int num_channels = 8;
-		int num_phrases = 8;
-		int phrase_length = 64;
-		int num_instruments = 16;
-		if (token == NULL)
+		check = msf_get_entry("init ",line);
+		if (check != NULL) 
 		{
-			free(check);
-			return 0;
-		}
-		while (token != NULL && count < 7)
-		{
-			switch (count)
+			int count = 0;
+			char *token = NULL;
+			token = strtok(check,MSF_DELIMITERS);
+			int speed = 6;
+			int loopback = 0;
+			int num_frames = 32;
+			int num_channels = 8;
+			int num_phrases = 8;
+			int phrase_length = 64;
+			int num_instruments = 16;
+			if (token == NULL)
 			{
-				case 0:
-					speed = atoi(token);
-					break;
-				case 1:
-					loopback = atoi(token);
-					break;
-				case 2:
-					num_frames = atoi(token);
-					break;
-				case 3:
-					num_channels = atoi(token);
-					break;
-				case 4:
-					num_phrases = atoi(token);
-					break;
-				case 5:
-					phrase_length = atoi(token);
-					break;
-				case 6:
-					num_instruments = atoi(token);
-					break;
+				free(check);
+				return 0;
 			}
-			token = strtok(NULL," ,_");
-			count++;
-		}
-		printf("Initializing MSF driver with params %i %i %i %i %i %i %i.\n",speed,loopback,num_frames,num_channels,
+			while (token != NULL && count < 7)
+			{
+				switch (count)
+				{
+					case 0:
+						speed = (int)strtoul(token,NULL,0);
+						break;
+					case 1:
+						loopback = (int)strtoul(token,NULL,0);
+						break;
+					case 2:
+						num_frames = (int)strtoul(token,NULL,0);
+						break;
+					case 3:
+						num_channels = (int)strtoul(token,NULL,0);
+						break;
+					case 4:
+						num_phrases = (int)strtoul(token,NULL,0);
+						break;
+					case 5:
+						phrase_length =(int)strtoul(token,NULL,0);
+						break;
+					case 6:
+						num_instruments = (int)strtoul(token,NULL,0);
+						break;
+				}
+				token = strtok(NULL,MSF_DELIMITERS);
+				count++;
+			}
+			printf("-init with %i %i %i %i %i %i %i ...",speed,loopback,num_frames,num_channels,
 				num_phrases,phrase_length,num_instruments);
-
-		driver = msf_init_special(speed,num_frames,num_channels,num_phrases,phrase_length,
-						num_instruments);
-		
-		printf("Got it at 0x%i.\n",(unsigned int)driver);
-		driver->loopback = loopback;
-		if (check != NULL)
-		{
-			free(check);
+	
+			driver = msf_init_special(speed,num_frames,num_channels,num_phrases,phrase_length,
+				num_instruments);
+			
+			printf("Got driver at 0x%i.\n",(unsigned int)driver);
+			driver->loopback = loopback;
+			if (check != NULL)
+			{
+				free(check);
+			}
 		}
 
 		// Hack to preserve the new driver pointer
 		return (unsigned long)driver;
-	}
-
-	check = msf_get_entry("//",line); // allow comments
-	if (check != NULL) { free(check); return 1; };
-
-//	printf("Driver: 0x%u\n",(unsigned int)driver);
-	if (driver != NULL && driver->init == 1)
-	{
-		check = msf_get_entry("name is ",line);
-		if (check != NULL)
-		{ 
-			driver->name = check; return 1;
-		}
-		
-		check = msf_get_entry("author is ",line);
-		if (check != NULL) { driver->author = check; return 1;}
-		
-	
 	}
 	
 	if (check == NULL)
@@ -612,6 +651,7 @@ msf_driver *msf_load_file(const char *fname)
 			driver = (msf_driver*)result;
 		}
 			
+		printf("\n");
 		line_number++;
 	}
 	printf("Name: %s\n",driver->name);
