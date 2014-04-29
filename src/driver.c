@@ -160,7 +160,6 @@ int msf_drv_proc(msf_driver *driver)
 		driver->phrase_cnt++;
 		new_step = 1;
 	}
-	driver->frames[0]->tune[3] = 16;
 	if (driver->phrase_cnt == driver->phrase_length) // End of phrase
 	{	
 		printf("Moving to frame %d, channel 0 has phrase %d.\n",driver->frame_cnt,driver->frames[driver->frame_cnt]->phrase[0]);
@@ -253,7 +252,7 @@ void msf_step(msf_driver *driver)
 		// Apply frequency offset from macro LL
 		if (driver->pitch[i] != NULL)
 		{
-			driver->freq[i] += ((float)driver->pitch[i]->value / MSF_TUNE_DIV);
+			driver->freq[i] += ((float)driver->pitch[i]->value / MSF_PITCH_DIV);
 		}
 		
 		int arp_off = 0;
@@ -264,7 +263,7 @@ void msf_step(msf_driver *driver)
 		
 		// Set the channel frequency
 		// Considering: frequency from (note + arp offset + transpose) + pitch bend sum
-		poly_set_freq(i,msf_get_freq(driver->note[i] + arp_off + driver->frames[driver->frame_cnt]->transpose[i]) + driver->freq[i]);
+		poly_set_freq(i,(driver->frames[driver->frame_cnt]->tune[i] / MSF_TUNE_DIV) + msf_get_freq(driver->note[i] + arp_off + driver->frames[driver->frame_cnt]->transpose[i]) + driver->freq[i]);
 		
 		// Set duty
 		if (driver->duty[i] != NULL)
