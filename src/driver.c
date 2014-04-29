@@ -101,7 +101,7 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	poly_init(16,2,44100,num_channels,NULL);
 	for (int i = 0; i < num_channels; i++)
 	{
-		poly_init_generator(i,square,0.0,440 + (8*i));
+		poly_init_generator(i,poly_square,0.0,440 + (8*i));
 	}
 	poly_start();
 	printf("Giving back 0x%u.\n",(unsigned int)driver);
@@ -223,19 +223,19 @@ void msf_step(msf_driver *driver)
 			switch(instrument->type)
 			{
 			case WAVE_SQUARE:
-				poly_set_wavetype(i,square);
+				poly_set_wavetype(i,poly_square);
 				break;
 			case WAVE_SINE:
-				poly_set_wavetype(i,sine);
+				poly_set_wavetype(i,poly_sine);
 				break;
 			case WAVE_SAW:
-				poly_set_wavetype(i,saw);
+				poly_set_wavetype(i,poly_saw);
 				break;
 			case WAVE_TRIANGLE:
-				poly_set_wavetype(i,triangle);
+				poly_set_wavetype(i,poly_triangle);
 				break;
 			case WAVE_NOISE:
-				poly_set_wavetype(i,noise);
+//				poly_set_wavetype(i,poly_noise);
 				break;
 				// The rest will come once libpoly supports them properly
 			}

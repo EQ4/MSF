@@ -1,5 +1,5 @@
 // Init [speed] [loopback] [num frames] [num channels] [num phrases] [phrase length] [num instruments]
-init 26 0 2 5 16 64 8
+init 11 0 2 5 16 64 8
 name is MSF Tetris Test
 author is Michael J. Moffitt
 // Use some example valid, but oddly formatted data
@@ -26,5 +26,5 @@ arp of instrument 0 is 128
 
 //pitch of instrument 0 is 0 0 0 | 48 190
 pitch of instrument 0 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 123 123 123 133 133 133 133 133 133 123 123 123
-//amp of instrument 0 is 255 240 230 220 210 200
-amp of instrument 0 is 0xAA 0xB0 0xB8 0xBF 0xC0 0xC8 0xD0 0xD8 0xE0 0xE8 0XF0 0xF8 0xFF
+amp of instrument 0 is 255 240 230 220 210 200
+//amp of instrument 0 is 0xAA 0xB0 0xB8 0xBF 0xC0 0xC8 0xD0 0xD8 0xE0 0xE8 0XF0 0xF8 0xFF
