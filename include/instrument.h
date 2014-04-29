@@ -59,6 +59,5 @@ typedef struct
 
 msf_instrument *msf_create_instrument();
 void msf_destroy_instrument(msf_instrument *ptr);
-
 float msf_get_freq(int note);
 #endif

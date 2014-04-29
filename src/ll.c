@@ -2,6 +2,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 void msf_destroy_ll(msf_ll *ptr)
 {
@@ -100,4 +101,64 @@ void msf_print_ll(msf_ll *ptr)
 		ptr = ptr->next;
 	}
 	printf("\n");
+}
+
+msf_ll *msf_parse_ll(char *str, int shift, int ignore)
+{
+	msf_ll *ret = msf_create_ll(0);
+	msf_ll *llptr = ret;
+	msf_ll *loop = NULL;
+	int get_loop = 0;
+	char *token = strtok(str, " ,_\t");
+
+/*
+
+For each value in the str line, add a node to ret with that value.
+If it contains a pipe (|), a loop point is set. This means that the
+address of the next added node should be recorded in the loop pointer.
+
+*/
+
+	if (str != NULL)
+	{
+		llptr->value = (int)strtoul(str,NULL,0);
+	}
+	int count = 0;
+	while (token != NULL)
+	{
+		if (token[0] == '|')
+		{
+			get_loop = 1;	
+		}
+		else
+		{
+			if (count >= ignore)
+			{
+				printf("Adding %lu.\n",strtoul(token,NULL,0));
+				llptr->next = msf_create_ll((int)strtoul(token,NULL,0) + shift);
+				if (llptr->next->value == shift) // deal with odd outliers
+				{
+					llptr->next->value = 0;
+				}
+				if (get_loop == 1)
+				{
+					loop = llptr->next;
+					get_loop = 2;
+					printf("Set loop point in LL\n");
+				}
+				llptr = llptr->next;
+			}
+			count++;
+		}
+		token = strtok(NULL, " ,_\t");
+	}
+	if (get_loop == 2 && loop != NULL)
+	{
+		llptr->next = loop;
+	}
+	else
+	{
+		llptr->next = llptr;
+	}
+	return ret; 
 }

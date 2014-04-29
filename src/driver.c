@@ -390,8 +390,69 @@ char *msf_get_entry(const char *word, const char *l)
 	return ret;
 }
 
+// Choices:
+// 0 duty
+// 1 amp
+// 2 pitch
+// 3 arp
+int msf_set_ll_param(msf_driver *driver, char *check, int choice)
+{
+	char *numcpy = malloc(sizeof(char) * 8); // Copy a fragment of the line to get the size
+	numcpy = strncpy(numcpy,check,7);
+	numcpy[7] = '\0'; // Just in case
+	char *token = strtok(numcpy,MSF_DELIMITERS);
+	int instnum = (int)strtoul(token,NULL,0);
+	free(numcpy);
+	token = NULL;
+	msf_instrument *inst = driver->instruments[instnum];
+	msf_ll *ll = NULL;
+	int offset = 0;
+	switch (choice)
+	{
+		case 0:
+			ll = inst->duty_macro;
+			offset = 0;
+			break;
+		case 1:
+			ll = inst->amp_macro;
+			offset = -128;
+			break;
+		case 2:
+			ll = inst->pitch_macro;
+			offset = -128;
+			break;
+		case 3:
+			ll = inst->arp_macro;
+			offset = -128;
+			break;
+	}
+	if (ll != NULL)
+	{
+		msf_destroy_ll(ll);
+	}
+	
+	ll = msf_parse_ll(check,offset,2);
+	switch (choice)
+	{
+		case 0:
+			inst->duty_macro = ll;
+			break;
+		case 1:
+			inst->amp_macro = ll;
+			break;
+		case 2:
+			inst->pitch_macro = ll;
+			break;
+		case 3:
+			inst->arp_macro = ll;
+			break;
+	}
+	free(check);
+	return 1;
+}
 // This is a complete hack. The returned unsigned long, if greater than 2, is 
 // the address of the driver on the heap.
+
 
 unsigned long msf_handle_line(msf_driver *driver, char *line)
 {
@@ -446,21 +507,82 @@ unsigned long msf_handle_line(msf_driver *driver, char *line)
 			return 1;
 		}	
 
+		check = msf_get_entry("instrument ",line);
+		if (check != NULL)
+		{		
+			char *token = strtok(check,MSF_DELIMITERS);
+			int instnum = (int)strtoul(token,NULL,0);
+			token = strtok(NULL,MSF_DELIMITERS); // skip the "is"
+			if (token == NULL)
+			{
+				free(check);
+				return 0;
+			}
+			token = strtok(NULL,MSF_DELIMITERS);
+			msf_instrument *inst = driver->instruments[instnum];
+			for (int i = 0; i < 3; i++)
+			{
+				if (token == NULL)
+				{
+					break;
+				}
+				switch (i)
+				{
+					case 0:
+						inst->type = (int)strtoul(token,NULL,0);
+						break;
+					case 1:
+						inst->left_amp = (float)strtoul(token,NULL,0) / 255.0;
+						break;
+					case 2:
+						inst->right_amp = (float)strtoul(token,NULL,0) / 255.0;
+						break;
+				}
+
+				token = strtok(NULL,MSF_DELIMITERS);
+			}
+			free(check);
+			return 1;
+		}
+
+		// Parsing instrument parameters
+		check = msf_get_entry("duty of instrument ",line);
+		if (check != NULL)
+		{
+			msf_set_ll_param(driver,check,0);
+		}
+
+		// Parsing instrument parameters
+		check = msf_get_entry("amp of instrument ",line);
+		if (check != NULL)
+		{
+			msf_set_ll_param(driver,check,1);
+		}
+
+			// Parsing instrument parameters
+		check = msf_get_entry("pitch of instrument ",line);
+		if (check != NULL)
+		{
+			msf_set_ll_param(driver,check,2);
+		}
+			// Parsing instrument parameters
+		check = msf_get_entry("arp of instrument ",line);
+		if (check != NULL)
+		{
+			msf_set_ll_param(driver,check,3);
+		}
+
+		
+
 		// Frame data
 		check = msf_get_entry("frame ",line);
 		if (check != NULL)
 		{
-			if (driver->init != 1)
-			{
-				printf("Premature frame entry");
-				free(check);
-				return 2;
-			}
 			// Get the length of the original substring check and duplicate it
 			
 			// Go through it token by token with multiple delimiters in case
 			// some mega marny thought it was a good idea to use underscores
-			// or somethinb dumb like that
+			// or something dumb like that
 			char *token = strtok(check,MSF_DELIMITERS); 
 			int framenum = (int)strtoul(token,NULL,0);
 			token = strtok(NULL,MSF_DELIMITERS); // skip the "is"
@@ -494,12 +616,6 @@ unsigned long msf_handle_line(msf_driver *driver, char *line)
 		check = msf_get_entry("phrase ",line);
 		if (check != NULL)
 		{
-			if (driver->init != 1)
-			{
-				printf("Premature phrase entry");
-				free(check);
-				return 2;
-			}
 			char *token = strtok(check,MSF_DELIMITERS);
 			int phrasenum = (int)strtoul(token,NULL,0);
 			token = strtok(NULL,MSF_DELIMITERS); // skip the "is"
