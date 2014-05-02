@@ -125,9 +125,7 @@ msf_driver *msf_init()
 // Steps through channel [i]'s linked lists
 void msf_drv_inc_ll(msf_driver *driver, int i)
 {
-	// Advance the macro LLs
 	if (driver->arp[i] != NULL && driver->arp[i]->next != NULL)
-// Ignore some malformed data
 	{
 		driver->arp[i] = driver->arp[i]->next;	
 	}
