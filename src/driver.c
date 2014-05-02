@@ -98,11 +98,14 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	driver->note = malloc(sizeof(int *) * num_channels);
 
 	// Initialize libPOLY6 with the parametres from above
+	printf("Initializing libPOLY\n");
 	poly_init(16,2,44100,num_channels,NULL);
+	printf("--Creating generators\n");
 	for (int i = 0; i < num_channels; i++)
 	{
 		poly_init_generator(i,poly_square,0.0,440 + (8*i));
 	}
+	printf("--poly_start()\n");
 	poly_start();
 	printf("Giving back 0x%u.\n",(unsigned int)driver);
 	return driver;
@@ -449,11 +452,76 @@ int msf_set_ll_param(msf_driver *driver, char *check, int choice)
 	free(check);
 	return 1;
 }
-// This is a complete hack. The returned unsigned long, if greater than 2, is 
-// the address of the driver on the heap.
 
+// Builds the driver; once this has happened handle_line is used only
+msf_driver *msf_handle_driver_line(char *line)
+{
+	msf_driver* driver = NULL;
+	// Initialize MSF driver
+	char *check = NULL;
+	check = msf_get_entry("init ",line);
+	if (check != NULL) 
+	{
+		int count = 0;
+		char *token = NULL;
+		token = strtok(check,MSF_DELIMITERS);
+		int speed = 6;
+		int loopback = 0;
+		int num_frames = 32;
+		int num_channels = 8;
+		int num_phrases = 8;
+		int phrase_length = 64;
+		int num_instruments = 16;
+		if (token == NULL)
+		{
+			free(check);
+			return 0;
+		}
+		while (token != NULL && count < 7)
+		{
+			switch (count)
+			{
+				case 0:
+					speed = (int)strtoul(token,NULL,0);
+					break;
+				case 1:
+					loopback = (int)strtoul(token,NULL,0);
+					break;
+				case 2:
+					num_frames = (int)strtoul(token,NULL,0);
+					break;
+				case 3:
+					num_channels = (int)strtoul(token,NULL,0);
+					break;
+				case 4:
+					num_phrases = (int)strtoul(token,NULL,0);
+					break;
+				case 5:
+					phrase_length =(int)strtoul(token,NULL,0);
+					break;
+				case 6:
+					num_instruments = (int)strtoul(token,NULL,0);
+					break;
+			}
+			token = strtok(NULL,MSF_DELIMITERS);
+			count++;
+		}
+		printf("-init with %i %i %i %i %i %i %i ...",speed,loopback,num_frames,num_channels,
+			num_phrases,phrase_length,num_instruments);
+		driver = msf_init_special(speed,num_frames,num_channels,num_phrases,phrase_length,
+			num_instruments);
+		
+		printf("Got driver at 0x%i.\n",(unsigned int)driver);
+		driver->loopback = loopback;
+		if (check != NULL)
+		{
+			free(check);
+		}
+	}
+	return driver;
+}
 
-unsigned long msf_handle_line(msf_driver *driver, char *line)
+unsigned int msf_handle_line(msf_driver *driver, char *line)
 {
 	char *check;
 	/* Check holds the result of seeing if the line begins with a property
@@ -467,12 +535,17 @@ unsigned long msf_handle_line(msf_driver *driver, char *line)
 
 	// Check if it's a frame definition
 
-	check = msf_get_entry("//",line); // allow comments
+	check = msf_get_entry("#",line); // allow comments
 	if (check != NULL) 
 	{
-		printf("[comment]\n");
 		free(check); 
 		return 1; 
+	}
+	check = msf_get_entry("//",line);
+	if (check != NULL)
+	{
+		free(check);
+		return 1;
 	}
 
 	if (driver != NULL && driver->init == 1)
@@ -656,74 +729,6 @@ unsigned long msf_handle_line(msf_driver *driver, char *line)
 			return 1;
 		}
 	}
-
-	// Initialize MSF driver
-	if (driver == NULL || (driver != NULL && driver->init != 1))
-	{
-		check = msf_get_entry("init ",line);
-		if (check != NULL) 
-		{
-			int count = 0;
-			char *token = NULL;
-			token = strtok(check,MSF_DELIMITERS);
-			int speed = 6;
-			int loopback = 0;
-			int num_frames = 32;
-			int num_channels = 8;
-			int num_phrases = 8;
-			int phrase_length = 64;
-			int num_instruments = 16;
-			if (token == NULL)
-			{
-				free(check);
-				return 0;
-			}
-			while (token != NULL && count < 7)
-			{
-				switch (count)
-				{
-					case 0:
-						speed = (int)strtoul(token,NULL,0);
-						break;
-					case 1:
-						loopback = (int)strtoul(token,NULL,0);
-						break;
-					case 2:
-						num_frames = (int)strtoul(token,NULL,0);
-						break;
-					case 3:
-						num_channels = (int)strtoul(token,NULL,0);
-						break;
-					case 4:
-						num_phrases = (int)strtoul(token,NULL,0);
-						break;
-					case 5:
-						phrase_length =(int)strtoul(token,NULL,0);
-						break;
-					case 6:
-						num_instruments = (int)strtoul(token,NULL,0);
-						break;
-				}
-				token = strtok(NULL,MSF_DELIMITERS);
-				count++;
-			}
-			printf("-init with %i %i %i %i %i %i %i ...",speed,loopback,num_frames,num_channels,
-				num_phrases,phrase_length,num_instruments);
-	
-			driver = msf_init_special(speed,num_frames,num_channels,num_phrases,phrase_length,
-				num_instruments);
-			
-			printf("Got driver at 0x%i.\n",(unsigned int)driver);
-			driver->loopback = loopback;
-			if (check != NULL)
-			{
-				free(check);
-			}
-		}
-
-		// Hack to preserve the new driver pointer
-		return (unsigned long)driver;
-	}
 	
 	if (check == NULL)
 	{
@@ -752,18 +757,26 @@ msf_driver *msf_load_file(const char *fname)
 	// Handle each line, taking data from it as is appropriate
 	while (fgets(line, MSF_MAX_LINELENGTH, file))
 	{
-		unsigned long result = msf_handle_line(driver,line);
-		if (result == 0)
+		if (driver == NULL)
 		{
-			printf("Ignoring line %i.\n",line_number);
+			driver = msf_handle_driver_line(line);
 		}
-		else if (result == 2)
+		else
 		{
-			printf(" at line %i.\n",line_number);
-		}
-		else if (result > 8)
-		{
-			driver = (msf_driver*)result;
+			unsigned long result = msf_handle_line(driver,line);
+		
+			if (result == 0)
+			{
+				printf("Ignoring line %i.\n",line_number);
+			}
+			else if (result == 2)
+			{
+				printf(" at line %i.\n",line_number);
+			}
+			else if (result > 8)
+			{
+				driver = (msf_driver*)result;
+			}
 		}
 			
 		printf("\n");

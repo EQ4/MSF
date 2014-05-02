@@ -82,7 +82,8 @@ void msf_step(msf_driver *driver); // Actually runs the music
 void msf_shutdown(msf_driver *driver); // No leaks!
 
 
-unsigned long msf_handle_line(msf_driver *driver, char *line);
+msf_driver *msf_handle_driver_line(char *line);
+unsigned int msf_handle_line(msf_driver *driver, char *line);
 int *msf_get_line_values(const char *line);
 char *msf_get_entry(const char *word, const char *l);
 msf_driver *msf_load_file(const char *fname); // Load from MSF file

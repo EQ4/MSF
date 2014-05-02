@@ -1,0 +1,30 @@
+############ Init [speed] [loopback] [num frames] [num channels] [num phrases] [phrase length] [num instruments]
+init 7 0 8 6 32 32 16
+name is Axel F.
+author is Michael J. Moffitt
+
+############ Frames 0x[null][tune][transpose][phrase]
+frame 0 is 0x00880001 0x00800001 0 0 0 0 
+frame 1 is 0x00880002 0x00800002 0 0 0 0 
+
+############ instrument [num] is [type] [l-amp] [r-amp]
+
+# bass / early lead instrument
+instrument 1 is 0 255 255
+duty of instrument 1 is 204 200 196 192 188 184 180 176 172 168 164 160 156 152 148 144 140 136 132 128
+amp of instrument 1 is  0xFF 0xFB 0xF7 0xF3 0xEF 0xED 0xE9 0xE7 0xE3 0xE1  0xDD 0xDB 0xD9 0xD5 0xD3 0xD1 0xCD 0xCB 0xC9 0xC7 0xC3 0xC1 
+pitch of instrument 1 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 132 132 132 124 124 124 124 124 124 132 132 132
+
+# Maj chord
+instrument 2 is 
+
+############ phrase [num] is 0x[arg][cmd][inst][note]
+# set up phrase 0 to just kill the note for safety
+phrase 0 is 0x000000FF
+
+# Sweet bass line
+phrase 1 is 0x0119 0 0 0 0x0125 0 0 0x0123 _0 0x0123 0x0120 0 0x0123 0 0x0125 0 _0x0119 0 0 0 0x0125 0 0 0 _ 0 0x0120 0 0 0x0123 0 0x0125 
+phrase 2 is 0x0115 0 0 0 0x0121 0 0 0x0123 _0 0x0123 0x0120 0 0x0123 0 0x0125 0 _0x0119 0 0x0125 0 0 0 0 0 _ 0 0x0123 0x0120 0 0x011E 0 0x011C 0
+
+# Early lead
+
