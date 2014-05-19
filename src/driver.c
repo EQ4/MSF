@@ -1,5 +1,6 @@
 #include "../include/driver.h"
 
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <poly.h> 
@@ -40,6 +41,7 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	driver->frames = malloc(sizeof(msf_frame *) * num_frames);
 	driver->phrases = malloc(sizeof(msf_phrase *) * num_phrases);
 	driver->instruments = malloc(sizeof(msf_instrument *) * num_instruments);
+
 
 	if (!driver->frames)
 	{
@@ -82,20 +84,25 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	driver->amp = malloc(num_channels * sizeof(msf_ll *));
 	driver->pitch = malloc(num_channels * sizeof(msf_ll *));
 	driver->duty = malloc(num_channels * sizeof(msf_ll *));
+	driver->note_delay = malloc(sizeof(int *) * num_channels);
+	driver->note_cut = malloc(sizeof(int *) * num_channels);
+	driver->init = 1;
+	driver->loopback = 0;
+
+
+	driver->amp_l = malloc(sizeof(float *) * num_channels);
+	driver->amp_r= malloc(sizeof(float *) * num_channels);
+	driver->freq = malloc(sizeof(float *) * num_channels);
+	driver->note = malloc(sizeof(int *) * num_channels);
 	for (int i = 0; i < num_channels; i++) // Null them out to avoid confusion
 	{
 		driver->arp[i] = NULL;
 		driver->amp[i] = NULL;
 		driver->pitch[i] = NULL;
 		driver->duty[i] = NULL;
+		driver->note_delay[i] = 0;
+		driver->note_cut[i] = 0;
 	}
-	driver->init = 1;
-	driver->loopback = 0;
-
-	driver->amp_l = malloc(sizeof(float *) * num_channels);
-	driver->amp_r= malloc(sizeof(float *) * num_channels);
-	driver->freq = malloc(sizeof(float *) * num_channels);
-	driver->note = malloc(sizeof(int *) * num_channels);
 
 	// Initialize libPOLY6 with the parametres from above
 	printf("Initializing libPOLY\n");
@@ -155,26 +162,80 @@ int msf_drv_proc(msf_driver *driver)
 	{
 		new_step = 1;
 	}
-	if (driver->phrase_adv == driver->speed) // Time to go to next step
+	if (driver->phrase_adv >= driver->speed) // Time to go to next step
 	{
 		driver->phrase_adv = 0;
 		driver->phrase_cnt++;
 		new_step = 1;
 	}
-	if (driver->phrase_cnt == driver->phrase_length) // End of phrase
+	if (driver->phrase_cnt >= driver->phrase_length) // End of phrase
 	{	
-		printf("Moving to frame %d, channel 0 has phrase %d.\n",driver->frame_cnt,driver->frames[driver->frame_cnt]->phrase[0]);
 		driver->frame_cnt++;
 		driver->phrase_cnt = 0;
 		driver->phrase_adv = 0;
+		printf("Moving to frame %d, channel 0 has phrase %d.\n",driver->frame_cnt,driver->frames[driver->frame_cnt]->phrase[0]);
 	}
-	if (driver->frame_cnt == driver->track_length) // End of song
+	if (driver->frame_cnt >= driver->track_length) // End of song
 	{
 		driver->phrase_cnt = 0;
 		driver->phrase_adv = 0;
 		driver->frame_cnt = driver->loopback;
 	}
 	return new_step;
+}
+
+void msf_kill_channel(msf_driver *driver, int chan)
+{
+	if (chan < driver->num_channels)
+	{
+		printf("Killing channel %i\n",chan);
+		poly_set_amplitude(chan,0);
+		driver->amp_l[chan] = 0;
+		driver->amp_r[chan] = 0;
+		driver->note[chan] = -1;
+	}
+}
+
+void msf_trigger_note(msf_driver *driver, int i, msf_instrument *instrument, int note)
+{
+	if (note > 0 && note < 0xFF)
+		{
+		printf("Trigger on channel %i\n",i);
+		driver->arp[i] = instrument->arp_macro;
+		driver->amp[i] = instrument->amp_macro;
+		driver->pitch[i] = instrument->pitch_macro;
+		driver->duty[i] = instrument->duty_macro;
+		driver->note[i] = note;
+		driver->amp_l[i] = instrument->left_amp;
+		driver->amp_r[i] = instrument->right_amp;
+		
+		// Set note with transposition
+		driver->freq[i] = 0; // Zero out the frequency offset from the pitch macro
+		
+		// Set L/R balance
+		poly_set_R_amp(i,driver->amp_r[i]);
+		poly_set_L_amp(i,driver->amp_l[i]);
+		
+		// Set up wave type
+		switch(instrument->type)
+		{
+		case WAVE_SQUARE:
+			poly_set_wavetype(i,poly_square);
+			break;
+		case WAVE_SINE:
+			poly_set_wavetype(i,poly_sine);
+			break;
+		case WAVE_SAW:
+			poly_set_wavetype(i,poly_saw);
+			break;
+		case WAVE_TRIANGLE:
+			poly_set_wavetype(i,poly_triangle);
+			break;
+		case WAVE_NOISE:
+//			poly_set_wavetype(i,poly_noise);
+			break;
+		}
+	}
 }
 
 void msf_step(msf_driver *driver)
@@ -187,6 +248,7 @@ void msf_step(msf_driver *driver)
 		// Pull the phrase number for channel i from the current frame
 		int phrase_num = driver->frames[driver->frame_cnt]->phrase[i];
 		
+		int idx = driver->phrase_cnt;
 		// The phrase itself
 		msf_phrase *phrase = driver->phrases[phrase_num];
 
@@ -195,55 +257,72 @@ void msf_step(msf_driver *driver)
 		
 		if (phrase->note[driver->phrase_cnt] == -1 || phrase->note[driver->phrase_cnt] == 0xFF) // Note kill
 		{
-			poly_set_amplitude(i,0);
-			driver->amp_l[i] = 0;
-			driver->amp_r[i] = 0;
-			driver->note[i] = -1;
+			msf_kill_channel(driver,i);
 		}
-		if (new_step && phrase->note[driver->phrase_cnt] > 0 && phrase->note[driver->phrase_cnt] < 0xFF && phrase->inst[driver->phrase_cnt] != -1) // If there is a note to set
+
+		// New step, check for notes and commands
+		if (new_step)
 		{
-			// Set the note
-			// Reset our macro traversal
-			driver->arp[i] = instrument->arp_macro;
-			driver->amp[i] = instrument->amp_macro;
-			driver->pitch[i] = instrument->pitch_macro;
-			driver->duty[i] = instrument->duty_macro;
-			driver->note[i] = phrase->note[driver->phrase_cnt];
-			driver->amp_l[i] = instrument->left_amp;
-			driver->amp_r[i] = instrument->right_amp;
-			
-			// Set note with transposition
-			driver->freq[i] = 0; // Zero out the frequency offset from the pitch macro
-			driver->note[i] = driver->note[i];
-			
-			// Set L/R balance
-			poly_set_R_amp(i,driver->amp_r[i]);
-			poly_set_L_amp(i,driver->amp_l[i]);
-			
-			// Set up wave type
-			switch(instrument->type)
+			// If there is a delay, don't trigger the note, just set the delay value instead.	
+
+			// TODO: Fix HOP not triggering note of new frame
+			if (phrase->cmd[idx] == MSF_FX_HOP)
 			{
-			case WAVE_SQUARE:
-				poly_set_wavetype(i,poly_square);
-				break;
-			case WAVE_SINE:
-				poly_set_wavetype(i,poly_sine);
-				break;
-			case WAVE_SAW:
-				poly_set_wavetype(i,poly_saw);
-				break;
-			case WAVE_TRIANGLE:
-				poly_set_wavetype(i,poly_triangle);
-				break;
-			case WAVE_NOISE:
-//				poly_set_wavetype(i,poly_noise);
-				break;
-				// The rest will come once libpoly supports them properly
+				if (phrase->arg[idx] < driver->phrase_length)
+				{
+					printf("HOP TO LINE %i\n",phrase->arg[idx]);
+					driver->frame_cnt++;
+					driver->phrase_adv = 0;
+					driver->phrase_cnt = phrase->arg[idx];
+					phrase_num = driver->frames[driver->frame_cnt]->phrase[i];
+					instrument = driver->instruments[phrase->inst[driver->phrase_cnt]];
+					driver->note_delay[i] = 0;
+					phrase = driver->phrases[phrase_num];
+				}
 			}
+
+			if(phrase->cmd[idx] == MSF_FX_KILL)
+			{
+				printf("KILL AT %i STEPS\n",phrase->arg[idx]);
+				if (phrase->arg[idx] == 0)
+				{
+					msf_kill_channel(driver,i);
+				}
+				driver->note_cut[i] = phrase->arg[idx];
+			}
+			if (phrase->cmd[idx] == MSF_FX_DELAY && phrase->arg[idx] > 0)
+			{
+				driver->note_delay[i] = phrase->arg[idx];
+				printf("DELAY FOR %i STEPS\n",phrase->arg[idx]);
+			}
+			else if (driver->note_delay[i] == 0 && phrase->inst[idx] != -1)
+			{
+				msf_trigger_note(driver,i,instrument,phrase->note[idx]);
+			}
+
+
 		}
 		else
 		{
 			msf_drv_inc_ll(driver, i);
+		}
+
+		// Step through note delay
+		if (driver->note_delay[i] > 0)
+		{
+			driver->note_delay[i]--;
+			if (driver->note_delay[i] == 0)
+			{
+				msf_trigger_note(driver,i,driver->instruments[phrase->inst[driver->phrase_cnt]],driver->phrases[phrase_num]->note[driver->phrase_cnt]);
+			}
+		}
+		if (driver->note_cut[i] > 0)
+		{
+			driver->note_cut[i]--;
+			if (driver->note_cut[i] == 0) // note cut just occured
+			{
+				msf_kill_channel(driver,i);
+			}
 		}
 		
 		//  ------------------------------------------------------------------------------
@@ -323,6 +402,8 @@ void msf_shutdown(msf_driver *driver)
 		free(driver->amp_r);
 		free(driver->freq);
 		free(driver->duty);
+		free(driver->note_cut);
+		free(driver->note_delay);
 		if (driver->name != NULL)
 		{
 			free(driver->name);
@@ -784,6 +865,5 @@ msf_driver *msf_load_file(const char *fname)
 	printf("By: %s\n",driver->author);
 	fclose(file);
 	free(line);
-	return driver;
-	
+	return driver;	
 }

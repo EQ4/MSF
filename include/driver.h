@@ -21,6 +21,7 @@ lpoly
 #include "../include/instrument.h"
 #include "../include/ll.h"
 #include "../include/phrase.h"
+#include "../include/effects.h"
 
 #define MSF_DEFAULT_SPEED 6
 #define MSF_NUM_FRAMES 256
@@ -53,6 +54,9 @@ struct msf_driver
 	int phrase_adv; 
 	int phrase_cnt; // How far into the frame we are (which line of the phrases)
 
+	int *note_delay; // [n-channels] wide note delay counter
+	int *note_cut; // [n-channels] wide note cut counter
+
 	// Track data
 	msf_frame **frames; 
 	msf_phrase **phrases;
@@ -81,11 +85,13 @@ void msf_drv_inc_ll(msf_driver *driver, int i); // Step through the LLs
 void msf_step(msf_driver *driver); // Actually runs the music
 void msf_shutdown(msf_driver *driver); // No leaks!
 
-
 msf_driver *msf_handle_driver_line(char *line);
 unsigned int msf_handle_line(msf_driver *driver, char *line);
 int *msf_get_line_values(const char *line);
 char *msf_get_entry(const char *word, const char *l);
 msf_driver *msf_load_file(const char *fname); // Load from MSF file
+
+void msf_trigger_note(msf_driver *driver, int i, msf_instrument *instrument, int note);
+void msf_kill_channel(msf_driver *driver, int chan);
 
 #endif

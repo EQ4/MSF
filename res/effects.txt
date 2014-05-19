@@ -1,0 +1,54 @@
+MSF Effects Listing
+
+MSF has, in bits 31-24 of a line of a phrase, 8 bits that define a command.
+Bits 23-16 act as parameters to the command. Together, these form the command
+column as seen in the editor's pattern view. 
+
+Commands are parsed from column 0 to the maximum numbered column (in channels)
+so if a speed command is issued in column 0 and also in column 2, column 2 will
+take priority.
+
+There are not a lot of commands so far, so here they are in the order in which
+I thought of them. The letter corresponds to the representation of the command.
+In the command byte, the representation of the letter in lower-case is simply
+used. For example, 'a' is 0x61. The command is ORed with 0x60 to remove the
+need for distinction between upper and lower case, though lower case is the
+intended notation.
+
+H: Hop
+Hop aborts the current line of the current phrase, and jumps to the next 
+frame to the line specified in the argument. A command of H00 simply jumps to
+the next frame. This is different than Jump, but can be used similarly.
+An attempt to jump out of range will do nothing.
+
+K: Kill
+Kill silences the channel after [arg] steps. If the song speed is 6 (default),
+K06 is equivelant to putting a note kill in the note column in the next line.
+This is useful as a way of doing steccato notes; a K03 in a 6-speed song will
+be a very short hit, and an amplitude macro won't be needed for a short hit, 
+removing the need for redundant instruments.
+
+D: Delay
+Delay, combined with a note on the same line, will wait [arg] steps until 
+putting the note information into the synth registers. [arg] has an effective
+max of [speed] frames. Any value above will give odd results, as it will 
+delay the triggering of whatever note is at the current line of the phrase.
+In other words, it doesn't keep storage of the note information to be delayed,
+but will simply play what's on the current line after that amount of time. 
+
+Delay does nothing when not paired with note data on the same line.
+
+O: Output
+Lets you set the left and right amplitude coefficients for balancing effects.
+Useful for quickly going between channels without needing to create different
+instrument entries each time.
+
+S: Speed
+Sets the speed (number of steps until line advance) parameter for the song. 
+Applies until the song is started over or another command changes it. 
+
+J: Jump
+This aborts the current phrase, and goes to frame [arg] instead of the next.
+An attempt to jump out of range will do nothing.
+
+

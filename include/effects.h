@@ -1,11 +1,13 @@
 #ifndef EFFECTS_H
 #define EFFECTS_H
 
-// All effects > 60 and < 7B should be OR'd with 0x60 so all letters are
-// treated as uppercase to aid hand-editing
+// All effects should be ORed with 0x60
 
-#define MSF_FX_HOP 0x68
-#define MSX_FX_KILL 0x6B
-
+#define MSF_FX_HOP      0x68				// h
+#define MSF_FX_KILL     0x6B				// k
+#define MSF_FX_DELAY    0x64				// d
+#define MSF_FX_OUTPUT   0x6F				// o
+#define MSF_FX_SPEED    0x73				// s
+#define MSF_FX_JUMP     0x6A				// j
 
 #endif
