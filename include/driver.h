@@ -21,7 +21,6 @@ lpoly
 #include "../include/instrument.h"
 #include "../include/ll.h"
 #include "../include/phrase.h"
-#include "../include/effects.h"
 
 #define MSF_DEFAULT_SPEED 6
 #define MSF_NUM_FRAMES 256
@@ -56,7 +55,8 @@ struct msf_driver
 
 	int *note_delay; // [n-channels] wide note delay counter
 	int *note_cut; // [n-channels] wide note cut counter
-
+	int hop_queue;
+	int jump_queue;
 	// Track data
 	msf_frame **frames; 
 	msf_phrase **phrases;

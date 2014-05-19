@@ -1,5 +1,5 @@
 #include "../include/driver.h"
-
+#include "../include/effects.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -23,6 +23,7 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	driver->speed = speed;
 	driver->num_frames = num_frames;
 	driver->track_length = num_frames;
+	printf("Track length: %i\n",num_frames);
 	driver->num_channels = num_channels;
 	driver->num_phrases = num_phrases;
 	driver->phrase_length = phrase_length;
@@ -35,6 +36,8 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	driver->phrase_cnt = 0;
 	driver->phrase_adv = 0;
 
+	driver->hop_queue = -1;
+	driver->jump_queue = -1;
 	driver->frames = NULL;
 	driver->phrases = NULL;
 	driver->instruments = NULL;
@@ -167,13 +170,29 @@ int msf_drv_proc(msf_driver *driver)
 		driver->phrase_adv = 0;
 		driver->phrase_cnt++;
 		new_step = 1;
+		if (driver->hop_queue != -1)
+		{
+			driver->frame_cnt++;
+			driver->phrase_cnt = driver->hop_queue;
+			driver->phrase_adv = 0;
+			printf("Hopping to frame %d, line %i.\n",driver->frame_cnt,driver->hop_queue);
+			driver->hop_queue = -1;
+		}
+		if (driver->jump_queue != -1)
+		{
+			driver->phrase_cnt = 0;
+			driver->frame_cnt = driver->jump_queue;
+			driver->phrase_adv = 0;
+			driver->jump_queue = -1;
+			printf("Jumping to frame %d.\n",driver->frame_cnt);
+		}
 	}
 	if (driver->phrase_cnt >= driver->phrase_length) // End of phrase
 	{	
 		driver->frame_cnt++;
 		driver->phrase_cnt = 0;
 		driver->phrase_adv = 0;
-		printf("Moving to frame %d, channel 0 has phrase %d.\n",driver->frame_cnt,driver->frames[driver->frame_cnt]->phrase[0]);
+		printf("Moving to frame %d.\n",driver->frame_cnt);
 	}
 	if (driver->frame_cnt >= driver->track_length) // End of song
 	{
@@ -188,7 +207,6 @@ void msf_kill_channel(msf_driver *driver, int chan)
 {
 	if (chan < driver->num_channels)
 	{
-		printf("Killing channel %i\n",chan);
 		poly_set_amplitude(chan,0);
 		driver->amp_l[chan] = 0;
 		driver->amp_r[chan] = 0;
@@ -270,34 +288,44 @@ void msf_step(msf_driver *driver)
 			{
 				if (phrase->arg[idx] < driver->phrase_length)
 				{
-					printf("HOP TO LINE %i\n",phrase->arg[idx]);
-					driver->frame_cnt++;
-					driver->phrase_adv = 0;
-					driver->phrase_cnt = phrase->arg[idx];
-					phrase_num = driver->frames[driver->frame_cnt]->phrase[i];
-					instrument = driver->instruments[phrase->inst[driver->phrase_cnt]];
-					driver->note_delay[i] = 0;
-					phrase = driver->phrases[phrase_num];
+					driver->hop_queue = phrase->arg[idx];
 				}
 			}
-
-			if(phrase->cmd[idx] == MSF_FX_KILL)
+			else if (phrase->cmd[idx] == MSF_FX_JUMP)
 			{
-				printf("KILL AT %i STEPS\n",phrase->arg[idx]);
+				if (phrase->arg[idx] < driver->num_frames)
+				{
+					driver->jump_queue = phrase->arg[idx];
+				}
+			}
+			else if(phrase->cmd[idx] == MSF_FX_KILL)
+			{
 				if (phrase->arg[idx] == 0)
 				{
 					msf_kill_channel(driver,i);
 				}
 				driver->note_cut[i] = phrase->arg[idx];
 			}
-			if (phrase->cmd[idx] == MSF_FX_DELAY && phrase->arg[idx] > 0)
+			else if (phrase->cmd[idx] == MSF_FX_SPEED)
+			{
+				driver->speed = phrase->arg[idx];
+			}
+			else if (phrase->cmd[idx] == MSF_FX_DELAY && phrase->arg[idx] > 0)
 			{
 				driver->note_delay[i] = phrase->arg[idx];
-				printf("DELAY FOR %i STEPS\n",phrase->arg[idx]);
 			}
-			else if (driver->note_delay[i] == 0 && phrase->inst[idx] != -1)
+			if (driver->note_delay[i] == 0 && phrase->inst[idx] != -1)
 			{
 				msf_trigger_note(driver,i,instrument,phrase->note[idx]);
+			}
+			if (phrase->cmd[idx] == MSF_FX_OUTPUT)
+			{
+				printf("Output command\n");
+				driver->amp_l[i] = ((phrase->arg[idx] & 0xF0) >> 4) / 16.0;
+				driver->amp_r[i] = (phrase->arg[idx] & 0x0F) / 16.0;
+				printf("Amplitude: %f\n",driver->amp_l[i]);
+				poly_set_R_amp(i,driver->amp_r[i]);
+				poly_set_L_amp(i,driver->amp_l[i]);
 			}
 
 
