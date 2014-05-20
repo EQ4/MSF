@@ -38,7 +38,6 @@ int main(int argc, char *argv[])
 		usleep(16000);
 		
 		msf_step(driver);
-//		msf_spill(driver);
 	}
 	printf("Killing driver now.\n");
 	msf_shutdown(driver);

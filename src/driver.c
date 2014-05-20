@@ -1,5 +1,7 @@
 #include "../include/driver.h"
 #include "../include/effects.h"
+#include "../include/instrument.h"
+#include "../include/txtcolor.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -158,7 +160,6 @@ void msf_drv_inc_ll(msf_driver *driver, int i)
 int msf_drv_proc(msf_driver *driver)
 {
 	int new_step = 0;
-
 	// Step through the song
 
 	if (driver->phrase_adv == 0 && driver->phrase_cnt == 0)
@@ -192,7 +193,8 @@ int msf_drv_proc(msf_driver *driver)
 		driver->frame_cnt++;
 		driver->phrase_cnt = 0;
 		driver->phrase_adv = 0;
-		printf("Moving to frame %d.\n",driver->frame_cnt);
+		textcolor(COL_BRIGHT,COL_BLUE,COL_BLACK);
+		printf("[ Frame %d ]\n",driver->frame_cnt);
 	}
 	if (driver->frame_cnt >= driver->track_length) // End of song
 	{
@@ -218,7 +220,7 @@ void msf_trigger_note(msf_driver *driver, int i, msf_instrument *instrument, int
 {
 	if (note > 0 && note < 0xFF)
 		{
-		printf("Trigger on channel %i\n",i);
+		//printf("Trigger on channel %i\n",i);
 		driver->arp[i] = instrument->arp_macro;
 		driver->amp[i] = instrument->amp_macro;
 		driver->pitch[i] = instrument->pitch_macro;
@@ -260,6 +262,10 @@ void msf_step(msf_driver *driver)
 {
 	int new_step = msf_drv_proc(driver);
 	
+	if (new_step)
+	{
+		msf_spill(driver);
+	}	
 	// Loop through each channel
 	for (int i = 0; i < driver->num_channels; i++)
 	{
@@ -320,10 +326,10 @@ void msf_step(msf_driver *driver)
 			}
 			if (phrase->cmd[idx] == MSF_FX_OUTPUT)
 			{
-				printf("Output command\n");
+				//printf("Output command\n");
 				driver->amp_l[i] = ((phrase->arg[idx] & 0xF0) >> 4) / 16.0;
 				driver->amp_r[i] = (phrase->arg[idx] & 0x0F) / 16.0;
-				printf("Amplitude: %f\n",driver->amp_l[i]);
+			//	printf("Amplitude: %f\n",driver->amp_l[i]);
 				poly_set_R_amp(i,driver->amp_r[i]);
 				poly_set_L_amp(i,driver->amp_l[i]);
 			}
@@ -372,7 +378,6 @@ void msf_step(msf_driver *driver)
 		// Set the channel frequency
 		// Considering: frequency from (note + arp offset + transpose) + pitch bend sum
 		poly_set_freq(i,(driver->frames[driver->frame_cnt]->tune[i] / MSF_TUNE_DIV) + msf_get_freq(driver->note[i] + arp_off + driver->frames[driver->frame_cnt]->transpose[i]) + driver->freq[i]);
-		
 		// Set duty
 		if (driver->duty[i] != NULL)
 		{
@@ -395,9 +400,144 @@ void msf_step(msf_driver *driver)
 	driver->phrase_adv++;
 }
 
-void msf_spill(msf_driver *driver)
+// Within 10 characters prints the channel state
+void msf_print_channel_state(msf_driver *driver, int chan)
 {
-	printf("%d\t%d\t%d\n",driver->frame_cnt,driver->phrase_cnt,driver->phrase_adv);
+	char *notestr = "  ";
+	char cmd = ' ';
+	int phrase_index = driver->frames[driver->frame_cnt]->phrase[chan];
+	int noteval = driver->phrases[phrase_index]->note[driver->phrase_cnt];
+	noteval += driver->frames[driver->frame_cnt]->transpose[chan];
+	int octave = noteval / 12;
+	int instval = driver->phrases[phrase_index]->inst[driver->phrase_cnt];
+	int argval = driver->phrases[phrase_index]->arg[driver->phrase_cnt];
+	switch (noteval%12)
+	{
+		case NOTE_C:
+			notestr = "C ";
+			break;
+		case NOTE_CS:
+			notestr = "C#";
+			break;
+		case NOTE_D:
+			notestr = "D ";
+			break;
+		case NOTE_DS:
+			notestr = "D#";
+			break;
+		case NOTE_E:
+			notestr = "E ";
+			break;
+		case NOTE_F:
+			notestr = "F ";
+			break;
+		case NOTE_FS:
+			notestr = "F#";
+			break;
+		case NOTE_G:
+			notestr = "G ";
+			break;
+		case NOTE_GS:
+			notestr = "G#";
+			break;
+		case NOTE_A:
+			notestr = "A ";
+			break;
+		case NOTE_AS:
+			notestr = "A#";
+			break;
+		case NOTE_B:
+			notestr = "B ";
+			break;
+	}
+
+	noteval -= driver->frames[driver->frame_cnt]->transpose[chan];
+	if (noteval == 0)
+	{
+		notestr = "  ";
+	}
+	else if (noteval == 255)
+	{
+		notestr = "==";
+	}
+	switch (driver->phrases[phrase_index]->cmd[driver->phrase_cnt])
+	{
+		case MSF_FX_HOP:
+			cmd = 'H';
+			break;
+		case MSF_FX_KILL:
+			cmd = 'K';
+			break;
+		case MSF_FX_DELAY:
+			cmd = 'D';
+			break;
+		case MSF_FX_OUTPUT:
+			cmd = 'O';
+			break;
+		case MSF_FX_SPEED:
+			cmd = 'S';
+			break;
+		case MSF_FX_JUMP:
+			cmd = 'J';
+			break;
+	}
+
+// Print the note
+
+	textcolor(COL_DIM,COL_BLUE,COL_BLACK);
+	printf("|");
+
+	// Note and octave
+	if (noteval > 0 && noteval < 255)
+	{
+		textcolor(COL_BRIGHT,COL_GREEN,COL_BLACK);
+		printf("%s%i",notestr,octave);
+
+	
+	}
+	else if (noteval == 0)
+	{
+		
+		textcolor(COL_DIM,COL_GREEN,COL_BLACK);
+		printf("%s ",notestr);
+	}
+	else if (noteval == 255)
+	{
+		
+		textcolor(COL_DIM,COL_GREEN,COL_BLACK);
+		printf("%s=",notestr);
+	}
+
+	// Instrument
+	textcolor(COL_BRIGHT,COL_YELLOW,COL_BLACK);
+	printf(" %02X ",instval);
+
+	// Command
+	textcolor(COL_BRIGHT,COL_CYAN,COL_BLACK);
+	printf("%c",cmd);
+
+	textcolor(COL_BRIGHT,COL_MAGENTA,COL_BLACK);
+	if (cmd != ' ')
+	{
+		printf("%02X",argval);
+	}
+	else
+	{
+		printf("  ");
+	}
+
+	//
+}
+
+void msf_spill(msf_driver *driver)
+{	
+	for (int i = 0; i < driver->num_channels; i++)
+	{
+		msf_print_channel_state(driver,i);
+	}
+	textcolor(COL_DIM,COL_BLUE,COL_BLACK);
+	printf("|\n");
+
 }
 
 void msf_shutdown(msf_driver *driver)
