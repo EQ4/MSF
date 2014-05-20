@@ -219,7 +219,7 @@ void msf_kill_channel(msf_driver *driver, int chan)
 void msf_trigger_note(msf_driver *driver, int i, msf_instrument *instrument, int note)
 {
 	if (note > 0 && note < 0xFF)
-		{
+	{
 		//printf("Trigger on channel %i\n",i);
 		driver->arp[i] = instrument->arp_macro;
 		driver->amp[i] = instrument->amp_macro;
@@ -333,13 +333,8 @@ void msf_step(msf_driver *driver)
 				poly_set_R_amp(i,driver->amp_r[i]);
 				poly_set_L_amp(i,driver->amp_l[i]);
 			}
-
-
 		}
-		else
-		{
-			msf_drv_inc_ll(driver, i);
-		}
+		msf_drv_inc_ll(driver, i);
 
 		// Step through note delay
 		if (driver->note_delay[i] > 0)
