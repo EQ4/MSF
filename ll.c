@@ -118,7 +118,7 @@ If it contains a pipe (|), a loop point is set. This means that the
 address of the next added node should be recorded in the loop pointer.
 
 */
-
+	int first = 0;
 	if (str != NULL)
 	{
 		llptr->value = (int)strtoul(str,NULL,0);
@@ -135,18 +135,28 @@ address of the next added node should be recorded in the loop pointer.
 			if (count >= ignore)
 			{
 				printf("Adding %lu.\n",strtoul(token,NULL,0));
-				llptr->next = msf_create_ll((int)strtoul(token,NULL,0) + shift);
-				if (llptr->next->value == shift) // deal with odd outliers
+				
+				if (!first)
 				{
-					llptr->next->value = 0;
+					llptr->next = msf_create_ll((int)strtoul(token,NULL,0) + shift);
+					if (llptr->next->value == shift) // deal with odd outliers
+					{
+						llptr->next->value = 0;
+					}
+					if (get_loop == 1)
+					{
+						loop = llptr->next;
+						get_loop = 2;
+						printf("Set loop point in LL\n");
+					}
+					llptr = llptr->next;
 				}
-				if (get_loop == 1)
+				else
 				{
-					loop = llptr->next;
-					get_loop = 2;
-					printf("Set loop point in LL\n");
+					first = 1;
+
+					llptr->value = ((int)strtoul(token,NULL,0) + shift);
 				}
-				llptr = llptr->next;
 			}
 			count++;
 		}

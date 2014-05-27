@@ -1,14 +1,30 @@
-CC = gcc
-CFLAGS = -O0 -g -std=gnu99
-LDFLAGS = -pthreads -lm -lao -lpoly
-SOURCES = src/main.c src/frame.c src/instrument.c src/ll.c src/phrase.c src/player.c
-OBJECTS = $(SOURCES:.c=.o)
-EXECUTABLE = msf
+#CC := clang
+CC := gcc
+CFLAGS := -fvisibility=hidden
+CPPFLAGS := -std=gnu11 -Iinclude
 
-all: $(SOURCES) $(EXECUTABLE)
+#CPPFLAGS := $(CPPFLAGS) -Wall -Wextra
+#CPPFLAGS := $(CPPFLAGS) -Weverything
+CPPFLAGS := $(CPPFLAGS) -w
+
+#CFLAGS := $(CFLAGS) -ggdb
+CFLAGS := $(CFLAGS) -O2
+
+LDFLAGS := -pthread
+LIBRARIES := -lm -lao -lpoly -lncurses
+SOURCES := $(wildcard *.c)
+OBJECTS := $(SOURCES:.c=.o)
+EXECUTABLE := msfplay
+
+.PHONY: all clean
+
+all: $(EXECUTABLE)
+
+clean:
+	$(RM) $(OBJECTS) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(CC) $(LDFLAGS) $(CFLAGS) $(OBJECTS) -o $@ $(LIBRARIES)
 
 .c.o:
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@

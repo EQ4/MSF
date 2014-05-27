@@ -14,13 +14,14 @@ lm
 lpoly
 
 */
+
 #ifndef DRIVER_H
 #define DRIVER_H
 
-#include "../include/frame.h"
-#include "../include/instrument.h"
-#include "../include/ll.h"
-#include "../include/phrase.h"
+#include "frame.h"
+#include "instrument.h"
+#include "ll.h"
+#include "phrase.h"
 
 #define MSF_DEFAULT_SPEED 6
 #define MSF_NUM_FRAMES 256
@@ -78,7 +79,7 @@ struct msf_driver
 // For those who aren't satisfied with my defaults
 msf_driver *msf_init_special(int speed, int num_frames, int num_channels, 
 					  int num_phrases, int phrase_length, int num_instruments);
-msf_driver *msf_init();
+msf_driver *msf_init(void);
 void msf_spill(msf_driver *driver); // Print where we are in the track
 int msf_drv_proc(msf_driver *driver);
 void msf_drv_inc_ll(msf_driver *driver, int i); // Step through the LLs

@@ -1,7 +1,7 @@
-#include "../include/driver.h"
-#include "../include/effects.h"
-#include "../include/instrument.h"
-#include "../include/txtcolor.h"
+#include "driver.h"
+#include "effects.h"
+#include "instrument.h"
+#include "txtcolor.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -261,7 +261,6 @@ void msf_trigger_note(msf_driver *driver, int i, msf_instrument *instrument, int
 void msf_step(msf_driver *driver)
 {
 	int new_step = msf_drv_proc(driver);
-	
 	if (new_step)
 	{
 		msf_spill(driver);
@@ -1028,5 +1027,6 @@ msf_driver *msf_load_file(const char *fname)
 	printf("By: %s\n",driver->author);
 	fclose(file);
 	free(line);
+	printf("Starting.\n");
 	return driver;	
 }
