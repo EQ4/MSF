@@ -13,7 +13,7 @@ This is a simple example "client" to the MSF driver.
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <ncurses.h>
+// #include <ncurses.h>
 
 #include "instrument.h"
 #include "phrase.h"
@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
 	Let's play with ncurses
 */
 	
+/*
 	initscr();
 	start_color();
 	init_pair(1, COLOR_GREEN, COLOR_BLACK);
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
 	refresh();
 	getch();
 	endwin();
-
+*/
 	if (argc == 1)
 	{
 		printf("Usage: msfplay songname.msf\n");

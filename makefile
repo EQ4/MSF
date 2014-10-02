@@ -1,5 +1,5 @@
-#CC := clang
-CC := gcc
+CC := clang
+# CC := gcc # for wingnuts
 CFLAGS := -fvisibility=hidden
 CPPFLAGS := -std=gnu11 -Iinclude
 

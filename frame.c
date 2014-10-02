@@ -1,4 +1,4 @@
-#include "../include/frame.h"
+#include "frame.h"
 
 #include <stdlib.h>
 

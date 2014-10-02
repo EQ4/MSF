@@ -1,4 +1,4 @@
-#include "../include/instrument.h"
+#include "instrument.h"
 
 #include <stdlib.h>
 

@@ -1,4 +1,4 @@
-#include "../include/phrase.h"
+#include "phrase.h"
 #include <stdlib.h>
 
 msf_phrase *msf_create_phrase(int len)
