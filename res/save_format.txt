@@ -113,7 +113,7 @@ tetris.msf test file by hand.
 
  = Instrument list =
 The instrument is by far the most complicated section. This is because of the
-amplitude, arpeggoi, pitch, and duty cycle macros that are used to shape the
+amplitude, arpeggio, pitch, and duty cycle macros that are used to shape the
 instrument's sound over time. Rather than use the ADSR curves one might expect
 from a more modern synthesizer, things like amplitude (and attack, implicitly)
 are defined via macros. A sound that quickly starts and fades out would have
