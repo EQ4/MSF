@@ -8,7 +8,6 @@
 #include <poly.h> 
 #include <string.h>
 
-
 msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int num_phrases, int phrase_length, int num_instruments)
 {
 	msf_driver *driver = NULL;
