@@ -1,7 +1,7 @@
 CC := clang
 # CC := gcc # for wingnuts
 CFLAGS := -fvisibility=hidden
-CPPFLAGS := -std=gnu11 -Iinclude
+CPPFLAGS := -std=gnu11 -Iinc
 
 #CPPFLAGS := $(CPPFLAGS) -Wall -Wextra
 #CPPFLAGS := $(CPPFLAGS) -Weverything
@@ -12,7 +12,7 @@ CFLAGS := $(CFLAGS) -O2
 
 LDFLAGS := -pthread
 LIBRARIES := -lm -lao -lpoly -lncurses
-SOURCES := $(wildcard *.c)
+SOURCES := $(wildcard src/*.c)
 OBJECTS := $(SOURCES:.c=.o)
 EXECUTABLE := msfplay
 
