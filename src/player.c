@@ -52,6 +52,7 @@ int main(int argc, char *argv[])
 	{
 		return -1;
 	}
+	usleep(32000);
 	while(1)
 	{
 		usleep(16000);

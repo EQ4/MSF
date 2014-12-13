@@ -115,6 +115,9 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	for (int i = 0; i < num_channels; i++)
 	{
 		poly_init_generator(i,poly_square,0.0,440 + (8*i));
+		poly_set_noise_size(i,31);
+		poly_set_noise_tap(i,6);
+		poly_seed_noise(i,0x55);
 	}
 
 	// Temporary grindy _-_-____---- square wave for sample test
@@ -271,10 +274,10 @@ void msf_trigger_note(msf_driver *driver, int i, msf_instrument *instrument, int
 			poly_set_wavetype(i,poly_triangle);
 			break;
 		case WAVE_NOISE:
-//			poly_set_wavetype(i,poly_noise);
+			poly_set_wavetype(i,poly_noise);
 			break;
 		case WAVE_ONESAMPLE:
-	//		poly_set_wavetype(i,poly_onesample);
+			poly_set_wavetype(i,poly_onesample);
 			break;
 		case WAVE_LOOPSAMPLE:
 			poly_set_wavetype(i,poly_loopsample);

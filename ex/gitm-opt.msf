@@ -1,0 +1,78 @@
+# Init [speed] [loopback] [num frames] [num channels] [num phrases] [phrase length] [num instruments]
+init 6 0 12 4 32 48 8
+name is Ghost in the Machine - Options
+author is Michael Moffitt
+#          Pu1    Pu2    Tri    Noi
+frame 0 is 0 0 0 0
+frame 1 is 0x8003 0x8004 0x8001 0x8002
+frame 2 is 0x8005 0x8006 0x8009 0x800B
+frame 3 is 0x8007 0x8008 0x8000 0x800B
+frame 4 is 0x8000 0x8000 0x8000 0x800B
+
+
+# INTRO  ---------
+
+# Empty frame
+phrase 0 is 0 0 0 0 0 0 0 0 0 0 0 0 0  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+# Lead frame 1
+phrase 3 is 255 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0x0033
+
+# Lead frame 2
+phrase 4 is 255 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0x012F
+
+# Triangle opening
+phrase 1 is 0 0 0 0 0 0 0 0 0 0 0 0x042A 0x042B 0 0 0x041F 0 0 0x0421 0 0 0x0423 0 0x680000
+
+# Noise opening
+phrase 2 is 0x026B0350 0x026B0350 0x026B0350 0x0370 255 0  0x026B0350 0x026B0350 0x046B0350 0x0370 255 0x0346 0x046B0358 0 0x046B0350 0 0x046B0346 0 0x046B032E 0 0 0x0346 0 0 
+
+# PART A -----------------
+
+# Lead 1
+phrase 5 is 0x0034 0 0x0037 255 0 0x0033 0x0034 0 0x0037 255 0 0x0033 0x0034 255 0 0x003C 255 0 0x0039 0 0 0 0 0x0033 0x0034 0 0x0037 255 0 0x0033 0x034 0 0x0037 255 0 0x0033 0x0034 255 0 0x003C 255 0 0x0039 0 0 0 0 0x0034 
+
+phrase 6 is 0x0130 0 0x0134 255 0 0x012F 0x0130 0 0x0134 255 0 0x012F 0x0130 255 0 0x0137 255 0 0x0134 0 0 0 0 0x012F 0x0130 0 0x0134 255 0 0x012F 0x0130 0 0x0134 255 0 0x012F 0x0130 255 0 0x0135 255 0 0x0136 0 0 0 0 0x0138
+
+# lead 2
+phrase 7 is 0x0139 0 0x0135 0x012D 0 0x012E 0x012F 0 0x0137 255 0 0x0135 0x0134 0 0x012B 0x0128 0 0x0132 0x0131 0 0x0139 255 0 0x0138 0x0139 0 0x0137 0x0135 255 0x0134 0x0132 255 0 0x012F 255 0 0x0130 0 0 0 0 0 0 255 0 0 0 0
+phrase 8 is 0x0035 0 0x0030 0x0029 0 0x002A 0x002B 0 0x002F 255 0 0x0030 0x002F 0 0x0028 0x0024 0 0x002E 0x002D 0 0x0031 255 0 0x0034 0x0035 0 0x0030 0x002D 255 0x002B 0x0029 255 0 0x0026 255 0 0x0028 0 0 0 0 0 0 255 0 0 0 0 
+
+# Bass 1
+phrase 9 is 0x0424 0 0x036B0000 0x0428 0 0x036B0000 0x042B 0 0x036B0000 0x042D 0 0x036B0000  0x0424 0 0x036B0000 0x0428 0 0x036B0000 0x042B 0 0x036B0000 0x042D 0 0x036B0000  0x0424 0 0x036B0000 0x0428 0 0x036B0000 0x042B 0 0x036B0000 0x042D 0x036B0000 0x036B0424
+phrase 10 is 0
+
+phrase 11 is 255
+
+phrase 12 is 0x0350 255 0x0350 255 0x0350 255 0x0350 255 
+
+
+
+
+
+# ------------- Instruments -------------
+
+# Noisy bits
+instrument 3 is 4 224 224  # noise generator
+amp of instrument 3 is 255 240 240 240 220 220 220 200 200 200 180 180 180
+
+# 12.5% lead
+instrument 0 is 0 192 192
+duty of instrument 0 is 32
+pitch of instrument 0 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 120 120 120 136 136 136 136 136 136 120 120 120
+
+# 25% secondary
+instrument 1 is 0 192 192 
+duty of instrument 1 is 64
+pitch of instrument 1 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 120 120 120 136 136 136 136 136 136 120 120 120
+
+# 50% secondary
+instrument 2 is 0 192 192 
+duty of instrument 2 is 128
+pitch of instrument 2 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 120 120 120 136 136 136 136 136 136 120 120 120
+
+# Triangle
+instrument 4 is 2 255 255
+amp of instrument 4 is 255
+arp of instrument 4 is 116
+
