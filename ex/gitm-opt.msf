@@ -1,5 +1,5 @@
 # Init [speed] [loopback] [num frames] [num channels] [num phrases] [phrase length] [num instruments]
-init 6 0 12 4 32 48 8
+init 8 0 12 4 32 48 8
 name is Ghost in the Machine - Options
 author is Michael Moffitt
 #          Pu1    Pu2    Tri    Noi
@@ -61,7 +61,7 @@ amp macro 1 is 255 240 240 240 220 220 220 200 200 200 180 180 180
 instrument 0 is 0 192 192
 duty of instrument 0 is 1
 pitch of instrument 0 is 1
-pitch macro 1 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 120 120 120 136 136 136 136 136 136 120 120 120
+pitch macro 1 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 124 124 124 132 132 132 132 132 132 124 124 124 
 
 # 25% secondary
 instrument 1 is 0 192 192 

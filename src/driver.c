@@ -209,7 +209,7 @@ int msf_drv_proc(msf_driver *driver)
 			driver->frame_cnt++;
 			driver->phrase_cnt = driver->hop_queue;
 			driver->phrase_adv = 0;
-			printf("Hopping to frame %d, line %i.\n",driver->frame_cnt,driver->hop_queue);
+			printf("Hop %02X - %02X\n",driver->frame_cnt,driver->hop_queue);
 			driver->hop_queue = -1;
 		}
 		if (driver->jump_queue != -1)
@@ -218,7 +218,7 @@ int msf_drv_proc(msf_driver *driver)
 			driver->frame_cnt = driver->jump_queue;
 			driver->phrase_adv = 0;
 			driver->jump_queue = -1;
-			printf("Jumping to frame %d.\n",driver->frame_cnt);
+			printf("Jmp %02X\n",driver->frame_cnt);
 		}
 	}
 	if (driver->phrase_cnt >= driver->phrase_length) // End of phrase
@@ -226,8 +226,6 @@ int msf_drv_proc(msf_driver *driver)
 		driver->frame_cnt++;
 		driver->phrase_cnt = 0;
 		driver->phrase_adv = 0;
-		textcolor(COL_BRIGHT,COL_BLUE,COL_BLACK);
-		printf("[ Frame %d ]\n",driver->frame_cnt);
 	}
 	if (driver->frame_cnt >= driver->track_length) // End of song
 	{
@@ -437,6 +435,11 @@ void msf_step(msf_driver *driver)
 // Within 10 characters prints the channel state
 void msf_print_channel_state(msf_driver *driver, int chan)
 {
+	if (driver->phrase_cnt == 0 && driver->phrase_adv == 0 && chan == 0)
+	{
+		textcolor(ATTR_FRAME,COL_FRAME,COL_BLACK);
+		printf("Frame %02X\n",driver->frame_cnt);
+	}
 	char *notestr = "  ";
 	char cmd = ' ';
 	int phrase_index = driver->frames[driver->frame_cnt]->phrase[chan];
@@ -445,6 +448,12 @@ void msf_print_channel_state(msf_driver *driver, int chan)
 	int octave = noteval / 12;
 	int instval = driver->phrases[phrase_index]->inst[driver->phrase_cnt];
 	int argval = driver->phrases[phrase_index]->arg[driver->phrase_cnt];
+	
+	if (chan == 0)
+	{
+		textcolor(ATTR_NUM,COL_NUM,COL_BLACK);
+		printf(" %02X ",driver->phrase_cnt);
+	}
 	switch (noteval%12)
 	{
 		case NOTE_C:
@@ -518,39 +527,45 @@ void msf_print_channel_state(msf_driver *driver, int chan)
 
 // Print the note
 
-	textcolor(COL_DIM,COL_BLUE,COL_BLACK);
+	textcolor(ATTR_DIV,COL_DIV,COL_BLACK);
 	printf("|");
-
 	// Note and octave
 	if (noteval > 0 && noteval < 255)
 	{
-		textcolor(COL_BRIGHT,COL_GREEN,COL_BLACK);
+		textcolor(ATTR_NOTE,COL_NOTE,COL_BLACK);
 		printf("%s%i",notestr,octave);
 
 	
 	}
 	else if (noteval == 0)
-	{
-		
-		textcolor(COL_DIM,COL_GREEN,COL_BLACK);
+	{	
+		textcolor(ATTR_NOTE,COL_NOTE,COL_BLACK);
 		printf("%s ",notestr);
 	}
 	else if (noteval == 255)
 	{
 		
-		textcolor(COL_DIM,COL_GREEN,COL_BLACK);
+		textcolor(ATTR_CUT,COL_CUT,COL_BLACK);
 		printf("%s=",notestr);
 	}
 
 	// Instrument
-	textcolor(COL_BRIGHT,COL_YELLOW,COL_BLACK);
-	printf(" %02X ",instval);
+	if (noteval != 0 && noteval != 255)
+	{
+		textcolor(ATTR_INST,COL_INST,COL_BLACK);
+		printf(" %02X ",instval);
+	}
+	else
+	{
+		textcolor(COL_RESET,COL_WHITE,COL_BLACK);
+		printf("    ");
+	}
 
 	// Command
-	textcolor(COL_BRIGHT,COL_CYAN,COL_BLACK);
+	textcolor(ATTR_CMD,COL_CMD,COL_BLACK);
 	printf("%c",cmd);
 
-	textcolor(COL_BRIGHT,COL_MAGENTA,COL_BLACK);
+	textcolor(ATTR_ARG,COL_ARG,COL_BLACK);
 	if (cmd != ' ')
 	{
 		printf("%02X",argval);
@@ -560,7 +575,15 @@ void msf_print_channel_state(msf_driver *driver, int chan)
 		printf("  ");
 	}
 
-	//
+	if (chan == driver->num_channels - 1)
+	{
+		// Get the line number in there again
+		textcolor(ATTR_DIV,COL_DIV,COL_BLACK);
+		printf("|");
+		textcolor(ATTR_NUM,COL_NUM,COL_BLACK);
+		printf(" %02X",driver->phrase_cnt);
+
+	}
 }
 
 void msf_spill(msf_driver *driver)
@@ -569,8 +592,7 @@ void msf_spill(msf_driver *driver)
 	{
 		msf_print_channel_state(driver,i);
 	}
-	textcolor(COL_DIM,COL_BLUE,COL_BLACK);
-	printf("|\n");
+	printf("\n");
 
 }
 
