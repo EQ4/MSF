@@ -46,14 +46,17 @@ typedef struct
 	int type;
 	float left_amp; // 0.0 - 1.0 left amplitude multiplier
 	float right_amp; // 0.0 - 1.0 right amplitude multiplier
-	int *wave_ptr; // Pointer to sample data
-	int wave_depth; // Depth of the sample
-	int wave_mult; // 44100hz / sample rate (must be 1 for 44.1k, 2 for 22k)
-	int wave_len; // Number of samples in the wave
-	msf_ll *amp_macro; // Absolute amplitude linked list macro
-	msf_ll *arp_macro; // Absolute half-step linked list macro
-	msf_ll *pitch_macro; // Relative pitch linked list macro
-	msf_ll *duty_macro;
+
+	// Indeces for macros and wave num
+	unsigned int wave_num;
+	unsigned int amp_num;
+	unsigned int arp_num;
+	unsigned int pitch_num;
+	unsigned int duty_num;
+//	msf_ll *amp_macro; // Absolute amplitude linked list macro
+//	msf_ll *arp_macro; // Absolute half-step linked list macro
+//	msf_ll *pitch_macro; // Relative pitch linked list macro
+//	msf_ll *duty_macro;
 	
 } msf_instrument;
 

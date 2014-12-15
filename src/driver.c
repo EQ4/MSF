@@ -80,7 +80,6 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	for (int i = 0; i < num_instruments; i++)
 	{
 		driver->instruments[i] = msf_create_instrument();
-		driver->instruments[i]->amp_macro->value = 255; // Default to full blast
 	}
 
 	// Point these to the LL macros (one per channel);
@@ -98,6 +97,19 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	driver->amp_r= malloc(sizeof(float *) * num_channels);
 	driver->freq = malloc(sizeof(float *) * num_channels);
 	driver->note = malloc(sizeof(int *) * num_channels);
+
+	driver->amp_macro = (msf_ll **)malloc(sizeof(msf_ll *) * NUM_MACROS);
+	driver->arp_macro = (msf_ll **)malloc(sizeof(msf_ll *) * NUM_MACROS);
+	driver->pitch_macro = (msf_ll **)malloc(sizeof(msf_ll *) * NUM_MACROS);
+	driver->duty_macro = (msf_ll **)malloc(sizeof(msf_ll *) * NUM_MACROS);
+	for (int i = 0; i < NUM_MACROS; i++)
+	{
+		driver->amp_macro[i] = msf_create_ll(255);
+		driver->arp_macro[i] = msf_create_ll(0);
+		driver->pitch_macro[i] = msf_create_ll(0);
+		driver->duty_macro[i] = msf_create_ll(128);
+	}
+
 	for (int i = 0; i < num_channels; i++) // Null them out to avoid confusion
 	{
 		driver->arp[i] = NULL;
@@ -242,10 +254,10 @@ void msf_trigger_note(msf_driver *driver, int i, msf_instrument *instrument, int
 	if (note > 0 && note < 0xFF)
 	{
 		//printf("Trigger on channel %i\n",i);
-		driver->arp[i] = instrument->arp_macro;
-		driver->amp[i] = instrument->amp_macro;
-		driver->pitch[i] = instrument->pitch_macro;
-		driver->duty[i] = instrument->duty_macro;
+		driver->arp[i] = driver->arp_macro[instrument->arp_num];
+		driver->amp[i] = driver->amp_macro[instrument->amp_num];
+		driver->pitch[i] = driver->pitch_macro[instrument->pitch_num];
+		driver->duty[i] = driver->duty_macro[instrument->duty_num];
 		driver->note[i] = note;
 		driver->amp_l[i] = instrument->left_amp;
 		driver->amp_r[i] = instrument->right_amp;
@@ -337,7 +349,7 @@ void msf_step(msf_driver *driver)
 				{
 					msf_kill_channel(driver,i);
 				}
-				driver->note_cut[i] = phrase->arg[idx];
+				driver->note_cut[i] = phrase->arg[idx] + 1;
 			}
 			else if (phrase->cmd[idx] == MSF_FX_SPEED)
 			{
@@ -594,6 +606,17 @@ void msf_shutdown(msf_driver *driver)
 		free(driver->duty);
 		free(driver->note_cut);
 		free(driver->note_delay);
+		for (int i = 0; i < NUM_MACROS; i++)
+		{
+			msf_destroy_ll(driver->amp_macro[i]);
+			msf_destroy_ll(driver->arp_macro[i]);
+			msf_destroy_ll(driver->pitch_macro[i]);
+			msf_destroy_ll(driver->duty_macro[i]);
+		}
+		free(driver->amp_macro);
+		free(driver->arp_macro);
+		free(driver->pitch_macro);
+		free(driver->duty_macro);
 		if (driver->name != NULL)
 		{
 			free(driver->name);
@@ -671,32 +694,37 @@ int msf_set_ll_param(msf_driver *driver, char *check, int choice)
 	numcpy = strncpy(numcpy,check,7);
 	numcpy[7] = '\0'; // Just in case
 	char *token = strtok(numcpy,MSF_DELIMITERS);
-	int instnum = (int)strtoul(token,NULL,0);
+	int idx = (int)strtoul(token,NULL,0);
 	free(numcpy);
 	token = NULL;
-	msf_instrument *inst = driver->instruments[instnum];
 	msf_ll *ll = NULL;
 	int offset = 0;
+	printf("Setting ");
 	switch (choice)
 	{
-		case 0:
-			ll = inst->duty_macro;
+		case MSF_LL_CHOICE_DUTY:
+			ll = driver->duty_macro[idx];
+			printf("duty ");
 			offset = 0;
 			break;
-		case 1:
-			ll = inst->amp_macro;
+		case MSF_LL_CHOICE_AMP:
+			ll = driver->amp_macro[idx];
+			printf("amp ");
 			offset = -128;
 			break;
-		case 2:
-			ll = inst->pitch_macro;
+		case MSF_LL_CHOICE_PITCH:
+			ll = driver->pitch_macro[idx];
+			printf("pitch ");
 			offset = -128;
 			break;
-		case 3:
-			ll = inst->arp_macro;
+		case MSF_LL_CHOICE_ARP:
+			ll = driver->arp_macro[idx];
+			printf("arp ");
 			offset = -128;
 			break;
 	}
-	if (ll != NULL)
+	printf("macro #%d... ",idx);
+	if (ll != NULL) // Handle a redefinition
 	{
 		msf_destroy_ll(ll);
 	}
@@ -705,19 +733,20 @@ int msf_set_ll_param(msf_driver *driver, char *check, int choice)
 	switch (choice)
 	{
 		case 0:
-			inst->duty_macro = ll;
+			driver->duty_macro[idx] = ll;
 			break;
 		case 1:
-			inst->amp_macro = ll;
+			driver->amp_macro[idx] = ll;
 			break;
 		case 2:
-			inst->pitch_macro = ll;
+			driver->pitch_macro[idx] = ll;
 			break;
 		case 3:
-			inst->arp_macro = ll;
+			driver->arp_macro[idx] = ll;
 			break;
 	}
 	free(check);
+	printf("ok\n");
 	return 1;
 }
 
@@ -885,34 +914,115 @@ unsigned int msf_handle_line(msf_driver *driver, char *line)
 			return 1;
 		}
 
-		// Parsing instrument parameters
-		check = msf_get_entry("duty of instrument ",line);
+		// Define instrument macros - global to all instruments
+		check = msf_get_entry("duty macro ",line);
 		if (check != NULL)
 		{
-			msf_set_ll_param(driver,check,0);
+			msf_set_ll_param(driver,check,MSF_LL_CHOICE_DUTY);
+			return 1;
 		}
 
-		// Parsing instrument parameters
-		check = msf_get_entry("amp of instrument ",line);
+		check = msf_get_entry("amp macro ",line);
 		if (check != NULL)
 		{
-			msf_set_ll_param(driver,check,1);
+			msf_set_ll_param(driver,check,MSF_LL_CHOICE_AMP);
+			return 1;
 		}
 
-			// Parsing instrument parameters
-		check = msf_get_entry("pitch of instrument ",line);
+		check = msf_get_entry("pitch macro ",line);
 		if (check != NULL)
 		{
-			msf_set_ll_param(driver,check,2);
+			msf_set_ll_param(driver,check,MSF_LL_CHOICE_PITCH);
+			return 1;
 		}
-			// Parsing instrument parameters
+		check = msf_get_entry("arp macro ",line);
+		if (check != NULL)
+		{
+			msf_set_ll_param(driver,check,MSF_LL_CHOICE_ARP);		
+			return 1;
+		}
+
+		// Set instrument macro choices
 		check = msf_get_entry("arp of instrument ",line);
 		if (check != NULL)
 		{
-			msf_set_ll_param(driver,check,3);
+			char *token = strtok(check,MSF_DELIMITERS);
+			int instnum = (int)strtoul(token,NULL,0);
+			token = strtok(NULL,MSF_DELIMITERS); // skip the "is"
+			if (token == NULL)
+			{
+				free(check);
+				return 0;
+			}
+			token = strtok(NULL,MSF_DELIMITERS);
+			msf_instrument *inst = driver->instruments[instnum];
+			if (token != NULL)
+			{
+				inst->arp_num = (int)strtoul(token,NULL,0);
+			}
+			free(check);
+			return 1;
 		}
-
-		
+		check = msf_get_entry("amp of instrument ",line);
+		if (check != NULL)
+		{
+			char *token = strtok(check,MSF_DELIMITERS);
+			int instnum = (int)strtoul(token,NULL,0);
+			token = strtok(NULL,MSF_DELIMITERS); // skip the "is"
+			if (token == NULL)
+			{
+				free(check);
+				return 0;
+			}
+			token = strtok(NULL,MSF_DELIMITERS);
+			msf_instrument *inst = driver->instruments[instnum];
+			if (token != NULL)
+			{
+				inst->amp_num = (int)strtoul(token,NULL,0);
+			}
+			free(check);
+			return 1;
+		}
+		check = msf_get_entry("pitch of instrument ",line);
+		if (check != NULL)
+		{
+			char *token = strtok(check,MSF_DELIMITERS);
+			int instnum = (int)strtoul(token,NULL,0);
+			token = strtok(NULL,MSF_DELIMITERS); // skip the "is"
+			if (token == NULL)
+			{
+				free(check);
+				return 0;
+			}
+			token = strtok(NULL,MSF_DELIMITERS);
+			msf_instrument *inst = driver->instruments[instnum];
+			if (token != NULL)
+			{
+				inst->pitch_num = (int)strtoul(token,NULL,0);
+			}
+			free(check);
+			return 1;
+		}
+		check = msf_get_entry("duty of instrument ",line);
+		if (check != NULL)
+		{
+			char *token = strtok(check,MSF_DELIMITERS);
+			int instnum = (int)strtoul(token,NULL,0);
+			token = strtok(NULL,MSF_DELIMITERS); // skip the "is"
+			if (token == NULL)
+			{
+				free(check);
+				return 0;
+			}
+			token = strtok(NULL,MSF_DELIMITERS);
+			msf_instrument *inst = driver->instruments[instnum];
+			if (token != NULL)
+			{
+				inst->duty_num = (int)strtoul(token,NULL,0);
+			}
+			free(check);
+			return 1;
+		}
 
 		// Frame data
 		check = msf_get_entry("frame ",line);

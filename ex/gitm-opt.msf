@@ -3,11 +3,10 @@ init 6 0 12 4 32 48 8
 name is Ghost in the Machine - Options
 author is Michael Moffitt
 #          Pu1    Pu2    Tri    Noi
-frame 0 is 0 0 0 0
-frame 1 is 0x8003 0x8004 0x8001 0x8002
-frame 2 is 0x8005 0x8006 0x8009 0x800B
-frame 3 is 0x8007 0x8008 0x8000 0x800B
-frame 4 is 0x8000 0x8000 0x8000 0x800B
+frame 0 is 0x8003 0x8004 0x8001 0x8002
+frame 1 is 0x8005 0x8006 0x8009 0x800B
+frame 2 is 0x8007 0x8008 0x8000 0x800B
+frame 3 is 0x8000 0x8000 0x8000 0x800B
 
 
 # INTRO  ---------
@@ -42,7 +41,8 @@ phrase 8 is 0x0035 0 0x0030 0x0029 0 0x002A 0x002B 0 0x002F 255 0 0x0030 0x002F 
 phrase 9 is 0x0424 0 0x036B0000 0x0428 0 0x036B0000 0x042B 0 0x036B0000 0x042D 0 0x036B0000  0x0424 0 0x036B0000 0x0428 0 0x036B0000 0x042B 0 0x036B0000 0x042D 0 0x036B0000  0x0424 0 0x036B0000 0x0428 0 0x036B0000 0x042B 0 0x036B0000 0x042D 0x036B0000 0x036B0424
 phrase 10 is 0
 
-phrase 11 is 255
+# Noise in-song
+phrase 11 is 0x026B0320 0 0 0x0370 255 0x016B0340 0x026B0350 0 0 0x0370 255 0x016B0340   0x026B0320 0 0 0x0370 255 0x016B0340 0x026B0350 0 0 0x0370 255 0x016B0340  0x026B0320 0 0 0x0370 255 0x016B0340 0x026B0350 0 0 0x0370 255 0x016B0340  0x026B0320 0 0 0x0370 255 0x016B0340 0x026B0350 0 0 0x0370 255 0x016B0340  
 
 phrase 12 is 0x0350 255 0x0350 255 0x0350 255 0x0350 255 
 
@@ -53,26 +53,32 @@ phrase 12 is 0x0350 255 0x0350 255 0x0350 255 0x0350 255
 # ------------- Instruments -------------
 
 # Noisy bits
-instrument 3 is 4 224 224  # noise generator
-amp of instrument 3 is 255 240 240 240 220 220 220 200 200 200 180 180 180
+instrument 3 is 4 255 255  # noise generator
+amp of instrument 3 is 1
+amp macro 1 is 255 240 240 240 220 220 220 200 200 200 180 180 180
 
 # 12.5% lead
 instrument 0 is 0 192 192
-duty of instrument 0 is 32
-pitch of instrument 0 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 120 120 120 136 136 136 136 136 136 120 120 120
+duty of instrument 0 is 1
+pitch of instrument 0 is 1
+pitch macro 1 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 120 120 120 136 136 136 136 136 136 120 120 120
 
 # 25% secondary
 instrument 1 is 0 192 192 
-duty of instrument 1 is 64
-pitch of instrument 1 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 120 120 120 136 136 136 136 136 136 120 120 120
+pitch of instrument 1 is 1
+duty of instrument 1 is 2
+duty macro 1 is 32
+duty macro 2 is 64
 
+duty macro 3 is 128
 # 50% secondary
 instrument 2 is 0 192 192 
-duty of instrument 2 is 128
-pitch of instrument 2 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 120 120 120 136 136 136 136 136 136 120 120 120
+pitch of instrument 2 is 1
+duty of instrument 2 is 3
 
 # Triangle
 instrument 4 is 2 255 255
-amp of instrument 4 is 255
-arp of instrument 4 is 116
+arp of instrument 4 is 1
+
+arp macro 1 is 116
 

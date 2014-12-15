@@ -32,7 +32,13 @@ lpoly
 #define MSF_TUNE_DIV 32.00
 #define MSF_PITCH_DIV 1.0
 
+#define MSF_LL_CHOICE_DUTY 0
+#define MSF_LL_CHOICE_AMP 1
+#define MSF_LL_CHOICE_PITCH 2
+#define MSF_LL_CHOICE_ARP 3
+
 #define MSF_DELIMITERS " ,_\t"
+#define NUM_MACROS 64
 typedef struct msf_driver msf_driver;
 struct msf_driver
 {
@@ -69,9 +75,15 @@ struct msf_driver
 	char *name;
 	char *author;
 
+	msf_ll **amp_macro;
+	msf_ll **arp_macro;
+	msf_ll **pitch_macro;
+	msf_ll **duty_macro;
+
 	// Instrument macros (not to be allocated), one per channel
-	msf_ll **arp;
+	// These store pointers to the currently active macros in use for each channel
 	msf_ll **amp;
+	msf_ll **arp;
 	msf_ll **duty;
 	msf_ll **pitch;
 };
