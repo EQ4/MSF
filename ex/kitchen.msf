@@ -1,0 +1,36 @@
+# Init [speed] [loopback] [num frames] [num channels] [num phrases] [phrase length] [num instruments]
+init 6 0 4 3 8 32 16
+name is Kitchen Ban Ban
+author is Polysics
+# Use some example valid, but oddly formatted data
+frame 0 is 0x8000 0x8001 0x7402
+frame 1 is 0x8000 0x8001 0x7402
+frame 2 is 0x8003 0x8001 0x7402
+frame 3 is 0x8003 0x8001 0x7402
+
+phrase 0 is 0x2D 0x30 0x2D 0x2B  0x2D 0x30 0x2D 0x2B 0x2D 0x30 0x2D 0x2B 0x2D 0 0 255  0x2D 0x30 0x2D 0x2B 0x2D 0 0x30 0 0x34 0 0 0 255 0 0 0
+
+# bass 
+phrase 1 is 0x012D 0 0x0139 0 0x0130 0 0x013C 0 0x0132 0 0x013E 0 0x012B 0 0x0137 0  0x012D 0 0x0139 0 0x0130 0 0x013C 0 0x0132 0 0x013E 0 0x012B 0 0x0137 0 
+
+# drum
+phrase 2 is 0x0230 255 0x0260 0x0280 0x0250 255 0x0260 0x0280  0x0230 255 0x0260 0x0280 0x0250 255 0x0260 0x0280 0x0230 255 0x0260 0x0280 0x0250 255 0x0260 0x0280  0x0230 255 0x0260 0x0280 0x0250 255 0x0260 0x0280 
+
+# nashi
+phrase 3 is 255 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+# Instrument Stuff
+instrument 0 is 3 180 180
+arp of instrument 0 is 0x98
+amp of instrument 0 is 255 250 245 240 235 230 225 220 215 210 205 200 195 190 185 180 175 175 175 175 175 175 175 180 185 190 195 200 205 210 215 220
+pitch of instrument 0 is 128 128 128 128 128 128 128 128 128 128 128 128 | 130 130 126 126 126 126 130 130
+# "drum" thing
+instrument 2 is 4 128 128
+arp of instrument 2 is 145 141 130 128 114 100
+pitch of instrument 2 is 0
+duty of instrument 2 is 0x80
+amp of instrument 2 is 255 255 224 200 160 80 40 10 0 
+# bass
+instrument 1 is 6 255 255
+arp of instrument 1 is 116
+amp of instrument 1 is 255 240 224 212 204 200
