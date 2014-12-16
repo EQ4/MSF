@@ -134,8 +134,6 @@ address of the next added node should be recorded in the loop pointer.
 		{
 			if (count >= ignore)
 			{
-				printf("Adding %lu.\n",strtoul(token,NULL,0));
-				
 				if (!first)
 				{
 					llptr->next = msf_create_ll((int)strtoul(token,NULL,0) + shift);
@@ -147,7 +145,6 @@ address of the next added node should be recorded in the loop pointer.
 					{
 						loop = llptr->next;
 						get_loop = 2;
-						printf("Set loop point in LL\n");
 					}
 					llptr = llptr->next;
 				}

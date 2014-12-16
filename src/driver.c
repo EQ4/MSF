@@ -24,7 +24,6 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	driver->speed = speed;
 	driver->num_frames = num_frames;
 	driver->track_length = num_frames;
-	printf("Track length: %i\n",num_frames);
 	driver->num_channels = num_channels;
 	driver->num_phrases = num_phrases;
 	driver->phrase_length = phrase_length;
@@ -92,6 +91,8 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 	driver->init = 1;
 	driver->loopback = 0;
 
+	driver->print_notes = 0;
+
 
 	driver->amp_l = malloc(sizeof(float *) * num_channels);
 	driver->amp_r= malloc(sizeof(float *) * num_channels);
@@ -123,13 +124,13 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 			// Initialize libPOLY6 with the parametres from above
 	printf("Initializing libPOLY\n");
 	poly_init(16,2,44100,num_channels,NULL);
-	printf("--Creating generators\n");
 	for (int i = 0; i < num_channels; i++)
 	{
 		poly_init_generator(i,poly_square,0.0,440 + (8*i));
 		poly_set_noise_size(i,31);
 		poly_set_noise_tap(i,6);
-		poly_seed_noise(i,0x55);
+		poly_set_noise_mult(i,2);
+		poly_seed_noise(i,1);
 	}
 
 	// Temporary grindy _-_-____---- square wave for sample test
@@ -150,9 +151,7 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 		poly_set_sample(j,samp);
 	}
 
-	printf("--poly_start()\n");
 	poly_start();
-	printf("Giving back 0x%u.\n",(unsigned int)driver);
 	return driver;
 }
 // Simple shortcut init with some usable (but maybe too large) defaults
@@ -209,7 +208,10 @@ int msf_drv_proc(msf_driver *driver)
 			driver->frame_cnt++;
 			driver->phrase_cnt = driver->hop_queue;
 			driver->phrase_adv = 0;
-			printf("Hop %02X - %02X\n",driver->frame_cnt,driver->hop_queue);
+			if (driver->print_notes)
+			{
+				printf("Hop %02X - %02X\n",driver->frame_cnt,driver->hop_queue);
+			}
 			driver->hop_queue = -1;
 		}
 		if (driver->jump_queue != -1)
@@ -218,7 +220,10 @@ int msf_drv_proc(msf_driver *driver)
 			driver->frame_cnt = driver->jump_queue;
 			driver->phrase_adv = 0;
 			driver->jump_queue = -1;
-			printf("Jmp %02X\n",driver->frame_cnt);
+			if (driver->print_notes)
+			{
+				printf("Jmp %02X\n",driver->frame_cnt);
+			}
 		}
 	}
 	if (driver->phrase_cnt >= driver->phrase_length) // End of phrase
@@ -299,9 +304,9 @@ void msf_trigger_note(msf_driver *driver, int i, msf_instrument *instrument, int
 void msf_step(msf_driver *driver)
 {
 	int new_step = msf_drv_proc(driver);
-	if (new_step)
+	if (new_step && driver->print_notes)
 	{
-		msf_spill(driver);
+//		msf_spill(driver);
 	}	
 	// Loop through each channel
 	for (int i = 0; i < driver->num_channels; i++)
@@ -321,6 +326,24 @@ void msf_step(msf_driver *driver)
 			msf_kill_channel(driver,i);
 		}
 
+
+		// Step through note delay
+		if (driver->note_delay[i] > 0)
+		{
+			driver->note_delay[i]--;
+			if (driver->note_delay[i] == 0)
+			{
+				msf_trigger_note(driver,i,driver->instruments[phrase->inst[driver->phrase_cnt]],driver->phrases[phrase_num]->note[driver->phrase_cnt]);
+			}
+		}
+		if (driver->note_cut[i] > 0)
+		{
+			driver->note_cut[i]--;
+			if (driver->note_cut[i] == 0) // note cut just occured
+			{
+				msf_kill_channel(driver,i);
+			}
+		}
 		// New step, check for notes and commands
 		if (new_step)
 		{
@@ -363,33 +386,13 @@ void msf_step(msf_driver *driver)
 			}
 			if (phrase->cmd[idx] == MSF_FX_OUTPUT)
 			{
-				//printf("Output command\n");
 				driver->amp_l[i] = ((phrase->arg[idx] & 0xF0) >> 4) / 16.0;
 				driver->amp_r[i] = (phrase->arg[idx] & 0x0F) / 16.0;
-			//	printf("Amplitude: %f\n",driver->amp_l[i]);
 				poly_set_R_amp(i,driver->amp_r[i]);
 				poly_set_L_amp(i,driver->amp_l[i]);
 			}
 		}
 		msf_drv_inc_ll(driver, i);
-
-		// Step through note delay
-		if (driver->note_delay[i] > 0)
-		{
-			driver->note_delay[i]--;
-			if (driver->note_delay[i] == 0)
-			{
-				msf_trigger_note(driver,i,driver->instruments[phrase->inst[driver->phrase_cnt]],driver->phrases[phrase_num]->note[driver->phrase_cnt]);
-			}
-		}
-		if (driver->note_cut[i] > 0)
-		{
-			driver->note_cut[i]--;
-			if (driver->note_cut[i] == 0) // note cut just occured
-			{
-				msf_kill_channel(driver,i);
-			}
-		}
 		
 		//  ------------------------------------------------------------------------------
 		// | Commit information loaded from instrument data / runtime data to synthesizer |
@@ -705,11 +708,6 @@ char *msf_get_entry(const char *word, const char *l)
 	return ret;
 }
 
-// Choices:
-// 0 duty
-// 1 amp
-// 2 pitch
-// 3 arp
 int msf_set_ll_param(msf_driver *driver, char *check, int choice)
 {
 	char *numcpy = malloc(sizeof(char) * 8); // Copy a fragment of the line to get the size
@@ -721,31 +719,25 @@ int msf_set_ll_param(msf_driver *driver, char *check, int choice)
 	token = NULL;
 	msf_ll *ll = NULL;
 	int offset = 0;
-	printf("Setting ");
 	switch (choice)
 	{
 		case MSF_LL_CHOICE_DUTY:
 			ll = driver->duty_macro[idx];
-			printf("duty ");
 			offset = 0;
 			break;
 		case MSF_LL_CHOICE_AMP:
 			ll = driver->amp_macro[idx];
-			printf("amp ");
 			offset = -128;
 			break;
 		case MSF_LL_CHOICE_PITCH:
 			ll = driver->pitch_macro[idx];
-			printf("pitch ");
 			offset = -128;
 			break;
 		case MSF_LL_CHOICE_ARP:
 			ll = driver->arp_macro[idx];
-			printf("arp ");
 			offset = -128;
 			break;
 	}
-	printf("macro #%d... ",idx);
 	if (ll != NULL) // Handle a redefinition
 	{
 		msf_destroy_ll(ll);
@@ -768,7 +760,6 @@ int msf_set_ll_param(msf_driver *driver, char *check, int choice)
 			break;
 	}
 	free(check);
-	printf("ok\n");
 	return 1;
 }
 
@@ -880,7 +871,6 @@ unsigned int msf_handle_line(msf_driver *driver, char *line)
 				return 2;
 			}
 			driver->name = check; 
-			printf("-Put name.\n");
 			return 1;
 		}
 		
@@ -894,7 +884,6 @@ unsigned int msf_handle_line(msf_driver *driver, char *line)
 				return 2;
 			}
 			driver->author = check; 
-			printf("-Put author.\n");
 			return 1;
 		}	
 
@@ -1078,8 +1067,6 @@ unsigned int msf_handle_line(msf_driver *driver, char *line)
 				token = strtok(NULL,MSF_DELIMITERS);
 				channel++;
 			}
-			printf("-Put frame %i\n",framenum);
-	
 			free(check);
 			return 1;
 		}
@@ -1124,7 +1111,6 @@ unsigned int msf_handle_line(msf_driver *driver, char *line)
 			}
 	
 			phraseptr->used = 1;
-			printf("-Put phrase %i\n",phrasenum);
 			free(check);
 			return 1;
 		}
@@ -1165,11 +1151,7 @@ msf_driver *msf_load_file(const char *fname)
 		{
 			unsigned long result = msf_handle_line(driver,line);
 		
-			if (result == 0)
-			{
-				printf("Ignoring line %i.\n",line_number);
-			}
-			else if (result == 2)
+			if (result == 2)
 			{
 				printf(" at line %i.\n",line_number);
 			}
@@ -1179,13 +1161,12 @@ msf_driver *msf_load_file(const char *fname)
 			}
 		}
 			
-		printf("\n");
 		line_number++;
 	}
 	printf("Name: %s\n",driver->name);
 	printf("By: %s\n",driver->author);
 	fclose(file);
 	free(line);
-	printf("Starting.\n");
+	printf("Load complete.\n-----------------------\n");
 	return driver;	
 }

@@ -49,6 +49,8 @@ struct msf_driver
 	int num_phrases;
 	int num_instruments;
 
+	int print_notes;
+
 	// Variables for channel state - index of each is which channel
 	float *amp_l; // Current Left amplitude
 	float *amp_r; // Current Right amplitude
