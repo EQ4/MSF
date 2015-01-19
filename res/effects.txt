@@ -10,6 +10,7 @@ take priority.
 
 There are not a lot of commands so far, so here they are in the order in which
 I thought of them. The letter corresponds to the representation of the command.
+# Use some example valid, but oddly formatted data
 In the command byte, the representation of the letter in lower-case is simply
 used. For example, 'a' is 0x61. The command is ORed with 0x60 to remove the
 need for distinction between upper and lower case, though lower case is the
@@ -19,7 +20,8 @@ H: Hop
 Hop aborts the current line of the current phrase, and jumps to the next 
 frame to the line specified in the argument. A command of H00 simply jumps to
 the next frame. This is different than Jump, but can be used similarly.
-An attempt to jump out of range will do nothing.
+An attempt to jump out of range will do nothing. 
+This is like 'D' in Famitracker, but is styled after 'H' from LSDJ.
 
 K: Kill
 Kill silences the channel after [arg] steps. If the song speed is 6 (default),
@@ -27,6 +29,7 @@ K06 is equivelant to putting a note kill in the note column in the next line.
 This is useful as a way of doing steccato notes; a K03 in a 6-speed song will
 be a very short hit, and an amplitude macro won't be needed for a short hit, 
 removing the need for redundant instruments.
+This is like 'S' in FamiTracker.
 
 D: Delay
 Delay, combined with a note on the same line, will wait [arg] steps until 
@@ -37,6 +40,9 @@ In other words, it doesn't keep storage of the note information to be delayed,
 but will simply play what's on the current line after that amount of time. 
 
 Delay does nothing when not paired with note data on the same line.
+
+This can be used for implementing triplets cheaply without custom instruments
+or mucking with the track speed.
 
 O: Output
 Lets you set the left and right amplitude coefficients for balancing effects.

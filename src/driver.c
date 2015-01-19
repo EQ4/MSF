@@ -306,7 +306,7 @@ void msf_step(msf_driver *driver)
 	int new_step = msf_drv_proc(driver);
 	if (new_step && driver->print_notes)
 	{
-//		msf_spill(driver);
+		msf_spill(driver);
 	}	
 	// Loop through each channel
 	for (int i = 0; i < driver->num_channels; i++)
@@ -617,7 +617,6 @@ void msf_shutdown(msf_driver *driver)
 		{
 			msf_destroy_instrument(driver->instruments[i]);
 		}
-		
 		free(driver->frames);
 		free(driver->phrases);
 		free(driver->instruments);
@@ -631,6 +630,7 @@ void msf_shutdown(msf_driver *driver)
 		free(driver->duty);
 		free(driver->note_cut);
 		free(driver->note_delay);
+
 		for (int i = 0; i < NUM_MACROS; i++)
 		{
 			msf_destroy_ll(driver->amp_macro[i]);

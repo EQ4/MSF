@@ -6,62 +6,77 @@
 
 void msf_destroy_ll(msf_ll *ptr)
 {
+	if (ptr == NULL)
+	{
+		return;
+	}
+	// First build a list of addresses we've seen, and check against them 
+	// before freeing anything. This is to handle the ones that loop back
+	// on earlier nodes in a listo.
+	msf_ll *addr_list = msf_create_ll(-1);
+	addr_list->next = NULL;
+	msf_ll *addr_list_base = addr_list; // Store this to go back to later
+	msf_ll *current = ptr;
+	while (current != NULL && current->next != NULL)
+	{
+		// Go through the address list as it is now. If the address of current
+		// is not in the list, add it to the list. Otherwise, we have found a
+		// loop in the list and are finished constructing it.
+		int addr_in_list = 0;
+		addr_list = addr_list_base;
+		while(addr_list->next != NULL && !addr_in_list)
+		{
+			if (addr_list->value == (unsigned int)current)
+			{
+				addr_in_list = 1;
+			}
+			// Travel down the list
+			addr_list = addr_list->next;
+			if (addr_list->next == NULL)
+			{
+				if (addr_list->value == (unsigned int)current)
+				{
+					addr_in_list = 1;
+				}
+			}
+		}
+		if (!addr_in_list)
+		{
+			// The address wasn't found, so we add it.
+			addr_list->next = msf_create_ll((unsigned int)current);
+
+			// Go to the next node and repeat.
+			current = current->next;
+		}
+		else
+		{
+			current = NULL;
+		}
+	}
+
+	// Using the list of addresses, free the pointers as stored in the address 
+	// list then free the list itself.
+	
+	addr_list = addr_list_base->next; // Skip the -1 inserted
 	msf_ll *prev;
-	msf_ll *cur;
-	prev = NULL;
-	cur = ptr;
-
-	msf_ll *addresses; // Addresses we have already seen for end detection
-	addresses = msf_create_ll(-1);
-
-	msf_ll *addresses_base = addresses;
-
-	int finished = 0;
-	while (finished == 0)
+	while (addr_list != NULL)
 	{
-		// Check for the current address in our existing list
-		msf_ll *next_check = addresses_base;
-		while (next_check->next != NULL) // Go through the LL of seen addresses
+		// Free value pointed to by the address list node
+		free((msf_ll*)addr_list->value);
+
+		// Store address to free
+		prev = (msf_ll *)addr_list;
+
+		// Traverse list
+		addr_list = addr_list->next;
+
+		// Free node we hopped off of
+		if (prev)
 		{
-			if (next_check->value == (unsigned int)cur->next) // If we have seen the next node...
-			{
-				finished = 1; // ...we are done.
-				free(cur);
-				break;
-			}
-			else
-			{
-				next_check = next_check->next;
-			}
-		}
-		if (finished == 0)
-		{
-		    prev = cur; // Record our current node
-			if (cur->next == NULL)
-			{
-				finished = 1;
-			}
-			else
-			{
-				cur = cur->next; // Hop to next node
-			}
-			addresses->next = msf_create_ll((unsigned int)prev); // Build the next address node
-			addresses = addresses->next; // Go to it
-			free(prev); // Free the previous
+			free(prev);
 		}
 	}
-	
-	// Now we must free our addresses list
-	addresses = addresses_base;
-	while (addresses->next != NULL)
-	{
-		prev = addresses;
-		addresses = addresses->next;
-		free(prev);
-	}
-	free(addresses);
 }
-	
 
 msf_ll *msf_create_ll(int value)
 {

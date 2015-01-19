@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 	al_register_event_source(event_queue, al_get_audio_stream_event_source(stream));
 	al_register_event_source(event_queue, al_get_display_event_source(display));
 	
-	driver->print_notes = 0;
+	driver->print_notes = 1;
 
 	while(!quit)
 	{
