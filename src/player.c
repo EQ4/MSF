@@ -20,6 +20,7 @@ This is a simple example "client" to the MSF driver.
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_audio.h>
+#include <allegro5/allegro_primitives.h>
 
 ALLEGRO_DISPLAY *display;
 ALLEGRO_EVENT_QUEUE *event_queue;
@@ -54,7 +55,8 @@ int main(int argc, char *argv[])
 	al_init();
 	al_install_audio();
 	al_init_acodec_addon();
-	display = al_create_display(512,384);
+	al_init_primitives_addon();
+	display = al_create_display(640,480);
 	quit = 0;
 	
 	// Set up the audio stream and mixer attachment
@@ -76,6 +78,10 @@ int main(int argc, char *argv[])
 	
 	driver->print_notes = 1;
 
+	int pos = 0;
+
+	int draw_h = 0;
+
 	while(!quit)
 	{
 		ALLEGRO_EVENT event;
@@ -93,6 +99,7 @@ int main(int argc, char *argv[])
 				int16_t *frame = (int16_t *)al_get_audio_stream_fragment(stream);
 				if (!frame == NULL)
 				{
+					draw_h = 0;
 					for (int i = 0; i < SIZE_FRAGMENT; i++)
 					{	
 						song_timer++;
@@ -102,6 +109,14 @@ int main(int argc, char *argv[])
 							msf_step(driver);
 						}
 						poly_next_frame((int16_t *)(frame + (2*i)));
+						if (*frame > 0)
+						{
+							draw_h += *frame;
+						}
+						else
+						{
+							draw_h -= *frame;
+						}
 					}
 					al_set_audio_stream_fragment(stream, (void *)frame);
 				}
@@ -112,7 +127,17 @@ int main(int argc, char *argv[])
 				al_drain_audio_stream(stream);
 			}
 		}
-		al_clear_to_color(al_map_rgb(255,255,255));
+		draw_h = (int)(240.0 * draw_h / (32768.0));
+		draw_h = draw_h / SIZE_FRAGMENT;
+		al_draw_line(pos, 0, pos, 480, al_map_rgb(0,0,0), 1);
+		al_draw_line(pos, 240 - draw_h,
+			pos,240 + draw_h,al_map_rgb(255,255,255),1);
+
+		pos++;
+		if (pos == 640)
+		{
+			pos = 0;
+		}
 		al_flip_display();
 
 	}

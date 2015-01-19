@@ -1,5 +1,5 @@
 # Init [speed] [loopback] [num frames] [num channels] [num phrases] [phrase length] [num instruments]
-init 8 0 4 4 8 64 4
+init 7 0 4 4 8 64 4
 name is Parodius Da! Stage 2 Mid-Boss Theme
 author is Konami
 # Use some example valid, but oddly formatted data

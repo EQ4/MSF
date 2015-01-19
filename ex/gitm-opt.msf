@@ -62,8 +62,10 @@ phrase 12 is 0x0350 255 0x0350 255 0x0350 255 0x0350 255
 # Noisy bits
 instrument 3 is 4 255 255  # noise generator
 amp of instrument 3 is 1
+arp macro 2 is 140
+arp of instrument 3 is 2
 amp macro 1 is 255 240 240 240 220 220 220 200 200 200 180 180 | 180
-pitch macro 2 is | 255
+pitch macro 2 is 128
 pitch of instrument 3 is 2
 
 # 12.5% lead

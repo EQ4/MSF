@@ -321,7 +321,7 @@ void msf_step(msf_driver *driver)
 		// Instrument for the current phrase at the current time
 		msf_instrument *instrument = driver->instruments[phrase->inst[driver->phrase_cnt]];
 		
-		if (phrase->note[driver->phrase_cnt] == -1 || phrase->note[driver->phrase_cnt] == 0xFF) // Note kill
+		if (phrase->note[driver->phrase_cnt] == -1 || phrase->note[driver->phrase_cnt] == 0xFF) // Note ukill
 		{
 			msf_kill_channel(driver,i);
 		}

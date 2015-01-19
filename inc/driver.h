@@ -29,7 +29,7 @@ lpoly
 #define MSF_NUM_PHRASES 256
 #define MSF_PHRASE_LENGTH 64 // .mod much?
 #define MSF_NUM_INSTRUMENTS 256
-#define MSF_TUNE_DIV 32.00
+#define MSF_TUNE_DIV 4.00
 #define MSF_PITCH_DIV 0.5
 
 #define MSF_LL_CHOICE_DUTY 0
