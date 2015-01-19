@@ -28,5 +28,5 @@ arp macro 0 is 128
 
 pitch macro 0 is 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 123 123 123 133 133 133 133 133 133 123 123 123
 # amp of instrument 0 is 255 255 255 170
-amp macro 0 is 180 170 160 150 140
+amp macro 0 is 255 240 230 220 210 200 190 180 170 160 150 140 130 128
 # amp of instrument 0 is 0xAA 0xB0 0xB8 0xBF 0xC0 0xC8 0xD0 0xD8 0xE0 0xE8 0XF0 0xF8 0xFF

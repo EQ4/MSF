@@ -151,7 +151,7 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 		poly_set_sample(j,samp);
 	}
 
-	poly_start();
+	printf("Starting: %d\n",poly_start());
 	return driver;
 }
 // Simple shortcut init with some usable (but maybe too large) defaults
