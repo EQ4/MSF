@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 	al_install_audio();
 	al_init_acodec_addon();
 	al_init_primitives_addon();
-	display = al_create_display(640,480);
+	display = al_create_display(320,240);
 	quit = 0;
 	
 	// Set up the audio stream and mixer attachment
@@ -130,15 +130,15 @@ int main(int argc, char *argv[])
 				al_drain_audio_stream(stream);
 			}
 		}
-		draw_h = (int)(240.0 * draw_h / (32768.0));
+		draw_h = (int)(2 * 120.0 * draw_h / (32768.0));
 		draw_h = draw_h / SIZE_FRAGMENT;
-		al_draw_filled_rectangle(0, 0, 640, 480, al_map_rgba(0,0,0,4));
-		al_draw_line(pos, 0, pos, 480, al_map_rgb(0,0,0), 1);
-		al_draw_line(pos, 240 - draw_h,
-			pos,240 + draw_h,al_map_rgb(255,255,255),1);
+		al_draw_filled_rectangle(0, 0, 320, 240, al_map_rgba(0,0,0,5));
+		al_draw_line(pos, 0, pos, 240, al_map_rgb(0,0,0), 1);
+		al_draw_line(pos, 120 - draw_h,
+			pos,120 + draw_h,al_map_rgb(255,255,255),1);
 
 		pos++;
-		if (pos == 640)
+		if (pos == 320)
 		{
 			pos = 0;
 		}
