@@ -17,6 +17,7 @@ This is a simple example "client" to the MSF driver.
 #include "phrase.h"
 #include "frame.h"
 #include "driver.h"
+#include "txtcolor.h"
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_audio.h>
@@ -90,6 +91,8 @@ int main(int argc, char *argv[])
 			al_get_next_event(event_queue, &event);
 			if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 			{
+				
+				textcolor(COL_RESET,COL_WHITE,COL_BLACK);
 				printf("Exiting\n");
 				quit = 1;
 			}
@@ -129,6 +132,7 @@ int main(int argc, char *argv[])
 		}
 		draw_h = (int)(240.0 * draw_h / (32768.0));
 		draw_h = draw_h / SIZE_FRAGMENT;
+		al_draw_filled_rectangle(0, 0, 640, 480, al_map_rgba(0,0,0,4));
 		al_draw_line(pos, 0, pos, 480, al_map_rgb(0,0,0), 1);
 		al_draw_line(pos, 240 - draw_h,
 			pos,240 + draw_h,al_map_rgb(255,255,255),1);

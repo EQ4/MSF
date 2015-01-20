@@ -29,7 +29,7 @@ lpoly
 #define MSF_NUM_PHRASES 256
 #define MSF_PHRASE_LENGTH 64 // .mod much?
 #define MSF_NUM_INSTRUMENTS 256
-#define MSF_TUNE_DIV 4.00
+#define MSF_TUNE_DIV 64.00
 #define MSF_PITCH_DIV 0.5
 
 #define MSF_LL_CHOICE_DUTY 0
@@ -54,6 +54,8 @@ struct msf_driver
 	// Variables for channel state - index of each is which channel
 	float *amp_l; // Current Left amplitude
 	float *amp_r; // Current Right amplitude
+	float *master_l; // Coefficients for above amplitude for track control
+	float *master_r;
 	float *freq; // Current frequency *offset*
 	int *note; // Note value (frequency comes from this)
 	

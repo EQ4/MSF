@@ -4,18 +4,22 @@ name is Ghost in the Machine Track 3
 author is Michael Moffitt (mikejmoffitt.com)
 
 ############{ Arrangement }##############
-# Since this is adapted from Famitracker, the phrase numbers can't match
-# exactly. The first digit will dictate the channel, the second the phrase
-# number from the original arrangement.
-# Some re-use may be done, but not much.
 
 # 0x[Fine tune][Transpose][Phrase]
-frame 0 is 0x8000 0x8001 0x7402
+frame 0 is 0x8001 0x8002 0x8000 0x8000 0x8003 0x8A8003 0x8004 0x7B04
 
 ###############{ Phrases }###############
 # Just a kill phrase so the empty ones aren't upset
 phrase 0 is 255 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 
+# ----- Intro
+# square 50
+phrase 1 is 0x003D 0x003C 0x0038 0x0033 0x0035 0x0030 0x002C 0x0029 0x0028 0x0023 0x0020 0x0028 0x002A 0x0025 0x0022 0x002A
+phrase 2 is 255 0xAA6F0000 0x003D 0x003C 0x0038 0x0033 0x0035 0x0030 0x002C 0x0029 0x0028 0x0023 0x0020 0x0028 0x002A 0x0025
+# basslines
+phrase 3 is 0x0114 0x066B0120 0x066B0114 0x0111 0 0x066B011D 0x066B0111 0x0110 0 0x011C 0x066B0110 0x066B011C 0x0112 0x011E 0x0112 0x0068011E
+# saw chords
+phrase 4 is 0x042C 0 0 0 0x0429 0 0 0 0x0428 0 0 0 0x042A 0x041E 0 0x042A
 ############{ Pitch Macros }#############
 
 # Light vibrato
@@ -26,18 +30,19 @@ pitch macro 2 is 128 128 128 128 128 128 128 128 128 128 128 | 134 134 134 122 1
 #######{ Instrument Definitions }########
 
 # sq50 vibrato
-instrument 0 is 0 255 255
+instrument 0 is 0 200 200
 arp of instrument 0 is 0
 pitch of instrument 0 is 1
 duty macro 1 is 128
 duty of instrument 0 is 1
-amp macro 1 is 255 255 255 240 240 224 224 224 224 224 224 212 212 212 212 212 200 200 200 200 190 190 190 180 180 180 170 170 170 170 170 170 170 170 170 170 170 170 170 160 160 160 160 160 160 160
+amp macro 1 is 255 255 255 248 248 248 238 238 238 238 238 238 224 224 224 224 224 212 200 200 200 190 190 190 180 180 180 170 170 170 170 170 170 170 170 170 170 170 170 170 160 160 160 160 160 160 160
 amp of instrument 0 is 1
 
 # sq60
 instrument 1 is 0 255 255
 pitch of instrument 1 is 0
-arp of instrument 1 is 0
+arp macro 1 is 116
+arp of instrument 1 is 1
 amp macro 2 is 255 255 255 240 240 240 224 224 212 212 200 200 200 190 180 170
 amp of instrument 1 is 2
 duty macro 2 is 140
@@ -58,6 +63,6 @@ amp of instrument 3 is 1 # dep sq50 vibrato
 duty of instrument 3 is 1
 
 # saw vibrato
-instrument 4 is 0 255 255
+instrument 4 is 2 255 255
 amp of instrument 4 is 1
 pitch of instrument 4 is 2

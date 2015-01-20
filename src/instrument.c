@@ -76,6 +76,6 @@ float msf_get_freq(int note)
 		base_freq = 30.868;
 		break;
 	}
-	int mult = 1 << octave;
+	int mult = 1 << (octave + 1);
 	return base_freq * mult;
 }

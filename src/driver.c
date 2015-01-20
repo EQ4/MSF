@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <poly.h> 
 #include <string.h>
+#include <math.h>
 
 msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int num_phrases, int phrase_length, int num_instruments)
 {
@@ -95,7 +96,9 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 
 
 	driver->amp_l = malloc(sizeof(float *) * num_channels);
-	driver->amp_r= malloc(sizeof(float *) * num_channels);
+	driver->amp_r = malloc(sizeof(float *) * num_channels);
+	driver->master_l= malloc(sizeof(float *) * num_channels);
+	driver->master_r= malloc(sizeof(float *) * num_channels);
 	driver->freq = malloc(sizeof(float *) * num_channels);
 	driver->note = malloc(sizeof(int *) * num_channels);
 
@@ -119,6 +122,8 @@ msf_driver *msf_init_special(int speed, int num_frames, int num_channels, int nu
 		driver->duty[i] = NULL;
 		driver->note_delay[i] = 0;
 		driver->note_cut[i] = 0;
+		driver->master_l[i] = 1.0;
+		driver->master_r[i] = 1.0;
 	}
 
 			// Initialize libPOLY6 with the parametres from above
@@ -269,8 +274,8 @@ void msf_trigger_note(msf_driver *driver, int i, msf_instrument *instrument, int
 		driver->freq[i] = 0; // Zero out the frequency offset from the pitch macro
 		
 		// Set L/R balance
-		poly_set_R_amp(i,driver->amp_r[i]);
-		poly_set_L_amp(i,driver->amp_l[i]);
+		poly_set_R_amp(i,driver->amp_r[i] * driver->master_r[i]);
+		poly_set_L_amp(i,driver->amp_l[i] * driver->master_l[i]);
 
 
 		// Set up wave type
@@ -386,10 +391,10 @@ void msf_step(msf_driver *driver)
 			}
 			if (phrase->cmd[idx] == MSF_FX_OUTPUT)
 			{
-				driver->amp_l[i] = ((phrase->arg[idx] & 0xF0) >> 4) / 16.0;
-				driver->amp_r[i] = (phrase->arg[idx] & 0x0F) / 16.0;
-				poly_set_R_amp(i,driver->amp_r[i]);
-				poly_set_L_amp(i,driver->amp_l[i]);
+				driver->master_l[i] = ((phrase->arg[idx] & 0xF0) >> 4) / 16.0;
+				driver->master_r[i] = (phrase->arg[idx] & 0x0F) / 16.0;
+				poly_set_R_amp(i,driver->amp_r[i] * driver->master_r[i]);
+				poly_set_L_amp(i,driver->amp_l[i] * driver->master_l[i]);
 			}
 		}
 		msf_drv_inc_ll(driver, i);
@@ -412,7 +417,7 @@ void msf_step(msf_driver *driver)
 		
 		// Set the channel frequency
 		// Considering: frequency from (note + arp offset + transpose) + pitch bend sum
-		poly_set_freq(i,(driver->frames[driver->frame_cnt]->tune[i] / MSF_TUNE_DIV) + msf_get_freq(driver->note[i] + arp_off + driver->frames[driver->frame_cnt]->transpose[i]) + driver->freq[i]);
+		poly_set_freq(i,exp(driver->frames[driver->frame_cnt]->tune[i] / MSF_TUNE_DIV) + msf_get_freq(driver->note[i] + arp_off + driver->frames[driver->frame_cnt]->transpose[i]) + driver->freq[i]);
 		// Set duty
 		if (driver->duty[i] != NULL)
 		{
@@ -626,6 +631,8 @@ void msf_shutdown(msf_driver *driver)
 		free(driver->note);
 		free(driver->amp_l);
 		free(driver->amp_r);
+		free(driver->master_l);
+		free(driver->master_r);
 		free(driver->freq);
 		free(driver->duty);
 		free(driver->note_cut);
