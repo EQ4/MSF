@@ -92,7 +92,6 @@ struct msf_driver
 	msf_ll **pitch;
 };
 
-// For those who aren't satisfied with my defaults
 msf_driver *msf_init_special(int speed, int num_frames, int num_channels, 
 					  int num_phrases, int phrase_length, int num_instruments);
 msf_driver *msf_init(void);
@@ -100,7 +99,16 @@ void msf_spill(msf_driver *driver); // Print where we are in the track
 int msf_drv_proc(msf_driver *driver);
 void msf_drv_inc_ll(msf_driver *driver, int i); // Step through the LLs
 void msf_step(msf_driver *driver); // Actually runs the music
-void msf_shutdown(msf_driver *driver); // No leaks!
+void msf_shutdown(msf_driver *driver);
+
+// Printing functions
+msf_phrase *msf_get_current_phrase(msf_driver *driver, int chan);
+void msf_get_channel_note(msf_phrase *phrase, int cnt, char *notestr);
+void msf_get_channel_inst(msf_phrase *phrase, int cnt, char *notestr);
+void msf_get_channel_arg(msf_phrase *phrase, int cnt, char *notestr);
+void msf_get_channel_cmd(msf_phrase *phrase, int cnt, char *notestr);
+
+void msf_print_channel_state(msf_driver *driver, int chan);
 
 msf_driver *msf_handle_driver_line(char *line);
 unsigned int msf_handle_line(msf_driver *driver, char *line);

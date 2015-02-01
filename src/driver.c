@@ -440,6 +440,118 @@ void msf_step(msf_driver *driver)
 	driver->phrase_adv++;
 }
 
+msf_phrase *msf_get_current_phrase(msf_driver *driver, int chan)
+{
+	int phrase_index = driver->frames[driver->frame_cnt]->phrase[chan];
+	return driver->phrases[phrase_index];
+}
+
+void msf_get_channel_note(msf_phrase *phrase, int cnt, char *notestr)
+{
+	int noteval = phrase->note[cnt];
+	sprintf(notestr,"    ");
+	if (noteval > 0 && noteval < 255)
+	{
+		int octave = noteval / 12;
+		switch (noteval%12)
+		{
+			case NOTE_C:
+				sprintf(notestr,"C %X\n",octave);
+				break;
+			case NOTE_CS:
+				sprintf(notestr,"C#%X\n",octave);
+				break;
+			case NOTE_D:
+				sprintf(notestr,"D %X\n",octave);
+				break;
+			case NOTE_DS:
+				sprintf(notestr,"D#%X\n",octave);
+				break;
+			case NOTE_E:
+				sprintf(notestr,"E %X\n",octave);
+				break;
+			case NOTE_F:
+				sprintf(notestr,"F %X\n",octave);
+				break;
+			case NOTE_FS:
+				sprintf(notestr,"F#%X\n",octave);
+				break;
+			case NOTE_G:
+				sprintf(notestr,"G %X\n",octave);
+				break;
+			case NOTE_GS:
+				sprintf(notestr,"G#%X\n",octave);
+				break;
+			case NOTE_A:
+				sprintf(notestr,"A %X\n",octave);
+				break;
+			case NOTE_AS:
+				sprintf(notestr,"A#%X\n",octave);
+				break;
+			case NOTE_B:
+				sprintf(notestr,"B %X\n",octave);
+				break;
+		}	
+	}
+	else
+	{
+		if (noteval == 0)
+		{
+			sprintf(notestr,"   ");
+		}
+		else if (noteval == 255)
+		{
+			sprintf(notestr,"===");
+		}
+	}
+}
+
+void msf_get_channel_inst(msf_phrase *phrase, int cnt, char *notestr)
+{
+	int instval = phrase->inst[cnt];
+	sprintf(notestr,"    ");
+	if (instval != -1)
+	{
+		sprintf(notestr, "%02X",instval);
+	}
+}
+
+void msf_get_channel_arg(msf_phrase *phrase, int cnt, char *notestr)
+{
+	if (phrase->cmd[cnt] != 0)
+	{
+		int argval = phrase->arg[cnt];
+		sprintf(notestr,"%02X  ",argval);
+	}
+}
+
+void msf_get_channel_cmd(msf_phrase *phrase, int cnt, char *notestr)
+{
+	char cmd = ' ';
+	switch(phrase->cmd[cnt])
+	{
+		case MSF_FX_HOP:
+			cmd = 'H';
+			break;
+		case MSF_FX_KILL:
+			cmd = 'K';
+			break;
+		case MSF_FX_DELAY:
+			cmd = 'D';
+			break;
+		case MSF_FX_OUTPUT:
+			cmd = 'O';
+			break;
+		case MSF_FX_SPEED:
+			cmd = 'S';
+			break;
+		case MSF_FX_JUMP:
+			cmd = 'J';
+			break;
+	}
+	sprintf(notestr,"%c  ",cmd);
+}
+
 // Within 10 characters prints the channel state
 void msf_print_channel_state(msf_driver *driver, int chan)
 {
@@ -542,8 +654,6 @@ void msf_print_channel_state(msf_driver *driver, int chan)
 	{
 		textcolor(ATTR_NOTE,COL_NOTE,COL_BLACK);
 		printf("%s%i",notestr,octave);
-
-	
 	}
 	else if (noteval == 0)
 	{	
@@ -551,8 +661,7 @@ void msf_print_channel_state(msf_driver *driver, int chan)
 		printf("%s ",notestr);
 	}
 	else if (noteval == 255)
-	{
-		
+	{	
 		textcolor(ATTR_CUT,COL_CUT,COL_BLACK);
 		printf("%s=",notestr);
 	}
@@ -601,7 +710,6 @@ void msf_spill(msf_driver *driver)
 		msf_print_channel_state(driver,i);
 	}
 	printf("\n");
-
 }
 
 void msf_shutdown(msf_driver *driver)
@@ -1101,13 +1209,22 @@ unsigned int msf_handle_line(msf_driver *driver, char *line)
 				int inst = ((unsigned char)((value >> 8) & 0xFF));
 				int note = ((unsigned char)((value) & 0xFF));
 
-			
+				if (note == 0 || note == 0xFF)
+				{
+					inst = -1;
+				}
 
-				phraseptr->note[stepnum] = (unsigned char)(value & 0xFF);
+				phraseptr->note[stepnum] = note;
 				phraseptr->inst[stepnum] = inst;
 				phraseptr->cmd[stepnum] = cmd;
 				phraseptr->arg[stepnum] = arg;
 				token = strtok(NULL,MSF_DELIMITERS);
+				stepnum++;
+			}
+			// Clear out the rest if it's not defined
+			while (stepnum < phraseptr->length)
+			{
+				phraseptr->inst[stepnum] = -1;
 				stepnum++;
 			}
 			if (phraseptr->used != 0)

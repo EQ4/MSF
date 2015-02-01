@@ -17,20 +17,54 @@ This is a simple example "client" to the MSF driver.
 #include "phrase.h"
 #include "frame.h"
 #include "driver.h"
-#include "txtcolor.h"
+#include "colors.h"
 
 #include <allegro5/allegro.h>
+#include <allegro5/allegro_font.h>
+#include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_primitives.h>
 
 ALLEGRO_DISPLAY *display;
+ALLEGRO_BITMAP *main_buffer;
 ALLEGRO_EVENT_QUEUE *event_queue;
 ALLEGRO_AUDIO_STREAM *stream;
+ALLEGRO_FONT *font;
+ALLEGRO_FONT *fontbold;
 int quit;
 
 #define NUM_FRAGMENTS 2
-#define SIZE_FRAGMENT 1024
+#define SIZE_FRAGMENT 2048
 #define RATE 44100
+
+#define WIN_W 320
+#define WIN_H 240
+
+int win_w = WIN_W;
+int win_h = WIN_H;
+
+void update_display(void)
+{
+	al_set_target_backbuffer(display);
+	al_draw_bitmap(main_buffer,0,0,0);
+	al_flip_display();
+	al_set_target_bitmap(main_buffer);
+}
+
+int init(void)
+{
+	al_init();
+	al_install_audio();
+	al_init_acodec_addon();
+	al_init_primitives_addon();
+	al_init_font_addon();
+	al_init_ttf_addon();
+	al_set_new_display_flags(ALLEGRO_RESIZABLE|ALLEGRO_WINDOWED);
+	font = al_load_ttf_font("./gohufont.fon",11,ALLEGRO_TTF_MONOCHROME);
+	fontbold = al_load_ttf_font("./gohubold.fon",11,ALLEGRO_TTF_MONOCHROME);
+	display = al_create_display(win_w,win_h);
+	main_buffer = al_create_bitmap(win_w,win_h);
+}
 
 int main(int argc, char *argv[])
 {
@@ -53,11 +87,11 @@ int main(int argc, char *argv[])
 	int song_timer = 0;
 
 	// Initialization boilerplate
-	al_init();
-	al_install_audio();
-	al_init_acodec_addon();
-	al_init_primitives_addon();
-	display = al_create_display(320,240);
+	if (init() == 0)
+	{
+		msf_shutdown(driver);
+		return -1;
+	}
 	quit = 0;
 	
 	// Set up the audio stream and mixer attachment
@@ -77,13 +111,12 @@ int main(int argc, char *argv[])
 	al_register_event_source(event_queue, al_get_audio_stream_event_source(stream));
 	al_register_event_source(event_queue, al_get_display_event_source(display));
 	
-	driver->print_notes = 1;
-
-	int pos = 0;
+	driver->print_notes = 0;
 
 	int draw_h = 0;
 
-	while(!quit)
+	char *notestr = (char *)malloc(sizeof(char) * 11);
+	for (;;)
 	{
 		ALLEGRO_EVENT event;
 		if (!al_is_event_queue_empty(event_queue))
@@ -91,10 +124,20 @@ int main(int argc, char *argv[])
 			al_get_next_event(event_queue, &event);
 			if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 			{
-				
-				textcolor(COL_RESET,COL_WHITE,COL_BLACK);
 				printf("Exiting\n");
 				quit = 1;
+			}
+			else if (event.type == ALLEGRO_EVENT_DISPLAY_RESIZE)
+			{
+				if (event.display.source == display)
+				{
+					al_destroy_bitmap(main_buffer);
+					win_w = event.display.width;
+					win_h = event.display.height;
+					main_buffer = al_create_bitmap(win_w,win_h);
+					al_resize_display(display, win_w, win_h);
+				}
+				al_acknowledge_resize(event.display.source);
 			}
 			else if (event.type == ALLEGRO_EVENT_AUDIO_STREAM_FRAGMENT)
 			{
@@ -130,25 +173,47 @@ int main(int argc, char *argv[])
 				al_drain_audio_stream(stream);
 			}
 		}
-		draw_h = (int)(2 * 120.0 * draw_h / (32768.0));
-		draw_h = draw_h / SIZE_FRAGMENT;
-		al_draw_filled_rectangle(0, 0, 320, 240, al_map_rgba(0,0,0,5));
-		al_draw_line(pos, 0, pos, 240, al_map_rgb(0,0,0), 1);
-		al_draw_line(pos, 120 - draw_h,
-			pos,120 + draw_h,al_map_rgb(255,255,255),1);
 
-		pos++;
-		if (pos == 320)
+		al_clear_to_color(al_map_rgb(0,0,0));
+
+		for (int i = 0; i < driver->num_channels; i++)
 		{
-			pos = 0;
+			for (int j = 0; j < (win_h / 9) + 1; j++)
+			{
+				int basey = 11 + (9 * j);
+				int basex = (6 * 12 * i);
+				msf_phrase *phrase = msf_get_current_phrase(driver,i);
+				msf_get_channel_note(phrase, j, notestr);
+				ALLEGRO_COLOR col = MSF_COL_NOTE;
+				if (notestr[0] == '=')
+				{
+					col = MSF_COL_CUT;
+				}
+				al_draw_text(font, col,basex,basey,0,notestr);
+				basex += 24;
+				msf_get_channel_inst(phrase, j, notestr);
+				al_draw_text(font, MSF_COL_INST,basex,basey,0,notestr);
+				basex += 18;
+				msf_get_channel_cmd(phrase, j, notestr);
+				al_draw_text(font, MSF_COL_CMD,basex,basey,0,notestr);
+				basex += 12;
+				msf_get_channel_arg(phrase, j, notestr);
+				al_draw_text(font, MSF_COL_ARG,basex,basey,0,notestr);
+			}
 		}
-		al_flip_display();
 
+		al_flip_display();
+		if (quit)
+		{
+			goto exit_lab;
+		}
 	}
+exit_lab:
 	//poly_shutdown();
 	//al_destroy_audio_stream(stream);
 	//al_destroy_display(display);
 	//al_destroy_event_queue(event_queue);
+	free(notestr);
 	msf_shutdown(driver);
 	return 0;
 }
