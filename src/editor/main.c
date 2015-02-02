@@ -1,36 +1,16 @@
 /*
 
-MSF Player
+MSF Editor GUI
 Michael Moffitt 2014
 ------------------------------------------------------------------------------
-This is a simple example "client" to the MSF driver. 
-
-
-
 
 */
 
+#include "editor/includes.h"
 #include <stdio.h>
-#include <stdlib.h>
 
-#include "instrument.h"
-#include "phrase.h"
-#include "frame.h"
-#include "driver.h"
-#include "colors.h"
+#include "editor/colors.h"
 
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_font.h>
-#include <allegro5/allegro_ttf.h>
-#include <allegro5/allegro_audio.h>
-#include <allegro5/allegro_primitives.h>
-
-ALLEGRO_DISPLAY *display;
-ALLEGRO_BITMAP *main_buffer;
-ALLEGRO_EVENT_QUEUE *event_queue;
-ALLEGRO_AUDIO_STREAM *stream;
-ALLEGRO_FONT *font;
-ALLEGRO_FONT *fontbold;
 int quit;
 
 #define NUM_FRAGMENTS 2
@@ -39,9 +19,6 @@ int quit;
 
 #define WIN_W 320
 #define WIN_H 240
-
-int win_w = WIN_W;
-int win_h = WIN_H;
 
 void update_display(void)
 {
@@ -62,8 +39,38 @@ int init(void)
 	al_set_new_display_flags(ALLEGRO_RESIZABLE|ALLEGRO_WINDOWED);
 	font = al_load_ttf_font("./gohufont.fon",11,ALLEGRO_TTF_MONOCHROME);
 	fontbold = al_load_ttf_font("./gohubold.fon",11,ALLEGRO_TTF_MONOCHROME);
+	
+	win_w = WIN_W;
+	win_h = WIN_H;
+
+	char_w = 6;
+	char_h = 9;
+
+	hilight1 = 4;
+	hilight2 = 16;
+
 	display = al_create_display(win_w,win_h);
 	main_buffer = al_create_bitmap(win_w,win_h);
+
+	al_reserve_samples(1); // Sets up the default mixer
+	stream = al_create_audio_stream(
+		NUM_FRAGMENTS,
+		SIZE_FRAGMENT,
+		RATE,
+		ALLEGRO_AUDIO_DEPTH_INT16,
+		ALLEGRO_CHANNEL_CONF_2);
+	al_attach_audio_stream_to_mixer(stream, al_get_default_mixer());
+
+	// Set up event sources so the stream can request more sample frames, and we
+	// can also close the window.
+	event_queue = al_create_event_queue();
+	al_register_event_source(event_queue, al_get_audio_stream_event_source(stream));
+	al_register_event_source(event_queue, al_get_display_event_source(display));
+
+	driver->print_notes = 0;
+
+	scroll_x = 0;
+	scroll_y = 0;
 }
 
 int main(int argc, char *argv[])
@@ -77,7 +84,7 @@ int main(int argc, char *argv[])
 
 	const char *song;
 	song = argv[1];
-	msf_driver *driver = msf_load_file(song);
+	driver = msf_load_file(song);
 	if (driver == NULL)
 	{
 		return -1;
@@ -95,27 +102,10 @@ int main(int argc, char *argv[])
 	quit = 0;
 	
 	// Set up the audio stream and mixer attachment
-	al_reserve_samples(1); // Sets up the default mixer
-	
-	stream = al_create_audio_stream(
-		NUM_FRAGMENTS,
-		SIZE_FRAGMENT,
-		RATE,
-		ALLEGRO_AUDIO_DEPTH_INT16,
-		ALLEGRO_CHANNEL_CONF_2);
-	al_attach_audio_stream_to_mixer(stream, al_get_default_mixer());
-
-	// Set up event sources so the stream can request more sample frames, and we
-	// can also close the window.
-	event_queue = al_create_event_queue();
-	al_register_event_source(event_queue, al_get_audio_stream_event_source(stream));
-	al_register_event_source(event_queue, al_get_display_event_source(display));
-	
-	driver->print_notes = 0;
 
 	int draw_h = 0;
 
-	char *notestr = (char *)malloc(sizeof(char) * 11);
+	char *notestr = (char *)malloc(sizeof(char) * 5);
 	for (;;)
 	{
 		ALLEGRO_EVENT event;
@@ -176,33 +166,8 @@ int main(int argc, char *argv[])
 
 		al_clear_to_color(al_map_rgb(0,0,0));
 
-		for (int i = 0; i < driver->num_channels; i++)
-		{
-			for (int j = 0; j < (win_h / 9) + 1; j++)
-			{
-				int basey = 11 + (9 * j);
-				int basex = (6 * 12 * i);
-				msf_phrase *phrase = msf_get_current_phrase(driver,i);
-				msf_get_channel_note(phrase, j, notestr);
-				ALLEGRO_COLOR col = MSF_COL_NOTE;
-				if (notestr[0] == '=')
-				{
-					col = MSF_COL_CUT;
-				}
-				al_draw_text(font, col,basex,basey,0,notestr);
-				basex += 24;
-				msf_get_channel_inst(phrase, j, notestr);
-				al_draw_text(font, MSF_COL_INST,basex,basey,0,notestr);
-				basex += 18;
-				msf_get_channel_cmd(phrase, j, notestr);
-				al_draw_text(font, MSF_COL_CMD,basex,basey,0,notestr);
-				basex += 12;
-				msf_get_channel_arg(phrase, j, notestr);
-				al_draw_text(font, MSF_COL_ARG,basex,basey,0,notestr);
-			}
-		}
-
-		al_flip_display();
+		msf_render_phrases(0,0,notestr);
+		update_display();
 		if (quit)
 		{
 			goto exit_lab;
