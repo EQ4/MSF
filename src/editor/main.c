@@ -11,7 +11,6 @@ Michael Moffitt 2014
 
 #include "editor/colors.h"
 
-int quit;
 
 #define NUM_FRAGMENTS 2
 #define SIZE_FRAGMENT 2048
@@ -76,6 +75,7 @@ int init(void)
 int main(int argc, char *argv[])
 {
 
+int quit;
 	if (argc == 1)
 	{
 		printf("Usage: msfplay songname.msf\n");
