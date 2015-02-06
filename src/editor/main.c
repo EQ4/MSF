@@ -13,7 +13,7 @@ Michael Moffitt 2014
 
 
 #define NUM_FRAGMENTS 2
-#define SIZE_FRAGMENT 2048
+#define SIZE_FRAGMENT 4096
 #define RATE 44100
 
 #define WIN_W 320
@@ -111,14 +111,15 @@ int quit;
 		ALLEGRO_EVENT event;
 		if (!al_is_event_queue_empty(event_queue))
 		{
+			int16_t *frame;
 			al_get_next_event(event_queue, &event);
-			if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
+			switch(event.type)
 			{
+			case ALLEGRO_EVENT_DISPLAY_CLOSE:
 				printf("Exiting\n");
 				quit = 1;
-			}
-			else if (event.type == ALLEGRO_EVENT_DISPLAY_RESIZE)
-			{
+				break;
+			case ALLEGRO_EVENT_DISPLAY_RESIZE:
 				if (event.display.source == display)
 				{
 					al_destroy_bitmap(main_buffer);
@@ -128,11 +129,10 @@ int quit;
 					al_resize_display(display, win_w, win_h);
 				}
 				al_acknowledge_resize(event.display.source);
-			}
-			else if (event.type == ALLEGRO_EVENT_AUDIO_STREAM_FRAGMENT)
-			{
+				break;
+			case ALLEGRO_EVENT_AUDIO_STREAM_FRAGMENT:
 				// Time to get the next sample
-				int16_t *frame = (int16_t *)al_get_audio_stream_fragment(stream);
+				frame = (int16_t *)al_get_audio_stream_fragment(stream);
 				if (!frame == NULL)
 				{
 					draw_h = 0;
@@ -156,11 +156,11 @@ int quit;
 					}
 					al_set_audio_stream_fragment(stream, (void *)frame);
 				}
-			}
-			else if (event.type == ALLEGRO_EVENT_AUDIO_STREAM_FINISHED)
-			{
+				break;
+			case ALLEGRO_EVENT_AUDIO_STREAM_FINISHED:
 				printf("Stream has completed.\n");
 				al_drain_audio_stream(stream);
+				break;
 			}
 		}
 
