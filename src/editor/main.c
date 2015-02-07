@@ -180,8 +180,16 @@ int main(int argc, char *argv[])
 		}
 
 		al_clear_to_color(al_map_rgb(0,0,0));
+		for (int i = 0; i < driver->num_channels; i++)
+		{
+			render_phrase(
+				(char_w * MSF_RENDER_TXTLEN * i),
+				win_h / 2,
+				notestr,
+				msf_get_current_phrase(driver,i));
+			
 
-		render_phrases(0,0,notestr);
+		}
 		update_display();
 		if (quit)
 		{

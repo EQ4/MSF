@@ -89,27 +89,20 @@ void render_notetext(int j, int bx, int by, char *str, msf_phrase *phrase)
 	al_draw_text(font, MSF_COL_ARG,bx,by,0,str);
 }
 
-void render_phrases(int x, int y, char *str)
+void render_phrase(int x, int y, char *str, msf_phrase *phrase)
 {
-	for (int i = 0; i < driver->num_channels; i++)
+	for (int j = 0; j < phrase->length; j++)
 	{
-		msf_phrase *phrase = msf_get_current_phrase(driver,i);
-		int bx = x + (char_w * MSF_RENDER_TXTLEN * i);
-		for (int j = 0; j < phrase->length; j++)
+		int by = y + char_h + (char_h * j);
+		by -= driver->phrase_cnt * char_h; // Current line at the top
+		// Don't render below window when not needed
+		if (by > win_h + char_h)
 		{
-			int by = y + char_h + (char_h * j);
-			by -= driver->phrase_cnt * char_h;
-			by += phrase->length * char_h / 2;
-
-			// Don't render below window when not needed
-			if (by > win_h + char_h)
-			{
-				//break;
-			}
-						
-			render_hilights(j, bx, by);	
-			render_notetext(j, bx, by, str, phrase);
+			//break;
 		}
+					
+		render_hilights(j, x, by);	
+		render_notetext(j, x, by, str, phrase);
 	}
 }
 

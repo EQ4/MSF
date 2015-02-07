@@ -19,7 +19,7 @@ void init_render(void);
 
 void render_hilights(int j, int bx, int by);
 void render_notetext(int j, int bx, int by, char *str, msf_phrase *phrase);
-void render_phrases(int x, int y, char *str);
+void render_phrase(int x, int y, char *str, msf_phrase *phrase);
 
 void update_display(void);
 
