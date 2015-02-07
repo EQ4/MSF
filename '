@@ -4,10 +4,7 @@
 #include "editor/audio.h"
 
 ALLEGRO_BITMAP *main_buffer;
-ALLEGRO_DISPLAY *display;
-ALLEGRO_FONT *font;
-ALLEGRO_FONT *fontbold;
-unsigned int window_mode;
+
 
 // Calling this twice is fine - it will check if the display / buffer
 // already has been created and will rebuild it if needed.
@@ -41,10 +38,6 @@ void init_render(void)
 // bx, by: render offsets
 void render_hilights(int j, int bx, int by)
 {
-	if (by < char_h + 0.5)
-	{
-		return;
-	}
 	if (j == driver->phrase_cnt)
 	{
 		al_draw_filled_rectangle(bx, by - char_h - 0.5, 
@@ -104,7 +97,7 @@ void render_phrases(int x, int y, char *str)
 			// Don't render below window when not needed
 			if (by > win_h + char_h)
 			{
-				//break;
+				break;
 			}
 						
 			render_hilights(j, bx, by);	

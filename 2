@@ -22,15 +22,6 @@ Michael Moffitt 2014
 #define WIN_W 640
 #define WIN_H 480
 
-void clear_pointers(void)
-{
-	driver = NULL;
-	stream = NULL;
-	display = NULL;
-	main_buffer = NULL;
-	event_queue = NULL;
-}
-
 void set_defaults(void)
 {
 	win_w = WIN_W;
@@ -46,34 +37,9 @@ void set_defaults(void)
 	num_fragments = NUM_FRAGMENTS;
 	size_fragment = SIZE_FRAGMENT;
 
-	scroll_x = 0;
-	scroll_y = 0;
-
 }
 
-void init_event_queue(void)
-{
-	if (event_queue)
-	{
-		al_destroy_event_queue(event_queue);
-	}
-	event_queue = al_create_event_queue();
-}
-
-
-// TODO: init without song
-void init_msf(char *fname)
-{
-	if (driver)
-	{
-		msf_shutdown(driver);
-	}
-	driver = msf_load_file(fname);
-	printf("MSF driver is at %08X\n",(unsigned int)driver);
-	driver->print_notes = 0;
-}
-
-void init(void)
+int init(void)
 {
 	al_init();
 	al_install_audio();
@@ -83,9 +49,19 @@ void init(void)
 	al_init_ttf_addon();
 	
 	set_defaults();
-	init_event_queue();
 	init_render();
-	init_audio();
+
+
+	// Set up event sources so the stream can request more sample frames, and we
+	// can also close the window.
+	event_queue = al_create_event_queue();
+	al_register_event_source(event_queue, al_get_audio_stream_event_source(stream));
+	al_register_event_source(event_queue, al_get_display_event_source(display));
+
+	driver->print_notes = 0;
+
+	scroll_x = 0;
+	scroll_y = 0;
 }
 
 int main(int argc, char *argv[])
@@ -97,36 +73,36 @@ int main(int argc, char *argv[])
 		printf("Usage: msfplay songname.msf\n");
 		return 1;
 	}
-	printf("Clearing pointers\n");
-	clear_pointers();
-	printf("Setting defaults\n");
-	set_defaults();
-	printf("Calling init()\n");
-	init();
-	printf("Calling init_msf() with %s...\n",argv[1]);
-	init_msf(argv[1]);
-	printf("...ok\n");
+
+	const char *song;
+	song = argv[1];
+	driver = msf_load_file(song);
 	if (driver == NULL)
 	{
 		return -1;
 	}
-	printf("Beginning\n");
+
+	
 	int song_timer = 0;
 
 	// Initialization boilerplate
-
+	if (init() == 0)
+	{
+		msf_shutdown(driver);
+		return -1;
+	}
 	quit = 0;
 	
 
 	int draw_h = 0;
 
 	char *notestr = (char *)malloc(sizeof(char) * 5);
-	int16_t *frame;
 	for (;;)
 	{
 		ALLEGRO_EVENT event;
 		if (!al_is_event_queue_empty(event_queue))
 		{
+			int16_t *frame;
 			al_get_next_event(event_queue, &event);
 			switch(event.type)
 			{

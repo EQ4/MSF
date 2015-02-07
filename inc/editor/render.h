@@ -3,10 +3,24 @@
 
 #define MSF_RENDER_TXTLEN 12
 
+#define MODE_WINDOW 0
+#define MODE_FULL 1
+
 #include "editor/includes.h"
 
-void msf_render_hilights(int j, int basex, int basey);
-void msf_render_notetext(int j, int basex, int basey, char *notestr, msf_phrase *phrase);
-void msf_render_phrases(int x, int y, char *notestr);
+extern ALLEGRO_BITMAP *main_buffer;
+extern ALLEGRO_DISPLAY *display;
+extern ALLEGRO_FONT *font;
+extern ALLEGRO_FONT *fontbold;
+
+extern unsigned int window_mode;
+
+void init_render(void);
+
+void render_hilights(int j, int bx, int by);
+void render_notetext(int j, int bx, int by, char *str, msf_phrase *phrase);
+void render_phrases(int x, int y, char *str);
+
+void update_display(void);
 
 #endif
