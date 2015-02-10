@@ -14,10 +14,13 @@ extern unsigned int num_samples;
 extern unsigned int audio_rate;
 extern unsigned int num_fragments;
 extern unsigned int size_fragment;
+extern unsigned int music_timer;
 
 extern ALLEGRO_AUDIO_STREAM *stream;
 extern msf_driver *driver;
 
 void init_stream(void);
+
+void audio_fill_buffer(void);
 
 #endif

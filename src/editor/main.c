@@ -81,6 +81,7 @@ void init(void)
 	al_init_primitives_addon();
 	al_init_font_addon();
 	al_init_ttf_addon();
+	al_install_keyboard();
 	
 	set_defaults();
 	init_event_queue();
@@ -91,7 +92,7 @@ void init(void)
 int main(int argc, char *argv[])
 {
 
-	int quit;
+	int quit = 0;
 	if (argc == 1)
 	{
 		printf("Usage: msfplay songname.msf\n");
@@ -111,12 +112,10 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 	printf("Beginning\n");
-	int song_timer = 0;
 
 	// Initialization boilerplate
 
-	quit = 0;
-	
+	ALLEGRO_KEYBOARD_STATE keystate;
 
 	int draw_h = 0;
 
@@ -147,30 +146,7 @@ int main(int argc, char *argv[])
 				break;
 			case ALLEGRO_EVENT_AUDIO_STREAM_FRAGMENT:
 				// Time to get the next sample
-				frame = (int16_t *)al_get_audio_stream_fragment(stream);
-				if (!frame == NULL)
-				{
-					draw_h = 0;
-					for (int i = 0; i < SIZE_FRAGMENT; i++)
-					{	
-						song_timer++;
-						if (song_timer > 735)
-						{
-							song_timer = 0;
-							msf_step(driver);
-						}
-						poly_next_frame((int16_t *)(frame + (2*i)));
-						if (*frame > 0)
-						{
-							draw_h += *frame;
-						}
-						else
-						{
-							draw_h -= *frame;
-						}
-					}
-					al_set_audio_stream_fragment(stream, (void *)frame);
-				}
+				audio_fill_buffer();
 				break;
 			case ALLEGRO_EVENT_AUDIO_STREAM_FINISHED:
 				printf("Stream has completed.\n");
@@ -187,8 +163,6 @@ int main(int argc, char *argv[])
 				win_h / 2,
 				notestr,
 				msf_get_current_phrase(driver,i));
-			
-
 		}
 		update_display();
 		if (quit)
@@ -197,10 +171,10 @@ int main(int argc, char *argv[])
 		}
 	}
 exit_lab:
-	//poly_shutdown();
-	//al_destroy_audio_stream(stream);
-	//al_destroy_display(display);
-	//al_destroy_event_queue(event_queue);
+	poly_shutdown();
+	al_destroy_audio_stream(stream);
+	al_destroy_display(display);
+	al_destroy_event_queue(event_queue);
 	free(notestr);
 	msf_shutdown(driver);
 	return 0;
